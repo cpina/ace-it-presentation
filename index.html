@@ -16,12 +16,33 @@
         font-family: 'Ubuntu Mono';
 	src: url('fonts/UbuntuMono-Regular.ttf');
       }
+    </style>
+    <style>
       body { font-family: 'Droid Serif'; }
       h1, h2, h3 {
         font-family: 'Yanone Kaffeesatz';
         font-weight: normal;
       }
+      .footnote {
+         position: absolute;
+	 bottom: 3em;
+      }
       .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+      
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
     </style>
   </head>
   <body>
