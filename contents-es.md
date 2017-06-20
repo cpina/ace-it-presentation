@@ -1,6 +1,8 @@
 name: inverse
+layout: true
 class: center, middle, inverse
 ---
+layout: false
 template: inverse
 # Dando la vuelta la Antartida con software libre 
 .footnote[Carles Pina and Jen Thomas]
@@ -8,6 +10,7 @@ template: inverse
 template: inverse
 # Quienes somos
 ---
+layout: false
 # Jen Thomas
 - Data manager de BAS (Instituto Británico de la Antartida, Cambridge, Reino Unido) 
 - Hobbies: pájaros, insectos...
@@ -106,10 +109,6 @@ http://github.com/cpina/science-cruise-data-management
 ---
 background-image: url(images/event_report.png)
 background-size: contain 
-
----
-
-
 ---
 # Python example
 Let's see something...
