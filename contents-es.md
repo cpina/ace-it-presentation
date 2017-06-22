@@ -20,14 +20,13 @@ layout: false
 - Nací en Manresa, cerca de Barcelona (España)
 - Desde 2009 trabajo en Mendeley (departamento de Mendeley Desktop) trabajando en C++/Qt
 - Normalmente vivo en Londres (Reino Unido) pero nos cogimos un año sabático para viajar
-- Trabajo en Mendeley (departamento de Mendeley Desktop) trabajando en C++/Qt
-desde el 2009
-- Me gusta el software libre:
- - Uso GNU/Linux desde aproximadamente 1997
- - Uso Debian desde Debian Potato (2000)
+- Me gusta el software libre (uso Debian desde Debian Potato en el 2000)
+- Algunos proyectos:
  - qdacco (C++/Qt): está en Debian y Ubuntu
  - qphotosort (Python/Qt) y qnetload (C++/Qt)
+ - Estoy colaborando con Chronojump (C# y Python)
  - He contribuido a Grub, Pidgin, geeqie, Amarok, Pydance, gnokii...
+ - Aplicación Benches para Android y iOS (OpenStreetMap, Python, Flask)
 - En el año sabático acabamos en la Antártida
 ---
 template: inverse
@@ -94,6 +93,7 @@ background-size: contain
 --
 
 - Dijo: ¡con Django!
+(yo pensaba que no quería Django, que era demasiado grande)
 --
 
 - Y me hizo un proyecto pequeño en Django para que viera como funciona
@@ -110,23 +110,263 @@ http://github.com/cpina/science-cruise-data-management
 background-image: url(images/event_report.png)
 background-size: contain 
 ---
-# Python example
-Let's see something...
+# Internet en el barco
+- Teníamos 2 sistemas Iridium.
+- Inicialmente uno para llamadas, otro para Internet
+- Esto son, 128 kbits para 80 personas
+--
 
-- Cool
-- Useful
+- Y el sistema es MUY inestable
+---
+# Necesidades de comunicaciones
+- Científicos necesitan:
+ - Bajar imagenes de satélite de hielo
+ - Bajar modelos meterologicos
+ - Comunicarse con sus equipos
+ - Comunicarse con família
+- Periodistas necesitan:
+ - Subir fotos
+ - Subir vídeos!
+---
+template: inverse
+# Internet parte 1
+---
+# Setup parte 1
+- Un router TP-Link conectado al Iridium
+- Dos cables con ancho de banda "ilimitado"
+- El sistema WiFi como red de invitados y como máximo el 50% o 70% de velocidad y menos prioridad
+???
+La priorización sólo no funcionaba bien porqué la conexión es inestable
+---
+# Email
+- Recomandamos usar Thunderbird en cada portátil y usar la conexión cable
+- Fué bastante mal:
+ - Windows tiene time outs cortos (e.g. para DNS)
+ - Thunderbird tiene problemas con conexiones inestables (y mala información para el usuario)
+ - Tuvimos que configurar muchos Thunderbirds de diferentes proveedores
+ - Nunca sabíamos si había un error de configuración o bien de conexión
+
+???
+Mucha gente casi tirando portátiles!
+---
+# Whatsapp
+En el WiFi como invitados mucha gente usaba WhatsApp.
+
+- En iPhone no se puede escribir si el teléfono no está conectado (!)
+- En Android los mensajes salían y llegaban pero a veces tardaba horas
+- La gente dejaba teléfonos en la oficina que también saturaban la conexión (con updates, etc.).
+- No siempre funcionaba
+---
+# Bajar datos científicos
+- Con un rsync bajábamos datos científicos de noche (90 minutos para 15 MB más o menos, con las desconexiones)
 
 --
 
-```python
-#!/usr/bin/python3
-
-print("This is a test")
-
-if name=="ace":
-*    print("Cool!")
+```bash
+until rsync -e "ssh -o ConnectTimeout=120 -o ServerAliveInterval=120" -vtaz --progress --inplace --timeout --bwlimit=10k
+do
+    date
+done
 ```
+--
 
+El código es un reflejo de como es el programador
+--
+
+
+¡Bien persistente! (y con paciencia)
+---
+# Resumen comunicaciones parte 1
+- Mucha frustración: gente que no podía enviar mails o recibir durante días
+- En un entorno de estrés: tormentas, problemas técnicos, gente que su doctorado depende de la expedición, etc.
+- Periodistas esperandome a las 7 de la mañana diciendo "Me levanté a las 4 y no he podido enviar ningún WhatsApp!!!!"
+- Gente furiosa golpeando los portátiles
+---
+template: inverse
+# Internet parte 2
+---
+# Sistema de email
+Cuando llegamos a Austrália:
+- Compré (para 3 meses) un servidor VPS
+- Configuré Postfix (SMTP) i Dovecot (IMAP)
+- Configuré un servidor (un portátil) en el barco con Roundcube (Webmail), fetchmail (cliente IMAP) y Postfix.
+- Con Django hicimios un sistema para crear usuarios en el servidor del barco y en el servidor de Internet
+---
+# Crear los usuarios
+Como tenía poco tiempo el script de Django sencillamente imprimía los comandos y los copié-pegué en el servidor local o remoto:
+## Local
+```bash
+useradd --create-home carles.pinaestany
+echo carles.pinaestany:ahf5ze | chpasswd
+useradd --create-home jen.thomas
+echo jen.thomas:ahf5ze | chpasswd
+```
+---
+## Remoto
+(también generado por el script de Django):
+```bash
+useradd --shell /bin/false --create-home carles.pinaestany
+echo carles.pinaestany:Aib3gah0oTh5ii1pai0t | chpasswd
+echo carles.pinaestany | saslpasswd2 -u ace-expedition.net Aib3gah0oTh5ii1pai0t
+#####
+useradd --shell /bin/false --create-home jen.thomas
+echo jen.thomas:Bae5hahgho1iephuu5qu | chpasswd
+echo jen.thomas | saslpasswd2 -u ace-expedition.net Bae5hahgho1iephuu5qu
+```
+---
+# Envío de emails
+- Limité el tamaño máximo de mail a 50 KB (en Roundcube y en Postfix)
+- Limité el número de conexiones del Postfix del barco al Postfix de Internet a máximo 2 para evitar saturar la conexión
+---
+# Recepción de emails (sistema 1)
+- Con Django generé un .fetchmailrc que bajaba todos los emails de todos los usuarios (máximo de 50 KB).
+- Resultado:
+ - Si no había emails tardaba unas 4 horas a ir a cada usuario y mirar si había algun email (el protocolo IMAP tiene muchas comunicaciones inecesarias con una latencia alta es muy lento)
+ - Si la conexión no funcionaba: fetchmail "ignoraba" este usuario hasta la próxima pasada
+ - Los emails podían tardar 8 horas a ser recibidos! (y sólo si eran del tamaño decidido)
+---
+# Recepción de emails (sistema 2)
+- Con Django generé un .fetchmailrc de sólo los usuarios de la parte 2 del viaje (se redujo el tiempo de espera de 4 horas a unas 2 horas)
+---
+# Recepción de emails (sistema 3, definitivo)
+Pensé que quería sólo recoger los emails de los usuarios que tenían emails. Y en orden de recepción de los emails.
+
+Miré como organiza Dovecot los emails y a ver si podía saber fácilmente qué usuarios tenían emails en el servidor de Internet que deberían ser bajados.
+--
+
+Dovecot deja los emails nuevos en /home/$USERNAME/Maildir/new
+
+Además el nombre del fichero contiene el timestamp de recepción! P. ej: 1498094976.24034_1.servidor64
+--
+
+
+¡GRACIAS DOVECOT!
+---
+## Escoger qué usuarios tienen mails a bajar
+### Script en el servidor de Internet
+Un script en Python (en shell hubiera sido posible también) escaneaba todos los /home/* y imprimía en la stdout:
+```
+/home/carles.pinaestany/Maildir/new/1498094976.24034_1.servidor64
+/home/john.doe/Maildir/new/1375352537.24034_1.servidor64
+```
+Script: https://github.com/cpina/science-cruise-data-management/blob/master/ScienceCruiseDataManagement/utilities/messages_to_download.py
+---
+### Script en el servidor del barco
+```python
+cmd = "ssh -o ConnectTimeout=120 -o ServerAliveInterval=120 root@{} \
+./messages_to_download.py > '{}'".format(settings.IMAP_SERVER, output_file_path)
+```
+Entonces en el "output_file_path" hay la salida del script del servidor y el script local ordena qué usuarios bajar primero (los usuarios con los mails más viejos).
+
+El script de Python entonces genera "fetchmailrc" para este usuario y ejecuta:
+```python
+fetchmail --timeout 120 --fetchmailrc {} --pidfile {}".format(file_name, pidfile)
+```
+Hasta que funcione! (en un while)
+
+Script: https://github.com/cpina/science-cruise-data-management/blob/master/ScienceCruiseDataManagement/main/management/commands/downloademailsbyage.py
+---
+# Emails demasiado grandes
+- Durante unos días la gente no sabía si habían recibido emails demasiado grandes
+- Hice un email notifier. Usé Python con imaplib (imaplib para conectarse y ver qué emails son grandes)
+
+Script: https://github.com/cpina/science-cruise-data-management/blob/master/ScienceCruiseDataManagement/main/management/commands/warningoversizeemail.py
+---
+# Emails demasiado grandes
+En todos los scripts muy importante pensar que la conexión es inestable. El oversize email notifier empezó a funcionar consistentemente cuando hice:
+```python
+while True:
+    try:
+        print("Checking: {} {}/{}".format(email_account.email_address, index+1, len(emails_active_leg)))
+        self.check_user(email_account.email_address)
+        break
+    except ConnectionResetError:
+        print("Connection Reset Error for user: {}. Trying again".format(email_account))
+    except socket.timeout:
+        print("Connection timeout Error for user: {}. Trying again".format(email_account))
+    except OSError:
+        print("Probably 'Network is unreachable' error for user {}. Trying again".format(email_account))
+```
+---
+# Emails demasiado grandes
+warningoversizeemail.py hacia:
+- Enviar un email para notificar al receptor que un email era demasiado grande
+ - Contenía el tamaño, subject, remitente y UID
+- Guardaba el email UID y otra información en una tabla (así sólo se notificaba una vez que había un email grande)
+
+El mail de notificación decía "si este email es muy importante reenvia la notificación al equipo de data management"
+---
+# ¿Cómo bajamos los emails grandes?
+- Una idea sería usar fetchmail sin el límite de maximo email. Pero la conexión era MUY inestable, bajarse algo de más de 500 KB era difícil
+--
+
+- Divide and conquer
+--
+
+
+# rsync!
+--
+
+¡Usar rsync para bajar emails!
+(o "IMAP over rsync")
+---
+# downloademail.py
+- Dado el usuario y email UID se baja el fichero con rsync a una carpeta IMAP nueva (Downloaded emails) (va probando hasta que funciona!)
+- Añade la carpeta "Downloaded emails" en las carpetas del usuario (Dovecot: muy bien! Es un fichero de texto que se llama "subscriptions"
+---
+# Como enviar emails grandes?
+- Los usuarios venían y nos llevaban ficheros grandes (más de la capacidad del mail máxima). En una memória USB, carpeta compartida, etc.
+- A veces lo subíamos con un script (until rsync - sigue probando) al servidor de Internet en /var/www/uploaded/misc/nombre_fichero.zip
+- Otras veces lo poníamos en una cola durante la noche
+---
+# Subir/bajar ficheros durante la noche
+(esto fué la parte 2 y 3, la 1 era caos)
+
+- Los periodistas tenían una carpeta compartida y copiaban ficheros allá
+- Los ficheros y directorios se subían a http://ace-expedition.net/files/FECHA/ (con un máximo de 30 MB al dia)
+- Se bajaban datos para científicos
+- Se subía "la cola" (hasta las 8 de la mañana)
+---
+# La cola: rsync_queue.py
+Ver: https://github.com/cpina/rsync-queue
+
+Un script que subía ficheros de un directorio en orden alfabético.
+--
+
+Los ficheros que nos pasaban los copiabamos con orden de preferencia:
+```
+010-john-photos_of_fish.zip
+020-jen-video.zip
+030-james-test_files.zip
+```
+---
+# La cola: rsync_queue.py
+- Cuando un fichero era subido: se mandaba un mail a nosotros con el enlace y se movía el fichero a uploaded
+- A las 8: killall rsync_queue.py (y este manda un mail a nosotros con el estado de subido del fichero)
+- Internamente usa rsync con la opción --progress y así puede informar via email o puede generar un fichero de log con la salida
+
+Ver: https://github.com/cpina/rsync-queue/blob/master/rsync_queue.py#L96
+---
+# rsync --progress
+
+Del ```man rsync```:
+```
+  --progress
+      This  option  tells  rsync  to  print  information  showing  the
+*     progress  of  the transfer. This gives a bored user something to
+*     watch.  With a modern rsync  this  is  the  same  as  specifying
+```
+---
+# Usando los dos Iridiums
+- Conecté el Iridium de teléfono a la red de datos para subir ficheros cuando no había llamadas
+- En el servidor de internet: redirigí el puerto 2222 al puerto 22
+- En el servidor del barco: tenía un default gw (Iridium1). Pero paquetes que iban al puerto 2222 los marcaba para ir a un gw diferente: Iridium2
+- Tenía dos rsync_queue.py: uno que usaba el puerto 22 y el otro el puerto 2222.
+???
+Hablar del sabotaje?
+- Desconectar el cable
+- Conectarlo a un sitio diferente
+- ...
 ---
 class: inverse
 # License
