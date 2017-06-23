@@ -99,21 +99,42 @@ background-size: contain
 - Y me hizo un proyecto pequeño en Django para que viera como funciona
 ---
 class: middle, center
-# ¡Gracias Fran!
+# ¡Gracias Fran! (¡y Django!)
 ---
 # science-cruise-management
 http://github.com/cpina/science-cruise-data-management
 
 - Empecé a programar una semana... ¡la documentación de Django está muy bien!
 - Visité a Fran para preguntarle más cosas
+- Y hicimos una Intranet con Django
 ---
 background-image: url(images/event_report.png)
 background-size: contain 
 ---
+template: inverse
+# Sistema informática expedición en el barco
+---
+# Servidores hardware
+- En un portátil viejo: Ubuntu 16.10 (se calentaba, etc.).
+- (segundo mes): Añadimos un portátil nuevo con Ubuntu 16.10
+---tareas
+# Tareas de los servidores
+- Django (ver más tarde)
+- Sistema de email (ver más tarde)
+- Subir/bajar ficheros internet (ver más tarde)
+- DNS (Bind) (para http://ace-intranet.lan)
+- DHCP Server
+- Importar datos GPS
+- Copias de seguridad de diferentes ordenadores
+- Copias de seguridad entre NAS1 y NAS2
+---
+template: inverse
 # Internet en el barco
-- Teníamos 2 sistemas Iridium.
+---
+# Introducción
+- Teníamos 2 antenas Iridium.
 - Inicialmente uno para llamadas, otro para Internet
-- Esto son, 128 kbits para 80 personas
+- Esto son, 128 kbits para oficialmente 80 personas
 --
 
 - Las conexiones via satélite de Iridium eran MUY inestables
@@ -134,7 +155,7 @@ background-size: contain
 - Tienen satélites de sobras: los activan y ponen en el plano cuando hay problemas
 
 --
-- Hay cobertura en el polo norte y sur! Pero MUY lento y inestable: se conecta y desconecta
+- Hay cobertura en el polo norte y sur! Pero MUY lento y inestable: se conecta y desconecta porqué no son geostacionarios y hay cambios de satélite
 ---
 background-image: url(images/iridium1.jpg)
 background-size: contain
@@ -144,6 +165,9 @@ background-size: contain
 ---
 background-image: url(images/slow_ping.jpg)
 background-size: contain
+---
+# Reproducir vídeo:
+## iridium-apt-get-update.ogv
 ---
 # VSAT
 - No usamos VSAT durante la expedición
@@ -163,9 +187,6 @@ background-size: contain
  - Subir fotos
  - Subir vídeos!
 ---
-template: inverse
-# Internet parte 1
----
 # Setup parte 1
 - Un router TP-Link conectado al Iridium
 - Dos cables con ancho de banda "ilimitado"
@@ -182,7 +203,7 @@ La priorización sólo no funcionaba bien porqué la conexión es inestable
  - Nunca sabíamos si había un error de configuración o bien de conexión
 
 ???
-Mucha gente casi tirando portátiles!
+¡Mucha gente casi golpeando portátiles!
 ---
 # Whatsapp
 En el WiFi como invitados mucha gente usaba WhatsApp.
@@ -251,6 +272,10 @@ echo jen.thomas | saslpasswd2 -u ace-expedition.net Bae5hahgho1iephuu5qu
 ---
 # Envío de emails
 - Limité el tamaño máximo de mail a 50 KB (en Roundcube y en Postfix)
+--
+(después incrementamos el tamaño a 200 KB)
+--
+
 - Limité el número de conexiones del Postfix del barco al Postfix de Internet a máximo 2 para evitar saturar la conexión
 ---
 # Recepción de emails (sistema 1)
@@ -259,6 +284,9 @@ echo jen.thomas | saslpasswd2 -u ace-expedition.net Bae5hahgho1iephuu5qu
  - Si no había emails tardaba unas 4 horas a ir a cada usuario y mirar si había algun email (el protocolo IMAP tiene muchas comunicaciones inecesarias con una latencia alta es muy lento)
  - Si la conexión no funcionaba: fetchmail "ignoraba" este usuario hasta la próxima pasada
  - Los emails podían tardar 8 horas a ser recibidos! (y sólo si eran del tamaño decidido)
+- fetchmail es ideal:
+ - time outs altos por defecto
+ - buena opción -v (con el protocolo IMAP paso a paso)
 ---
 # Recepción de emails (sistema 2)
 - Con Django generé un .fetchmailrc de sólo los usuarios de la parte 2 del viaje (se redujo el tiempo de espera de 4 horas a unas 2 horas)
@@ -272,10 +300,6 @@ Miré como organiza Dovecot los emails y a ver si podía saber fácilmente qué 
 Dovecot deja los emails nuevos en /home/$USERNAME/Maildir/new
 
 Además el nombre del fichero contiene el timestamp de recepción! P. ej: 1498094976.24034_1.servidor64
---
-
-
-¡GRACIAS DOVECOT!
 ---
 ## Escoger qué usuarios tienen mails a bajar
 ### Script en el servidor de Internet
@@ -384,13 +408,22 @@ Ver: https://github.com/cpina/rsync-queue/blob/master/rsync_queue.py#L96
 ---
 # rsync --progress
 
-Del ```man rsync```:
+Del "man rsync":
 ```
   --progress
       This  option  tells  rsync  to  print  information  showing  the
 *     progress  of  the transfer. This gives a bored user something to
 *     watch.  With a modern rsync  this  is  the  same  as  specifying
 ```
+---
+# Otros datos científicos
+- En algunos casos datos científicos no estaban disponibles en Internet con rsync
+--
+
+- Lo mejor era bajarlos con wget en el servidor de Internet...
+--
+
+- ...y usar rsync para bajarlos al barco
 ---
 # Usando los dos Iridiums para datos
 - Conecté el Iridium de teléfono a la red de datos para subir ficheros cuando no había llamadas
@@ -404,18 +437,84 @@ Hablar del sabotaje?
 - ...
 ---
 template: inverse
-# La intranet
+# La web intranet
 ---
-# Usamos Django para la intranet
+# Django
 - No sabíamos Django antes de empezar
 - Tiene muy buena documentación off-line
-- Tenía mucho código Python en mi ~/git (código mío o código como Calibre)
+- Yo tenía mucho código Python en mi ~/git (código mío o código como Calibre)
+---
+# ¿Por qué era muy cómodo?
+- Escribiendo un modelo genera formularios
+- Cambiando el modelo hace las migraciones en la base de datos
+- Tiene sistema de permisos de usuarios
+---
+# Modelos en Django
+```python
+class StorageCrate(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+    location = models.CharField(max_length=255)
+    description = models.CharField(max_length=255, null=True, blank=True)
+    comment = models.TextField(null=True, blank=True)
+```
+--
+- Genera los formularios
+- Genera la tabla en la base de datos si no existia
+- Genera migraciones si existía diferente
+---
+# Models en Django
+- Es muy fácil acceder a la base de datos y crear objetos automáticamente
+- 
+---
+# Django
+- Sistema de plantillas
+--
+
+- Sistema de API en JSON
+--
+
+- Sistema de comandos para interactuar con los modelos
+---
 ---
 template: inverse
-# Otras tareas en el barco
+# Backups
 ---
+# Origen
+- De recursos compartidos
+- De discos duros
+- De zona "staging"
+---
+# Backups de recursos compartidos
+- Fuímos a cada ordenador que recogía datos en el barco (muchos con Windows)
+- Compartimos la carpeta (en sólo lectura)
+- Asignamos una IP estática
+- Teníamos un model en Django que específicabamos:
+ - IP
+ - Usuario
+ - Contraseña
+ - Volumen
+ - Destino
+???
+Cada vez que queríamos añadir un recurso compartido sólo era añadir en esta table
+---
+# Backups recursos compartidos
+- Teníamos un mail con el estado
+- Y una tabla con los últimos resultados
+--
+
+La idea es un script en Python que usa rsync y es "dirigido" por los datos en el modelo
+---
+template: inverse
 # Ferrybox
-- Lee 
+TODO
+---
+template: inverse
+# Instalar paquetes Debian en otros ordenadores
+TODO
+---
+template: inverse
+# GPS
+TODO
 ---
 class: inverse
 # License
