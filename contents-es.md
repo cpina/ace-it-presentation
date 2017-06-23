@@ -45,11 +45,11 @@ template: inverse
 ---
 # Barco: Akademik Tryoshnikov
 - Rompe hielos ruso
-- 140 metros de ....
-- 30? metros de ...
-- Tripulación del barco: unas 70 personas
+- 133 metros de eslora
+- 23 metros de manga
+- Tripulación: 60 personas
 ---
-# Fechas clave
+# Fechas del viaje
 - Inicios de noviembre: David Walton contacta a Jen (en 6 semanas nos pusimos apunto: pruebas médicas, entender qué hacer, empezar una aplicación para los científicos)
 - 22 de diciembre: inicio de parte 1 desde Cape Town (Sud África)
 - 2X de enero: inicio de parte 2 desde Hobbart (Austrália)
@@ -57,7 +57,7 @@ template: inverse
 - 2X de marzo: llegamos otra vez a Cape Town (Sud África)
 ---
 # ¿Dónde guardar los datos?
-- A principios de diciembre Jen pregunta a los 22 investigadores principales cuantos GB necesitarán para almacenar sus datos
+- A principios de diciembre Jen preguntó a los 22 investigadores principales cuantos GB necesitarán para almacenar sus datos
 - Llegamos a una estimación de 60 TB
 - Preguntamos al barco qué almacenamiento tienen
 --
@@ -80,7 +80,7 @@ template: inverse
 
 ![NAS](images/SNAS.jpg)
 
-Incluyó bajarse 300 MB para los Synologys: tuve que correr a una cafeteria y después al hotel para bajarme los 300 MB.
+Incluyó bajarse 300 MB para los Synologys: corrí a una cafeteria y después al hotel para bajarme los ficheros necesarios.
 ---
 background-image: url(images/seal_cape_town.jpg)
 background-size: contain 
@@ -105,7 +105,7 @@ class: middle, center
 http://github.com/cpina/science-cruise-data-management
 
 - Empecé a programar una semana... ¡la documentación de Django está muy bien!
-- Fuí a casa Fran a preguntarle más cosas
+- Visité a Fran para preguntarle más cosas
 ---
 background-image: url(images/event_report.png)
 background-size: contain 
@@ -116,7 +116,42 @@ background-size: contain
 - Esto son, 128 kbits para 80 personas
 --
 
-- Y el sistema es MUY inestable
+- Las conexiones via satélite de Iridium eran MUY inestables
+---
+# Iridium
+- La constelación tiene 66 satélites operativos
+--
+
+- Nombre Iridium porqué originalmente habia 77 satélites: el número atómico de Iridium
+--
+
+- Los satélites estan a unos 780 Km de la tierra
+--
+
+- Se pueden ver (como estrellas fugaces)
+--
+
+- Tienen satélites de sobras: los activan y ponen en el plano cuando hay problemas
+
+--
+- Hay cobertura en el polo norte y sur! Pero MUY lento y inestable: se conecta y desconecta
+---
+background-image: url(images/iridium1.jpg)
+background-size: contain
+---
+background-image: url(images/iridium2.jpg)
+background-size: contain
+---
+background-image: url(images/slow_ping.jpg)
+background-size: contain
+---
+# VSAT
+- No usamos VSAT durante la expedición
+- Cuando funcionaba (en el hemisferio norte) con el contrato que el barco tenía : unos 10 Mbps estables!
+- La antena apunta simpre (con motores) al satélite geostacionario
+---
+background-image: url(images/iridium3.jpg)
+background-size: contain
 ---
 # Necesidades de comunicaciones
 - Científicos necesitan:
@@ -357,7 +392,7 @@ Del ```man rsync```:
 *     watch.  With a modern rsync  this  is  the  same  as  specifying
 ```
 ---
-# Usando los dos Iridiums
+# Usando los dos Iridiums para datos
 - Conecté el Iridium de teléfono a la red de datos para subir ficheros cuando no había llamadas
 - En el servidor de internet: redirigí el puerto 2222 al puerto 22
 - En el servidor del barco: tenía un default gw (Iridium1). Pero paquetes que iban al puerto 2222 los marcaba para ir a un gw diferente: Iridium2
@@ -367,6 +402,20 @@ Hablar del sabotaje?
 - Desconectar el cable
 - Conectarlo a un sitio diferente
 - ...
+---
+template: inverse
+# La intranet
+---
+# Usamos Django para la intranet
+- No sabíamos Django antes de empezar
+- Tiene muy buena documentación off-line
+- Tenía mucho código Python en mi ~/git (código mío o código como Calibre)
+---
+template: inverse
+# Otras tareas en el barco
+---
+# Ferrybox
+- Lee 
 ---
 class: inverse
 # License
