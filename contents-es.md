@@ -498,23 +498,200 @@ template: inverse
 Cada vez que queríamos añadir un recurso compartido sólo era añadir en esta table
 ---
 # Backups recursos compartidos
-- Teníamos un mail con el estado
-- Y una tabla con los últimos resultados
+- Teníamos un mail con el resultado del último backup
+- Y una tabla en la base de datos con los últimos resultados
+--
+La idea es un script en Python que usa rsync y es hace los mount/rsync/umount basado en los datos que hay en el model (tabla)
+---
+# Trabajar con científicos
+- En Mendeley muchos de nuestros usuarios son científicos.
 --
 
-La idea es un script en Python que usa rsync y es "dirigido" por los datos en el modelo
+- En la expedición tenía un trato más cercano
+--
+
+- Anecdota: científico y hoja de Excel
 ---
 template: inverse
 # Ferrybox
+--
+# Ferrybox
+- Un Ferrybox lee continuamente datos del agua. Normalmente temperatura, salinidad, cantidad de oxígeno, fluorescencia
+--
+
+- La Ferrybox del barco tenía un problema: sólo guardaba los datos cuando se llegaba a un puerto (los científicos lo querían en tiempo real)
+--
+
+- La Ferrybox era una Debian Etch
+--
+
+- Para escribir en ficheros: mount -o rw,remount /
+--
+
+- Cambié la configuración de red para unirlo a la red de la expedición
+---
+# Ferrybox: tener un volcado en tiempo real
+- El processo "ferrycon" lee de /dev/ttyS[0,1,2,3] que son los dispositivos
+--
+
+- Hice unos scripts en Python (Python 2.5!) para leer de /dev/ttyS0 y escribir en ficheros (información sin calibrar pero lo podían recalibrar)
+--
+
+- Nos dimos cuenta que había muchos errores: a veces en los ficheros generados con Python, a veces en los ficheros generados con "ferrycon"
+--
+
+- En Linux dos procesos pueden leer del puerto serie pero entonces hay "interferencias" (se consumen los bytes, paridad, etc.)
+--
+
+- Desactivé los procesos en Python que leían del puerto serie...
+---
+# Ferrybox: tener un volcado al dia
+- Nos dijeron que "/ferrybox/bin/ferrycon audit -R" mostraba todos los datos
+--
+
+- Hice un script que cada noche hacía "ferrycon audit -R" y guardaba los datos del dia anterior en un fichero
+--
+
+- Copié el binario de rsync de Debian Etch a ~/bin/rsync , desde otro ordenador copiaba los ficheros usando "rsync --rsync-path=/home/ferrybox/bin/rsync ferrybox@ferrybox.lan:/var/ferrybox/data ."
+--
+
+- Y ya teníamos un fichero correcto al dia!
+
+---
+# Ferrybox: tener información a tiempo real
+- Nos dijeron (soporte Ferrybox) que "/ferrybox/bin/ferrycon audit -R -p -f testpointer.ack" mostraba los datos y escribía donde se había acabado de escribir (y la próxima vez sólo mostraba lo nuevo)
+--
+
+- No funcionaba:
+```
+"No "FerryLogData" service found on node <1>"
+```
+--
+
+- Usé "strace" para ver qué pasaba... y ferrycon intentaba hacer el fichero en un directorio que no existia:
+```
+open("/var/ferrybox/log/testpointer.ack.ack", O_RDWR|O_CREAT|O_TRUNC,
+0666) = -1 EACCES (Permission denied)
+```
+--
+
+- Creé el directorio, puse los permisos y ya se pudo generar el fichero adecuado para exeuctar "ferrycon audit -R -p -f testpointer.ack"
+---
+# Ferrybox: enseñar la información a tiempo real
+- En el servidor hice un script en Python para ejecutar:
+```bash
+ssh fbuser@ferrybox.lan /home/fbuser/bin/output_last_information.sh
+```
+Cada 5 minutos, desde un script en Python que captura el stdout, lo parsea y lo pone en una base de datos (https://github.com/cpina/science-cruise-data-management/blob/master/ScienceCruiseDataManagement/ship_data/management/commands/getferryboxdata.py)
+--
+
+-Usando Django, una vista, template y Chart.js hice una visualización de Ferrybox
+---
+template: inverse
+# Missing files
+---
+# Cambios de nombre de ficheros
+- Cada hora se hacía una copia de los ficheros de ordenadores usando rsync
+--
+
+- Algunos científicos cambiaban los nombres de los ficheros: algunos ficheros estaban duplicados (con diferentes nombres)
+--
+
+- Queríamos ver si había ficheros en un directorio que no estaban en otro directorio (en este caso sólo el nombre de los ficheros, no por contenido). Así nació:
+http://github.com/cpina/missing-files
+--
+
+- Había hecho uno parecido para contenido de ficheros
+---
+template: inverse
+# Otras tareas
+---
+# Otras tareas
+- Alguien escribió un texto en un fichero de texto y quería pasarlo via WhatsApp
+--
+
+- Un dispositivo con una RaspberryPi no se conectaba al WiFi
+--
+
+- Dispositivo requería Access Point que no llegó al barco
+--
+
+- Disco duro que no se podía montar en Windows
+--
+
+- Un dispositivo Bluetooth que no se conectaba al ordenador (imán)
+--
+
+- Y un sin fin más!
+---
+template: inverse
+# CTD Winch
+---
+# CTD
 TODO
 ---
 template: inverse
 # Instalar paquetes Debian en otros ordenadores
-TODO
+---
+# Instalar paquetes Debian en otros ordenadores
+- Gente con Ubuntu que necesitaban paquetes que no tenían
+--
+
+- Empecé a usar:
+```
+tar -T /tmp/files.txt -cvf /tmp/gnuplot-data.tar
+```
 ---
 template: inverse
 # GPS
-TODO
+---
+# GPS
+- Llegué y era importante que tuvieramos todos los datos del GPS guardados
+- Para saber "¿Dónde estábamos en la fecha+hora D?" (esto alimentaba la base de datos automáticamente)
+- No había nada para esto
+--
+# GPS Trimble
+- Un ordenador con Windows de la expedición ya tenía acceso a un GPS (por puerto serie)
+--
+
+- Este Windows ya tenía instalado el software Serial Port Splitter (https://www.eltima.com/products/serialsplitter/)
+--
+
+- Bajé + instalé GPS NMEA Router software (http://arundale.com/docs/ais/nmearouter.html)
+--
+
+- Compartí el directorio donde se guardaban los logs
+--
+
+- Escribí un parser de NMEA leyendo los ficheros en tiempo real (con rotación de ficheros): lo insertaba a la base de datos (https://github.com/cpina/science-cruise-data-management/blob/master/ScienceCruiseDataManagement/ship_data/management/commands/nmea_file2db.py)
+- (el parser NMEA es bastante interesante por la clase TailDirectory: lee continuamente del fichero, usa un callback para líneas enteras, comprueba nuevos ficheros en el directorio, etc.)
+--
+# GPS Puente de comandamiento
+En la primera isla descubrí que el GPS no funcionaba (o la red? O el Windows? o la base de datos? O el visualizador?)
+--
+
+- La tripulación lo apagó
+--
+
+- Buscamos un segundo GPS en el barco: encontramos el del puente de comandamiento
+--
+
+- La tripulación usó Franson GpsGate y "envió" los datos del GPS a nuestra IP via UDP
+--
+
+- (la tripulación añadió una nueva IP de una nueva red a su tarjeta de red a su switch, yo añadí un nuevo dispositivo USB para la nueva red)
+--
+
+- Con ngrep (y tcpdump) ví que sí, llegaban los datos... pero no sabia como guardarlos!
+--
+
+- Investigué, bajé y compilé kplex ()! Lee del puerto UDP, lo sirve en TCP (útil para tenerlo en otros ordenadores en tiempo real en mi red), lo guarda a un fichero
+--
+
+- Pero kplex (http://www.stripydog.com/kplex/index.html) no tiene soporte para "un fichero diferente cada dia"... hice un script que modificaba el fichero de configuración y reiniciaba kplex cada dia a media noche
+
+???
+Qué hay como Serial Port Splitter en Linux?
 ---
 class: inverse
 # License
