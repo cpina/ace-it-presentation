@@ -514,7 +514,7 @@ La idea es un script en Python que usa rsync y es hace los mount/rsync/umount ba
 ---
 template: inverse
 # Ferrybox
---
+---
 # Ferrybox
 - Un Ferrybox lee continuamente datos del agua. Normalmente temperatura, salinidad, cantidad de oxígeno, fluorescencia
 --
@@ -628,8 +628,33 @@ template: inverse
 # CTD Winch
 ---
 # CTD
-TODO
+- Dispositivo que cuando baja lee la "Conductivity, Temperature and Depth"
+--
+
+- Entonces cierran las botellas cuando sube para tener muestras
+--
+
+- Tiene una grua de unos 8000 metros de cable
 ---
+Image CTD
+---
+# CTD Problema 
+- Un dia me dijeron que la tripulación no podía cambiar parámetros del CTD (no aparecía el teclado en pantalla)
+--
+
+- Encontramos que el CTD Winch tenía un cable de red y mostraba una IP cuando se iniciaba
+--
+
+- Conecté el portátil al cable de red, puse una IP, un nmap... y tenía VNC!
+--
+
+- Me conecté con VNC y podía ver, pude escribir en el campo donde no aparecía el teclado
+--
+
+- ¡Pero no aceptó el valor!
+---
+# CTD Solución
+# TODO
 template: inverse
 # Instalar paquetes Debian en otros ordenadores
 ---
@@ -645,11 +670,11 @@ tar -T /tmp/files.txt -cvf /tmp/gnuplot-data.tar
 template: inverse
 # GPS
 ---
-# GPS
+# GPS Introducción
 - Llegué y era importante que tuvieramos todos los datos del GPS guardados
 - Para saber "¿Dónde estábamos en la fecha+hora D?" (esto alimentaba la base de datos automáticamente)
 - No había nada para esto
---
+---
 # GPS Trimble
 - Un ordenador con Windows de la expedición ya tenía acceso a un GPS (por puerto serie)
 --
@@ -665,8 +690,8 @@ template: inverse
 
 - Escribí un parser de NMEA leyendo los ficheros en tiempo real (con rotación de ficheros): lo insertaba a la base de datos (https://github.com/cpina/science-cruise-data-management/blob/master/ScienceCruiseDataManagement/ship_data/management/commands/nmea_file2db.py)
 - (el parser NMEA es bastante interesante por la clase TailDirectory: lee continuamente del fichero, usa un callback para líneas enteras, comprueba nuevos ficheros en el directorio, etc.)
---
-# GPS Puente de comandamiento
+---
+# GPS Puente de comandamiento (1/2)
 En la primera isla descubrí que el GPS no funcionaba (o la red? O el Windows? o la base de datos? O el visualizador?)
 --
 
@@ -683,8 +708,8 @@ En la primera isla descubrí que el GPS no funcionaba (o la red? O el Windows? o
 --
 
 - Con ngrep (y tcpdump) ví que sí, llegaban los datos... pero no sabia como guardarlos!
---
-
+---
+# GPS Puente de comandamiento (2/2)
 - Investigué, bajé y compilé kplex ()! Lee del puerto UDP, lo sirve en TCP (útil para tenerlo en otros ordenadores en tiempo real en mi red), lo guarda a un fichero
 --
 
