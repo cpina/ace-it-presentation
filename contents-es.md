@@ -4,7 +4,7 @@ class: center, middle, inverse
 ---
 layout: false
 template: inverse
-# Dando la vuelta la Antartida con software libre 
+# Dando la vuelta a la Antártida con software libre 
 .footnote[Carles Pina and Jen Thomas]
 ---
 template: inverse
@@ -12,14 +12,16 @@ template: inverse
 ---
 layout: false
 # Jen Thomas
-- Data manager de BAS (Instituto Británico de la Antartida, Cambridge, Reino Unido) 
-- Hobbies: pájaros, insectos...
+- Nací en un pueblo en Inglaterra
+- Trabajaba 3.5 años como "Data Manager" del Instituto Británico de la Antartida (British Antarctic Survey, Cambridge, Reino Unido) 
+- Ahora trabajo para el Instituto Polar de Suiza (Swiss Polar Institute, Lausanne, Switzerland)
+- Hobbies: pájaros, insectos, el medio ambiente, ciencia, viajar, música
 
 ---
 # Carles Pina i Estany
 - Nací en Manresa, cerca de Barcelona (España)
 - Desde 2009 trabajo en Mendeley (departamento de Mendeley Desktop) trabajando en C++/Qt
-- Normalmente vivo en Londres (Reino Unido) pero nos cogimos un año sabático para viajar
+- Normalmente vivo en Londres (Reino Unido) pero nos tomamos un año sabático para viajar
 - Me gusta el software libre (uso Debian desde Debian Potato en el 2000)
 - Algunos proyectos:
  - qdacco (C++/Qt): está en Debian y Ubuntu
@@ -32,15 +34,20 @@ layout: false
 template: inverse
 # Introducción
 ---
+class: middle, center
 # ¿Qué es ACE?
+---
+background-image: url(images/ace_final_map_official.png)
+background-size: contain
+---
 - Antarctic Cicumnavigation Expedition
-- Dimos la vuelta la Antártida!
+- Dimos la vuelta a la Antártida!
 - 22 equipos estudiando:
- - oceano
- - metereologia
+ - océano
+ - meteorología
  - aire
  - islas
-- Unos 60 científicos en cada parte
+- Unos 60 científicos en cada parte - > 150 en total de 23 paises
 - Unas 20 personas de soporte en la expedición
 ---
 # Barco: R/V Akademik Tryoshnikov
@@ -58,9 +65,11 @@ El barco no tiene estabilizadores
 background-image: url(images/rocking.jpg)
 background-size: contain
 ---
-# Fechas del viaje
+# Itinerario
+---
+???
 - Inicios de noviembre: David Walton contacta a Jen (en 6 semanas nos pusimos apunto: pruebas médicas, entender qué hacer, empezar una aplicación para los científicos)
-- 22 de diciembre: inicio de parte 1 desde Cape Town (Sud África)
+- 20 de diciembre: inicio de parte 1 desde Cape Town (Sud África)
 - 2X de enero: inicio de parte 2 desde Hobart (Austrália)
 - 2X de febrero: inicio de parte 3 desde Punta Arenas (Chile)
 - 2X de marzo: llegamos otra vez a Cape Town (Sud África)
