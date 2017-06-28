@@ -48,6 +48,15 @@ template: inverse
 - 133 metros de eslora
 - 23 metros de manga
 - Tripulación: 60 personas
+
+Alquilado para la expedición: casi todos los equipos llevaron su propio equipos. Sin informático abordo.
+--
+
+
+El barco no tiene estabilizadores
+---
+background-image: url(images/rocking.jpg)
+background-size: contain
 ---
 # Fechas del viaje
 - Inicios de noviembre: David Walton contacta a Jen (en 6 semanas nos pusimos apunto: pruebas médicas, entender qué hacer, empezar una aplicación para los científicos)
@@ -59,18 +68,22 @@ template: inverse
 # ¿Dónde guardar los datos?
 - A principios de diciembre Jen preguntó a los 22 investigadores principales cuantos GB necesitarán para almacenar sus datos
 - Llegamos a una estimación de 60 TB
-- Preguntamos al barco qué almacenamiento tienen
 --
 
-- Nos dicen que 500 GB (0.5 TB)
+
+### Preguntamos al barco qué almacenamiento tienen
+--
+
+Nos dicen que 500 GB (0.5 TB)
 ---
 # Datos, datos, datos...
 - Preguntamos, miramos, comparamos y al final compramos:
- - discos duros: 8 TB Western Digital x 15
- - discos duros: 8 TB Seagate x 15
- - NAS: 2 Synology DS-1815+
+ - 15 discos duros 8 TB Western Digital
+ - 15 discos duros 8 TB Seagate
+ - 2 NAS Synology DS-1815+
  - 2 Gigabit switches
  - 2 SAI APC
+ - ...
 --
 
 ¡todo esto llegó a Sud África 2 días antes de salir!
@@ -82,8 +95,17 @@ template: inverse
 
 Incluyó bajarse 300 MB para los Synologys: corrí a una cafeteria y después al hotel para bajarme los ficheros necesarios.
 ---
-background-image: url(images/seal_cape_town.jpg)
+# Material sobrante
+En un barco hay uno de recambio de casi todo.
+
+Compramos material sobrante (discos, switches, etc.) ¡Durante un mes no teníamos acceso a ninguna tienda!
+---
+background-image: url(images/propeller_blade.jpg)
 background-size: contain 
+
+???
+Explicar como cambiar: dry dock o bien ¿playa cuando baja la marea?
+Tienen que estar equilibrados o sinó no va bien
 ---
 # La Base de Datos
 - Teníamos que crear una base de datos para que los científicos introdujeran información de sus actividades
@@ -99,17 +121,44 @@ background-size: contain
 - Y me hizo un proyecto pequeño en Django para que viera como funciona
 ---
 class: middle, center
-# ¡Gracias Fran! (¡y Django!)
+# ¡Gracias Fran y Django!
 ---
 # science-cruise-management
 http://github.com/cpina/science-cruise-data-management
 
-- Empecé a programar una semana... ¡la documentación de Django está muy bien!
+- Empecé a programar durante una semana... ¡la documentación de Django está muy bien!
 - Visité a Fran para preguntarle más cosas
 - Y hicimos una Intranet con Django
 ---
+background-image: url(images/intranet_homepage.png)
+background-size: contain
+---
 background-image: url(images/event_report.png)
 background-size: contain 
+---
+background-image: url(images/intranet_location.png)
+background-size: contain 
+---
+# Mapa
+- Yo había usado la librería Leaflet (sobretodo por Benches)
+--
+
+- Queríamos hacer un mapa de la expedición:
+ - ¿Dónde estábamos?
+ - ¿Dónde han pasado los eventos?
+--
+
+- Pero la proyección del mapa no es la estándard
+---
+background-image: url(images/intranet_map.png)
+background-size: contain 
+---
+# Proyección del mapa
+- Leaflet tiene soporte para proyecciones (con un plugin)
+- La Antártida normalmente se visualiza con proyección EPSG:3031
+- No hay tiles renderizadas con la proyección
+- En lugar de tiles usé coastlines: describen el contorno
+- Pasé las coastlines del formato original a geojson (para que Leaflet lo cargara)
 ---
 template: inverse
 # Sistema informática expedición en el barco
@@ -117,27 +166,33 @@ template: inverse
 # Servidores hardware
 - En un portátil viejo: Ubuntu 16.10 (se calentaba, etc.).
 - (segundo mes): Añadimos un portátil nuevo con Ubuntu 16.10
----tareas
-# Tareas de los servidores
+
+## Tareas de los servidores
 - Django (ver más tarde)
 - Sistema de email (ver más tarde)
-- Subir/bajar ficheros internet (ver más tarde)
-- DNS (Bind) (para http://ace-intranet.lan)
-- DHCP Server
-- Importar datos GPS
-- Copias de seguridad de diferentes ordenadores
-- Copias de seguridad entre NAS1 y NAS2
+- Subir/bajar ficheros internet (ver más adelante)
+- DNS (Bind) (para http://ace-intranet.lan, http://ace-mail.lan)
+- DHCP Server (ISC DHCP)
+- Servidor git interno (no podíamos depender de nada de internet)
+- Importar datos GPS (ver más adelante)
+- Copias de seguridad de diferentes ordenadores (ver más adelante)
+- Copias de seguridad entre NAS1 y NAS2 (rsync)
+- Reiniciar el router TP-Link a media noche (o por la mañana...)
+
+???
+-OSX no resuelve dirección dominios si no tiene conexión a internet?
+-Primero reiniciaba el router a mano desde la habitación pero entonces me olvidaba y tenía que levantarme o la gente por la mañana me esperaba...
 ---
 template: inverse
 # Internet en el barco
 ---
 # Introducción
 - Teníamos 2 antenas Iridium.
-- Inicialmente uno para llamadas, otro para Internet
-- Esto son, 128 kbits para oficialmente 80 personas
+- Inicialmente una para llamadas, otra para Internet
+- Esto son, 128 kbits para _oficialmente_ 80 personas
 --
 
-- Las conexiones via satélite de Iridium eran MUY inestables
+- Las conexiones via satélite de Iridium son MUY inestables
 ---
 # Iridium
 - La constelación tiene 66 satélites operativos
@@ -146,16 +201,20 @@ template: inverse
 - Nombre Iridium porqué originalmente habia 77 satélites: el número atómico de Iridium
 --
 
-- Los satélites estan a unos 780 Km de la tierra
+- Hay cobertura en el polo norte y sur! Pero MUY lento y inestable: se conecta y desconecta porqué no son geostacionarios y hay cambios de satélite
 --
 
-- Se pueden ver (como estrellas fugaces)
+- Los satélites estan a unos 780 Km de la tierra (GPS a unos 20.000 Km)
+--
+
+- Por la noche a veces se pueden ver (como estrellas fugaces)
 --
 
 - Tienen satélites de sobras: los activan y ponen en el plano cuando hay problemas
-
 --
-- Hay cobertura en el polo norte y sur! Pero MUY lento y inestable: se conecta y desconecta porqué no son geostacionarios y hay cambios de satélite
+
+
+Estan lanzando satélites de nueva generación
 ---
 background-image: url(images/iridium1.jpg)
 background-size: contain
@@ -171,7 +230,7 @@ background-size: contain
 ---
 # VSAT
 - No usamos VSAT durante la expedición
-- Cuando funcionaba (en el hemisferio norte) con el contrato que el barco tenía : unos 10 Mbps estables!
+- Cuando funcionaba (en el hemisferio norte) con el contrato que el barco tenía: ¡unos 10 Mbps estables!
 - La antena apunta simpre (con motores) al satélite geostacionario
 ---
 background-image: url(images/iridium3.jpg)
@@ -628,33 +687,49 @@ template: inverse
 # CTD Winch
 ---
 # CTD
-- Dispositivo que cuando baja lee la "Conductivity, Temperature and Depth"
---
-
-- Entonces cierran las botellas cuando sube para tener muestras
---
-
-- Tiene una grua de unos 8000 metros de cable
+- Dispositivo que ligado a un winch (grua) y cuando baja lee la "Conductivity, Temperature and Depth"
 ---
-Image CTD
+background-image: url(images/ctd_lab.jpg)
+background-size: contain
 ---
-# CTD Problema 
+background-image: url(images/ctd_water.jpg)
+background-size: contain
+---
+# CTD
+- Al bajar (teníamos cable hasta 8000 metros pero en la expedición sólo usábamos hasta 1500 metros
+- Se cierran las botellas cuando se sube el CTD para recoger agua del fondo del mar
+- Muchos proyectos usan agua del CTD
+---
+# CTD: el problema
 - Un dia me dijeron que la tripulación no podía cambiar parámetros del CTD (no aparecía el teclado en pantalla)
 --
 
-- Encontramos que el CTD Winch tenía un cable de red y mostraba una IP cuando se iniciaba
+- Encontramos que el CTD Winch tenía un cable de red y que la pantalla mostraba una IP cuando se iniciaba
 --
 
-- Conecté el portátil al cable de red, puse una IP, un nmap... y tenía VNC!
+- Conecté el portátil al cable de red, puse una IP, un nmap... y tenía un servidor de VNC (era un Windows CE)
 --
 
-- Me conecté con VNC y podía ver, pude escribir en el campo donde no aparecía el teclado
+- Me conecté con VNC (xtightvnc, krdc, etc.) y pude escribir en el campo donde no aparecía el teclado
 --
 
 - ¡Pero no aceptó el valor!
 ---
-# CTD Solución
-# TODO
+# CTD: solución
+- Tuvimos muchos emails, llamadas, etc. con la empresa que instaló el CTD (Adrian Winch)
+--
+
+- Pasamos fotos del problema, comparamos notas, etc. hasta que nos dieron el software para reinstalar (lo bajé en Austrália, eran unos 500 MB)
+--
+
+- Con Linux formateé un pendrive con FAT12 (!) pero cuando cargó el nuevo sistema no funcionó (pánico)
+--
+
+- Dentro de sus ficheros encontré otra imagen que sí que funcionó... al menos unos días porqué más problemas pasaron
+---
+background-image: url(images/ctd_cup.jpg)
+background-size: contain
+---
 template: inverse
 # Instalar paquetes Debian en otros ordenadores
 ---
@@ -710,13 +785,25 @@ En la primera isla descubrí que el GPS no funcionaba (o la red? O el Windows? o
 - Con ngrep (y tcpdump) ví que sí, llegaban los datos... pero no sabia como guardarlos!
 ---
 # GPS Puente de comandamiento (2/2)
-- Investigué, bajé y compilé kplex ()! Lee del puerto UDP, lo sirve en TCP (útil para tenerlo en otros ordenadores en tiempo real en mi red), lo guarda a un fichero
+- Investigué, bajé y compilé kplex: lee del puerto UDP, lo sirve en TCP (útil para tenerlo en otros ordenadores en tiempo real en mi red), lo guarda a un fichero
 --
 
 - Pero kplex (http://www.stripydog.com/kplex/index.html) no tiene soporte para "un fichero diferente cada dia"... hice un script que modificaba el fichero de configuración y reiniciaba kplex cada dia a media noche
 
 ???
 Qué hay como Serial Port Splitter en Linux?
+---
+# Recomendaciones para una expedición similar
+- Internet:
+ - Configurar un sistema de mail específico
+ - rsync para todo (subir/bajar ficheros, emails, etc.)
+ - usar links
+- Otros problemas:
+ - Pensar que todo es solucionable (aunque sea con workarounds)
+ - Proponer alternativas en el barco, o que alguien de su equipo busque y envie, etc.
+
+
+Nota: usé casi todo lo que sé (de hackdays, de cuando empecé a jugar con puertos paralelos, universidad, trabajos anteriores, etc.)
 ---
 class: inverse
 # License
