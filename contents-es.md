@@ -126,9 +126,9 @@ class: middle, center
 # science-cruise-management
 http://github.com/cpina/science-cruise-data-management
 
-- Empecé a programar durante una semana... ¡la documentación de Django está muy bien!
+- Empecé a programar durante una semana... ¡la documentación de Django está muy bien! (y disponible offline)
 - Visité a Fran para preguntarle más cosas
-- Y hicimos una Intranet con Django
+- Hiciimos toda la Intranet con Django
 ---
 background-image: url(images/intranet_homepage.png)
 background-size: contain
@@ -156,7 +156,7 @@ background-size: contain
 # Proyección del mapa
 - Leaflet tiene soporte para proyecciones (con un plugin)
 - La Antártida normalmente se visualiza con proyección EPSG:3031
-- No hay tiles renderizadas con la proyección
+- No hay tiles (imágenes PNG como las de openstreetmap.org) renderizadas con la proyección EPSG:3031
 - En lugar de tiles usé coastlines: describen el contorno
 - Pasé las coastlines del formato original a geojson (para que Leaflet lo cargara)
 ---
@@ -164,8 +164,8 @@ template: inverse
 # Sistema informática expedición en el barco
 ---
 # Servidores hardware
-- En un portátil viejo: Ubuntu 16.10 (se calentaba, etc.).
-- (segundo mes): Añadimos un portátil nuevo con Ubuntu 16.10
+- En un portátil viejo: Ubuntu 16.10 (se calentaba, etc.). Fué cómodo porqué lo llevamos ya semi configurado de casa
+- (segundo mes hasta el final): Añadimos un portátil nuevo con Ubuntu 16.10
 
 ## Tareas de los servidores
 - Django (ver más tarde)
@@ -173,11 +173,12 @@ template: inverse
 - Subir/bajar ficheros internet (ver más adelante)
 - DNS (Bind) (para http://ace-intranet.lan, http://ace-mail.lan)
 - DHCP Server (ISC DHCP)
-- Servidor git interno (no podíamos depender de nada de internet)
+- Servidor git interno (no podíamos depender de nada de Internet)
 - Importar datos GPS (ver más adelante)
 - Copias de seguridad de diferentes ordenadores (ver más adelante)
 - Copias de seguridad entre NAS1 y NAS2 (rsync)
 - Reiniciar el router TP-Link a media noche (o por la mañana...)
+- Otras tareas (p. ej. reiniciar un router a medianoche)
 
 ???
 -OSX no resuelve dirección dominios si no tiene conexión a internet?
@@ -192,7 +193,7 @@ template: inverse
 - Esto son, 128 kbits para _oficialmente_ 80 personas
 --
 
-- Las conexiones via satélite de Iridium son MUY inestables
+- Las conexiones via Iridium son MUY inestables
 ---
 # Iridium
 - La constelación tiene 66 satélites operativos
@@ -244,12 +245,14 @@ background-size: contain
  - Comunicarse con família
 - Periodistas necesitan:
  - Subir fotos
- - Subir vídeos!
+ - ¡Subir vídeos!
+ - Enviar textos
 ---
 # Setup parte 1
 - Un router TP-Link conectado al Iridium
 - Dos cables con ancho de banda "ilimitado"
 - El sistema WiFi como red de invitados y como máximo el 50% o 70% de velocidad y menos prioridad
+
 ???
 La priorización sólo no funcionaba bien porqué la conexión es inestable
 ---
@@ -259,7 +262,9 @@ La priorización sólo no funcionaba bien porqué la conexión es inestable
  - Windows tiene time outs cortos (e.g. para DNS)
  - Thunderbird tiene problemas con conexiones inestables (y mala información para el usuario)
  - Tuvimos que configurar muchos Thunderbirds de diferentes proveedores
- - Nunca sabíamos si había un error de configuración o bien de conexión
+ - Nunca sabíamos si había un error de configuración (servidores IMAP, SSL, usuario/contraseña) o bien de conexión
+ - Configuramos Thunderbird para bajar sólo emails recientes, sólo si son más pequeños de 50 KB, etc. pero no ayudó mucho
+ - Me dolía ver gente esperando para enviar un email delante de las pantallas
 
 ???
 ¡Mucha gente casi golpeando portátiles!
@@ -267,18 +272,22 @@ La priorización sólo no funcionaba bien porqué la conexión es inestable
 # Whatsapp
 En el WiFi como invitados mucha gente usaba WhatsApp.
 
-- En iPhone no se puede escribir si el teléfono no está conectado (!)
+- En iPhone no se puede escribir si WhatsApp piensa que no hay conexión
 - En Android los mensajes salían y llegaban pero a veces tardaba horas
 - La gente dejaba teléfonos en la oficina que también saturaban la conexión (con updates, etc.).
 - No siempre funcionaba
+--
+
+- Anécdota: científicos escribieron un mensaje en un fichero de texto y lo querían mandar por WhatsApp... (y tenían iPhone)
 ---
 # Bajar datos científicos
-- Con un rsync bajábamos datos científicos de noche (90 minutos para 15 MB más o menos, con las desconexiones)
+- Con un rsync bajábamos datos científicos de noche (90 minutos para 15 MB más o menos, con las desconexiones, pero muy variable)
 
 --
 
 ```bash
-until rsync -e "ssh -o ConnectTimeout=120 -o ServerAliveInterval=120" -vtaz --progress --inplace --timeout --bwlimit=10k
+until rsync -e "ssh -o ConnectTimeout=120 -o ServerAliveInterval=120" \
+            -vtaz --progress --inplace --timeout=120 --bwlimit=10k
 do
     date
 done
@@ -290,6 +299,24 @@ El código es un reflejo de como es el programador
 
 
 ¡Bien persistente! (y con paciencia)
+---
+# rsync --progress
+
+Del "man rsync":
+```
+  --progress
+      This  option  tells  rsync  to  print  information  showing  the
+*     progress  of  the transfer. This gives a bored user something to
+*     watch.  With a modern rsync  this  is  the  same  as  specifying
+```
+---
+# rsync -e "ssh -o ConnectTimeout=120"
+
+rsync usa ssh para conectar, asegurar que pasamos timeouts o a veces se quedaba mucho más tiempo sin enviar nada con conexión
+
+# inplace
+
+Si rsync se cancelaba dejaba el fichero incompleto: así seguía después. Por defecto hace un fichero temporal que se borra
 ---
 # Resumen comunicaciones parte 1
 - Mucha frustración: gente que no podía enviar mails o recibir durante días
@@ -464,16 +491,6 @@ Los ficheros que nos pasaban los copiabamos con orden de preferencia:
 - Internamente usa rsync con la opción --progress y así puede informar via email o puede generar un fichero de log con la salida
 
 Ver: https://github.com/cpina/rsync-queue/blob/master/rsync_queue.py#L96
----
-# rsync --progress
-
-Del "man rsync":
-```
-  --progress
-      This  option  tells  rsync  to  print  information  showing  the
-*     progress  of  the transfer. This gives a bored user something to
-*     watch.  With a modern rsync  this  is  the  same  as  specifying
-```
 ---
 # Otros datos científicos
 - En algunos casos datos científicos no estaban disponibles en Internet con rsync
@@ -782,16 +799,19 @@ En la primera isla descubrí que el GPS no funcionaba (o la red? O el Windows? o
 - (la tripulación añadió una nueva IP de una nueva red a su tarjeta de red a su switch, yo añadí un nuevo dispositivo USB para la nueva red)
 --
 
-- Con ngrep (y tcpdump) ví que sí, llegaban los datos... pero no sabia como guardarlos!
+- Con ngrep (y tcpdump) ví que sí, llegaban los datos... ¡pero no sabia como guardarlos!
 ---
 # GPS Puente de comandamiento (2/2)
 - Investigué, bajé y compilé kplex: lee del puerto UDP, lo sirve en TCP (útil para tenerlo en otros ordenadores en tiempo real en mi red), lo guarda a un fichero
 --
 
 - Pero kplex (http://www.stripydog.com/kplex/index.html) no tiene soporte para "un fichero diferente cada dia"... hice un script que modificaba el fichero de configuración y reiniciaba kplex cada dia a media noche
+--
+
+- (nota a posteriori: logrotate con copytruncate podía haber sustituido el script para kplex y reinicio de kplex)
 
 ???
-Qué hay como Serial Port Splitter en Linux?
+¿Qué hay como Serial Port Splitter en Linux?
 ---
 # Recomendaciones para una expedición similar
 - Internet:
