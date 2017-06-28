@@ -7,6 +7,9 @@ template: inverse
 # Dando la vuelta a la Antártida con software libre 
 .footnote[Carles Pina and Jen Thomas]
 ---
+class: center, middle
+# Contenido
+---
 template: inverse
 # Quienes somos
 ---
@@ -31,6 +34,7 @@ layout: false
  - Aplicación Benches para Android y iOS (OpenStreetMap, Python, Flask)
 - En el año sabático acabamos en la Antártida
 ---
+class: middle, center
 template: inverse
 # Introducción
 ---
@@ -39,7 +43,31 @@ class: middle, center
 ---
 background-image: url(images/ace_final_map_official.png)
 background-size: contain
+???
+- Inicios de noviembre: David Walton contacta a Jen (en 6 semanas nos pusimos apunto: pruebas médicas, entender qué hacer, empezar una aplicación para los científicos)
+- 20 de diciembre: inicio de parte 1 desde Cape Town (Sud África)
+- 2X de enero: inicio de parte 2 desde Hobart (Austrália)
+- 2X de febrero: inicio de parte 3 desde Punta Arenas (Chile)
+- 2X de marzo: llegamos otra vez a Cape Town (Sud África)
 ---
+class: middle, center
+# R/V Akademik Tryoshnikov
+---
+# IMAGEN DEL BARCO AQUI
+???
+- Rompe hielos ruso
+- 133 metros de eslora
+- 23 metros de manga
+- Tripulación: 60 personas: cocineras, ingenieros, tecnicos, no habia informatica,
+- Alquilado para la expedición: casi todos los equipos llevaron su propio equipos. Sin informático abordo.
+---
+El barco no tiene estabilizadores
+---
+background-image: url(images/rocking.jpg)
+background-size: contain
+---
+# IMAGENES DE CIENCIA AQUI
+???
 - Antarctic Cicumnavigation Expedition
 - Dimos la vuelta a la Antártida!
 - 22 equipos estudiando:
@@ -49,30 +77,6 @@ background-size: contain
  - islas
 - Unos 60 científicos en cada parte - > 150 en total de 23 paises
 - Unas 20 personas de soporte en la expedición
----
-# Barco: R/V Akademik Tryoshnikov
-- Rompe hielos ruso
-- 133 metros de eslora
-- 23 metros de manga
-- Tripulación: 60 personas
-
-Alquilado para la expedición: casi todos los equipos llevaron su propio equipos. Sin informático abordo.
---
-
-
-El barco no tiene estabilizadores
----
-background-image: url(images/rocking.jpg)
-background-size: contain
----
-# Itinerario
----
-???
-- Inicios de noviembre: David Walton contacta a Jen (en 6 semanas nos pusimos apunto: pruebas médicas, entender qué hacer, empezar una aplicación para los científicos)
-- 20 de diciembre: inicio de parte 1 desde Cape Town (Sud África)
-- 2X de enero: inicio de parte 2 desde Hobart (Austrália)
-- 2X de febrero: inicio de parte 3 desde Punta Arenas (Chile)
-- 2X de marzo: llegamos otra vez a Cape Town (Sud África)
 ---
 # ¿Dónde guardar los datos?
 - A principios de diciembre Jen preguntó a los 22 investigadores principales cuantos GB necesitarán para almacenar sus datos
