@@ -43,7 +43,7 @@ template: inverse
 - Unos 60 científicos en cada parte
 - Unas 20 personas de soporte en la expedición
 ---
-# Barco: Akademik Tryoshnikov
+# Barco: R/V Akademik Tryoshnikov
 - Rompe hielos ruso
 - 133 metros de eslora
 - 23 metros de manga
@@ -61,7 +61,7 @@ background-size: contain
 # Fechas del viaje
 - Inicios de noviembre: David Walton contacta a Jen (en 6 semanas nos pusimos apunto: pruebas médicas, entender qué hacer, empezar una aplicación para los científicos)
 - 22 de diciembre: inicio de parte 1 desde Cape Town (Sud África)
-- 2X de enero: inicio de parte 2 desde Hobbart (Austrália)
+- 2X de enero: inicio de parte 2 desde Hobart (Austrália)
 - 2X de febrero: inicio de parte 3 desde Punta Arenas (Chile)
 - 2X de marzo: llegamos otra vez a Cape Town (Sud África)
 ---
@@ -110,7 +110,7 @@ Tienen que estar equilibrados o sinó no va bien
 # La Base de Datos
 - Teníamos que crear una base de datos para que los científicos introdujeran información de sus actividades
 - Yo conocía Flask, Mysql, SQLAlchemy
-- Pero como hacer los formularios para entrar todo? (a mano con Flask tardaría mucho) (y con C++/Qt sería muy difícil!)
+- Pero ¿cómo hacer los formularios para entrar todo? (a mano con Flask tardaría mucho y con C++/Qt sería muy difícil!)
 - Estaba una noche en casa un amigo en Londres y le pregunté como lo haría él
 --
 
@@ -199,7 +199,10 @@ template: inverse
 - La constelación tiene 66 satélites operativos
 --
 
-- Nombre Iridium porqué originalmente habia 77 satélites: el número atómico de Iridium
+- Nombre Iridium porqué originalmente habia 77 satélites: el número atómico de Iridium 
+--
+
+- Tienen satélites de sobras: los activan y ponen en el plano cuando hay problemas
 --
 
 - Hay cobertura en el polo norte y sur! Pero MUY lento y inestable: se conecta y desconecta porqué no son geostacionarios y hay cambios de satélite
@@ -211,11 +214,8 @@ template: inverse
 - Por la noche a veces se pueden ver (como estrellas fugaces)
 --
 
-- Tienen satélites de sobras: los activan y ponen en el plano cuando hay problemas
---
-
-
 Estan lanzando satélites de nueva generación
+- Hay cobertura en el polo norte y sur! Pero MUY lento y inestable: se conecta y desconecta porqué no son geostacionarios y hay cambios de satélite
 ---
 background-image: url(images/iridium1.jpg)
 background-size: contain
@@ -232,7 +232,7 @@ background-size: contain
 # VSAT
 - No usamos VSAT durante la expedición
 - Cuando funcionaba (en el hemisferio norte) con el contrato que el barco tenía: ¡unos 10 Mbps estables!
-- La antena apunta simpre (con motores) al satélite geostacionario
+- La antena apunta siempre (con motores) al satélite geostacionario
 ---
 background-image: url(images/iridium3.jpg)
 background-size: contain
@@ -240,7 +240,7 @@ background-size: contain
 # Necesidades de comunicaciones
 - Científicos necesitan:
  - Bajar imagenes de satélite de hielo
- - Bajar modelos meterologicos
+ - Bajar modelos meteorológicos
  - Comunicarse con sus equipos
  - Comunicarse con família
 - Periodistas necesitan:
@@ -259,7 +259,7 @@ La priorización sólo no funcionaba bien porqué la conexión es inestable
 # Email
 - Recomandamos usar Thunderbird en cada portátil y usar la conexión cable
 - Fué bastante mal:
- - Windows tiene time outs cortos (e.g. para DNS)
+ - Windows tiene time-outs cortos (e.g. para DNS)
  - Thunderbird tiene problemas con conexiones inestables (y mala información para el usuario)
  - Tuvimos que configurar muchos Thunderbirds de diferentes proveedores
  - Nunca sabíamos si había un error de configuración (servidores IMAP, SSL, usuario/contraseña) o bien de conexión
