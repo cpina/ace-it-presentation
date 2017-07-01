@@ -767,10 +767,27 @@ template: inverse
 - Gente con Ubuntu que necesitaban paquetes que no tenían
 --
 
-- Empecé a usar:
+- Usé:
 ```
 tar -T /tmp/files.txt -cvf /tmp/gnuplot-data.tar
 ```
+Para generar un fichero .tar con todos los ficheros de un paquete. Sólo tenía que descomprimir en el otro ordenador:
+```
+cd /
+tar -xvf /media/user/USB/gnuplot-data.tar
+```
+(no ejecuta los scripts de post instalación, ni lo añade en el registro de paquetes instalados, ni añade usuarios de sistema, etc. pero funcionó para todo!)
+---
+template: inverse
+# Microsoft Office (en un Mac) no funcionaba (problema con licencias)
+---
+# Sustituirlo por LibreOffice
+- Pero en el primer mes no tenía el fichero .dmg de LibreOffice :-(
+- Cuando ví a otra persona con Mac y LibreOffice hice un tar del /Applications/LibreOffice.org
+- Descomprimí el tar en el ordenador del otro usuario
+--
+
+Pero el primer usuario... ¡lo tenía en francés! (y no se podía cambiar)
 ---
 template: inverse
 # GPS
