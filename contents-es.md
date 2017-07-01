@@ -207,6 +207,10 @@ template: inverse
 --
 
 - Las conexiones via Iridium son MUY inestables
+
+
+![NAS](images/Iridium_Coverage_Animation.gif)
+(imagen de Wikipedia)
 ---
 # Iridium
 - La constelación tiene 66 satélites operativos
