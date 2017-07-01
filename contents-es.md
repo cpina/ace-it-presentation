@@ -584,7 +584,16 @@ template: inverse
  - Volumen
  - Destino
 ???
-Cada vez que queríamos añadir un recurso compartido sólo era añadir en esta table
+Cada vez que queríamos añadir un recurso compartido sólo era añadir en esta tabla con el admin de Django
+---
+# Evitamos cambiar configuraciones del ordenador
+- Muchos ordenadores Windows estaban conectados a otros dispositivos via conexión LAN
+--
+
+- Añadimos un nuevo puerto LAN via conexiones USB
+--
+
+- Era la manera de minimizar cambios de configuración en los ordenadores Windows durante la expedición
 ---
 # Backups recursos compartidos
 - Teníamos un mail con el resultado del último backup
@@ -592,14 +601,59 @@ Cada vez que queríamos añadir un recurso compartido sólo era añadir en esta 
 --
 La idea es un script en Python que usa rsync y es hace los mount/rsync/umount basado en los datos que hay en el model (tabla)
 ---
-# Trabajar con científicos
-- En Mendeley muchos de nuestros usuarios son científicos.
+template: inverse
+# GPS
+---
+# GPS Introducción
+- Llegué y era importante que tuvieramos todos los datos del GPS guardados
+- Para saber "¿Dónde estábamos en la fecha+hora D?" (esto alimentaba la base de datos automáticamente)
+- No había nada para esto
+---
+# GPS Trimble
+- Un ordenador con Windows de la expedición ya tenía acceso a un GPS (por puerto serie)
 --
 
-- En la expedición tenía un trato más cercano
+- Este Windows ya tenía instalado el software Serial Port Splitter (https://www.eltima.com/products/serialsplitter/)
 --
 
-- Anecdota: científico y hoja de Excel
+- Bajé + instalé GPS NMEA Router software (http://arundale.com/docs/ais/nmearouter.html)
+--
+
+- Compartí el directorio donde se guardaban los logs
+--
+
+- Escribí un parser de NMEA leyendo los ficheros en tiempo real (con rotación de ficheros): lo insertaba a la base de datos (https://github.com/cpina/science-cruise-data-management/blob/master/ScienceCruiseDataManagement/ship_data/management/commands/nmea_file2db.py)
+- (el parser NMEA es bastante interesante por la clase TailDirectory: lee continuamente del fichero, usa un callback para líneas enteras, comprueba nuevos ficheros en el directorio, etc.)
+---
+# GPS Puente de comandamiento (1/2)
+En la primera isla descubrí que el GPS no funcionaba (o la red? O el Windows? o la base de datos? O el visualizador?)
+--
+
+- La tripulación lo apagó
+--
+
+- Buscamos un segundo GPS en el barco: encontramos el del puente de comandamiento
+--
+
+- La tripulación usó Franson GpsGate y "envió" los datos del GPS a nuestra IP via UDP
+--
+
+- (la tripulación añadió una nueva IP de una nueva red a su tarjeta de red a su switch, yo añadí un nuevo dispositivo USB para la nueva red)
+--
+
+- Con ngrep (y tcpdump) ví que sí, llegaban los datos... ¡pero no sabia como guardarlos!
+---
+# GPS Puente de comandamiento (2/2)
+- Investigué, bajé y compilé kplex: lee del puerto UDP, lo sirve en TCP (útil para tenerlo en otros ordenadores en tiempo real en mi red), lo guarda a un fichero
+--
+
+- Pero kplex (http://www.stripydog.com/kplex/index.html) no tiene soporte para "un fichero diferente cada dia"... hice un script que modificaba el fichero de configuración y reiniciaba kplex cada dia a media noche
+--
+
+- (nota a posteriori: logrotate con copytruncate podía haber sustituido el script para kplex y reinicio de kplex)
+
+???
+¿Qué hay como Serial Port Splitter en GNU/Linux?
 ---
 template: inverse
 # Ferrybox
@@ -705,6 +759,7 @@ template: inverse
 - Equipo de bentos: estudian los animales del fondo del mar
 - Querían saber la profundidad
 - Tienen un dispositivo a la proa del barco que baja unos 700 metros y recoge muestras
+- A veces ponen una GoPro
 ---
 background-image: url(images/trawling_winch.jpg)
 background-size: contain
@@ -714,6 +769,45 @@ background-size: contain
 ---
 background-image: url(images/trawling_star.jpg)
 background-size: contain
+---
+# Mostrar la pantalla de un Windows en la Intranet
+--
+
+- Pregunté a un amigo y me pasó el link de un software para Windows que hace un screenshot cada minuto y lo guarda en un directorio
+--
+
+- Pensé en compartir este directorio y desde el servidor coger la última imagen y ponerla en la intranet
+--
+
+- Pero no podíamos instalar nada en este ordenador Windows (problemas políticos)
+--
+
+- Nota: en sistemas GNU/Linux se puede usar el comando "import" para hacer screenshots fácilmente
+--
+
+- Si el ordenador Windows tuviera VNC: podría haber usado el paquete "vncsnapshot"
+
+???
+El "import" lo había usado para poner en Internet unas presentación dinámica (basada en datos de Mysql) de LibreOffice.org
+---
+# EchoViewer y NMEA strings
+
+- El software echoviewer puede enviar la profundidad a puertos UDP en format NMEA
+--
+
+- Manda un string con la profundiad en metro, pies i fantoms (!)
+--
+
+- Con kplex lo guardaba en un fichero (igual que el GPS "puente de comandamiento")
+--
+
+- Con un script nuevo lo inserta en la base de datos a tiempo real
+--
+
+- En la página principal de la Intranet mostraba el valor para el equipo bentos
+--
+
+- Lo tenía en la base de datos para consultar fácil por cuando lo pedían
 ---
 template: inverse
 # CTD Winch
@@ -754,7 +848,7 @@ background-size: contain
 - Pasamos fotos del problema, comparamos notas, etc. hasta que nos dieron el software para reinstalar (lo bajé en Austrália, eran unos 500 MB)
 --
 
-- Con Linux formateé un pendrive con FAT12 (!) pero cuando cargó el nuevo sistema no funcionó (pánico)
+- Con GNU/Linux formateé un pendrive con FAT12 (!) pero cuando cargó el nuevo sistema no funcionó (pánico)
 --
 
 - Dentro de sus ficheros encontré otra imagen que sí que funcionó... al menos unos días porqué más problemas pasaron
@@ -791,60 +885,6 @@ template: inverse
 
 Pero el primer usuario... ¡lo tenía en francés! (y no se podía cambiar)
 ---
-template: inverse
-# GPS
----
-# GPS Introducción
-- Llegué y era importante que tuvieramos todos los datos del GPS guardados
-- Para saber "¿Dónde estábamos en la fecha+hora D?" (esto alimentaba la base de datos automáticamente)
-- No había nada para esto
----
-# GPS Trimble
-- Un ordenador con Windows de la expedición ya tenía acceso a un GPS (por puerto serie)
---
-
-- Este Windows ya tenía instalado el software Serial Port Splitter (https://www.eltima.com/products/serialsplitter/)
---
-
-- Bajé + instalé GPS NMEA Router software (http://arundale.com/docs/ais/nmearouter.html)
---
-
-- Compartí el directorio donde se guardaban los logs
---
-
-- Escribí un parser de NMEA leyendo los ficheros en tiempo real (con rotación de ficheros): lo insertaba a la base de datos (https://github.com/cpina/science-cruise-data-management/blob/master/ScienceCruiseDataManagement/ship_data/management/commands/nmea_file2db.py)
-- (el parser NMEA es bastante interesante por la clase TailDirectory: lee continuamente del fichero, usa un callback para líneas enteras, comprueba nuevos ficheros en el directorio, etc.)
----
-# GPS Puente de comandamiento (1/2)
-En la primera isla descubrí que el GPS no funcionaba (o la red? O el Windows? o la base de datos? O el visualizador?)
---
-
-- La tripulación lo apagó
---
-
-- Buscamos un segundo GPS en el barco: encontramos el del puente de comandamiento
---
-
-- La tripulación usó Franson GpsGate y "envió" los datos del GPS a nuestra IP via UDP
---
-
-- (la tripulación añadió una nueva IP de una nueva red a su tarjeta de red a su switch, yo añadí un nuevo dispositivo USB para la nueva red)
---
-
-- Con ngrep (y tcpdump) ví que sí, llegaban los datos... ¡pero no sabia como guardarlos!
----
-# GPS Puente de comandamiento (2/2)
-- Investigué, bajé y compilé kplex: lee del puerto UDP, lo sirve en TCP (útil para tenerlo en otros ordenadores en tiempo real en mi red), lo guarda a un fichero
---
-
-- Pero kplex (http://www.stripydog.com/kplex/index.html) no tiene soporte para "un fichero diferente cada dia"... hice un script que modificaba el fichero de configuración y reiniciaba kplex cada dia a media noche
---
-
-- (nota a posteriori: logrotate con copytruncate podía haber sustituido el script para kplex y reinicio de kplex)
-
-???
-¿Qué hay como Serial Port Splitter en Linux?
----
 # Otras cosas... 
 - Alguien escribió un texto en un fichero de texto y quería pasarlo via WhatsApp
 --
@@ -860,6 +900,11 @@ En la primera isla descubrí que el GPS no funcionaba (o la red? O el Windows? o
 
 - Un dispositivo Bluetooth que no se conectaba al ordenador (imán)
 --
+
+- Configurar access points para acceso en diferentes partes del barco
+--
+
+- Configurar ordenador como router para dar acceso a equipo ROPOS desde punte de comandamiento a sus euqipos
 
 - Y un sin fin más!
 ---
