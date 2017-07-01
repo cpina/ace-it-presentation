@@ -619,6 +619,9 @@ template: inverse
 
 - Cambié la configuración de red para unirlo a la red de la expedición
 ---
+background-image: url(images/ferry_box.jpg)
+background-size: contain
+---
 # Ferrybox: tener un volcado en tiempo real
 - El processo "ferrycon" lee de /dev/ttyS[0,1,2,3] que son los dispositivos
 --
@@ -695,23 +698,22 @@ http://github.com/cpina/missing-files
 template: inverse
 # Otras tareas
 ---
-# Otras tareas
-- Alguien escribió un texto en un fichero de texto y quería pasarlo via WhatsApp
---
-
-- Un dispositivo con una RaspberryPi no se conectaba al WiFi
---
-
-- Dispositivo requería Access Point que no llegó al barco
---
-
-- Disco duro que no se podía montar en Windows
---
-
-- Un dispositivo Bluetooth que no se conectaba al ordenador (imán)
---
-
-- Y un sin fin más!
+template: inverse
+# Profundidad del oceano en la Intranet
+---
+# Profundidad ¿Por qué?
+- Equipo de bentos: estudian los animales del fondo del mar
+- Querían saber la profundidad
+- Tienen un dispositivo a la proa del barco que baja unos 700 metros y recoge muestras
+---
+background-image: url(images/trawling_winch.jpg)
+background-size: contain
+---
+background-image: url(images/trawling_bucket.jpg)
+background-size: contain
+---
+background-image: url(images/trawling_star.jpg)
+background-size: contain
 ---
 template: inverse
 # CTD Winch
@@ -842,6 +844,24 @@ En la primera isla descubrí que el GPS no funcionaba (o la red? O el Windows? o
 
 ???
 ¿Qué hay como Serial Port Splitter en Linux?
+---
+# Otras cosas... 
+- Alguien escribió un texto en un fichero de texto y quería pasarlo via WhatsApp
+--
+
+- Un dispositivo con una RaspberryPi no se conectaba al WiFi
+--
+
+- Dispositivo requería Access Point que no llegó al barco
+--
+
+- Disco duro que no se podía montar en Windows
+--
+
+- Un dispositivo Bluetooth que no se conectaba al ordenador (imán)
+--
+
+- Y un sin fin más!
 ---
 # Recomendaciones para una expedición similar
 - Internet:
