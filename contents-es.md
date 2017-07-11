@@ -4,6 +4,7 @@ class: center, middle, inverse
 ---
 layout: false
 template: inverse
+class: title-slide
 ### Dando la vuelta a la Antártida con software libre 
 ![penguins](images/title.apng)
 
