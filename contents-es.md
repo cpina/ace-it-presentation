@@ -19,6 +19,7 @@ layout: false
 # Jen Thomas
 - Nací en un pueblo en Inglaterra
 - Trabajaba 3.5 años como "Data Manager" del Instituto Británico de la Antartida (British Antarctic Survey, Cambridge, Reino Unido) 
+- Ya había hecho dos expediciones en un barco a la sub-Antártida 
 - Ahora trabajo para el Instituto Polar de Suiza (Swiss Polar Institute, Lausanne, Switzerland)
 - Hobbies: pájaros, insectos, el medio ambiente, ciencia, viajar, música
 
@@ -80,6 +81,11 @@ background-size: contain
 - Unos 60 científicos en cada parte - > 150 en total de 23 paises
 - Unas 20 personas de soporte en la expedición
 ---
+class: middle, center
+template: inverse
+# La gestión de datos
+---
+
 # ¿Dónde guardar los datos?
 - A principios de diciembre Jen preguntó a los 22 investigadores principales cuantos GB necesitarán para almacenar sus datos
 - Llegamos a una estimación de 60 TB
