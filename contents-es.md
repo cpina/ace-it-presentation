@@ -107,20 +107,17 @@ background-size: contain
 class: middle, center
 # La ciencia
 ---
+background-image: url(images/ace_team.jpg)
+background-size: contain
+---
 background-image: url(images/south_georgia_ciencia.jpg)
 background-size: contain
 ---
-# IMAGENES DE CIENCIA AQUI
-???
-- Antarctic Cicumnavigation Expedition
-- Dimos la vuelta a la Antártida!
-- 22 equipos estudiando:
- - océano
- - meteorología
- - aire
- - islas
-- Unos 60 científicos en cada parte - > 150 en total de 23 paises
-- Unas 20 personas de soporte en la expedición
+background-image: url(images/waves.jpg)
+background-size: contain
+---
+background-image: url(images/releasing_radiosonde.jpg)
+background-size: contain
 ---
 class: middle, center
 template: inverse
