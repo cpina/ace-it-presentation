@@ -962,18 +962,19 @@ Pero el primer usuario... ¡lo tenía en francés! (y no se podía cambiar)
 - Internet:
  - Configurar un sistema de mail específico
  - rsync para todo (subir/bajar ficheros, emails, etc.)
- - usar links
+ - Usar el navegador en modo texto "links"
+ - Bajar documentación
+ - Tener Wikipedia offline?
 - Otros problemas:
  - Pensar que todo es solucionable (aunque sea con workarounds)
- - Proponer alternativas en el barco, o que alguien de su equipo busque y envie, etc.
+ - Proponer alternativas en el barco, o que alguien de su equipo busque y envie documentos, soluciones, etc.
 
-
-Nota: usé casi todo lo que sé (de hackdays, de cuando empecé a jugar con puertos paralelos, universidad, trabajos anteriores, etc.)
+Nota: usé casi todo lo que sé (de hackdays, de cuando era pequeño y jugaba con el puerto paralelo, universidad, trabajos anteriores, etc.)
 ---
 class: inverse
 ## Contactos
-- Jen Thomas (jenny_t152@yahoo.co.uk)
-- Carles Pina i Estany (carles@pina.cat)
+- Jen Thomas ([jenny_t152@yahoo.co.uk](jenny_t152@yahoo.co.uk))
+- Carles Pina i Estany ([carles@pina.cat](carles@pina.cat))
 
 ## License
 ![CreativeCommons](external/creative-commons.png)
