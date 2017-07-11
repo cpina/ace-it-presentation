@@ -971,12 +971,16 @@ Pero el primer usuario... ¡lo tenía en francés! (y no se podía cambiar)
 Nota: usé casi todo lo que sé (de hackdays, de cuando empecé a jugar con puertos paralelos, universidad, trabajos anteriores, etc.)
 ---
 class: inverse
-# License
+## Contactos
+- Jen Thomas (jenny_t152@yahoo.co.uk)
+- Carles Pina i Estany (carles@pina.cat)
+
+## License
 ![CreativeCommons](external/creative-commons.png)
 
 Esta obra está bajo una [Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional](https://creativecommons.org/licenses/by-sa/4.0/).
 
-# Slides
+## Slides
 Las slides han sido escritas usando Markdown y renderizadas usando remarkjs (https://remarkjs.com) (¡es muy cómodo!)
 
-Para el apng de la página principal: apngasm (https://github.com/apngasm/apngasm) (o en Debian)
+Para el apng de la página principal: apngasm (https://github.com/apngasm/apngasm) (o paquete Debian)

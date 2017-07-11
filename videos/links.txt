@@ -1,0 +1,6 @@
+During the presentation the ACE Expedition videos might be played:
+-Leg 1: https://www.youtube.com/watch?v=87TvkL0meGU
+-Leg 2: https://www.youtube.com/watch?v=zUHk-jAe2Gw
+-Leg 3: https://www.youtube.com/watch?v=pt_Euo08O9I
+
+Also the personal screencast iridium-apt-get-update.ogv (to show how the Internet connection was working)
