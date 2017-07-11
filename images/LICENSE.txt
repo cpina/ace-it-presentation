@@ -4,3 +4,4 @@ Other photos:
 -akademik_tryoshnikov.jpg: https://public.wmo.int/en/media/news-from-members/december-2016-research-vessel-akademik-tryoshnikov-will-be-sent-expedition
 -ace_team.jpg: Copyright Swiss Polar Institute
 -ace_final_map_official.png: Copyright Swiss Polar Institute
+-logo_ACE.png: Copyright Swiss Polar Institute

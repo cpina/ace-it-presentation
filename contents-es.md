@@ -971,7 +971,7 @@ Pero el primer usuario... ¡lo tenía en francés! (y no se podía cambiar)
 
 Nota: usé casi todo lo que sé (de hackdays, de cuando era pequeño y jugaba con el puerto paralelo, universidad, trabajos anteriores, etc.)
 ---
-background-image: url(images/Badge\ ACE.PDF)
+background-image: url(images/logo_ACE.png)
 background-size: contain
 ---
 class: inverse
