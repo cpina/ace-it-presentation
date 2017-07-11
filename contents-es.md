@@ -217,7 +217,7 @@ background-size: contain
 - Pasé las coastlines del formato original a geojson (para que Leaflet lo cargara)
 ---
 template: inverse
-# Sistema informática expedición en el barco
+# Sistema informático expedición en el barco
 ---
 # Servidores hardware
 - En un portátil viejo: Ubuntu 16.10 (se calentaba, etc.). Fué cómodo porqué lo llevamos ya semi configurado de casa
