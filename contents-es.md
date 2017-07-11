@@ -8,7 +8,7 @@ class: title-slide
 ### Dando la vuelta a la Antártida con software libre 
 ![penguins](images/title.apng)
 
-.footnote[Carles Pina and Jen Thomas]
+.right[Carles Pina and Jen Thomas]
 ---
 class: center, middle
 # Contenido
@@ -17,14 +17,6 @@ template: inverse
 # Quienes somos
 ---
 layout: false
-# Jen Thomas
-- Nací en un pueblo en Inglaterra
-- Trabajaba 3.5 años como "Data Manager" del Instituto Británico de la Antartida (British Antarctic Survey, Cambridge, Reino Unido) 
-- Ya había hecho dos expediciones en un barco a la sub-Antártida 
-- Ahora trabajo para el Instituto Polar de Suiza (Swiss Polar Institute, Lausanne, Switzerland)
-- Hobbies: pájaros, insectos, el medio ambiente, ciencia, viajar, música
-
----
 # Carles Pina i Estany
 - Nací en Manresa, cerca de Barcelona (España)
 - Desde 2009 trabajo en Mendeley (departamento de Mendeley Desktop) trabajando en C++/Qt
@@ -61,7 +53,13 @@ background-size: contain
 - Amarok
 - gnokii
 - Django (después de la expedición)
-...
+---
+# Jen Thomas
+- Nací en un pueblo en Inglaterra
+- Trabajaba 3.5 años como "Data Manager" del Instituto Británico de la Antartida (British Antarctic Survey, Cambridge, Reino Unido) 
+- Ya había hecho dos expediciones en un barco a la sub-Antártida 
+- Ahora trabajo para el Instituto Polar de Suiza (Swiss Polar Institute, Lausanne, Switzerland)
+- Hobbies: pájaros, insectos, el medio ambiente, ciencia, viajar, música
 ---
 class: middle, center
 template: inverse
