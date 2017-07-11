@@ -119,7 +119,18 @@ class: middle, center
 template: inverse
 # La gestión de datos
 ---
-
+- Ayuda a los científicos de:
+ - guardar los datos
+ - colectar metadatos sobre la expedición
+ - escribir metadatos
+ - para hacer los datos más útiles y abiertos para el futuro
+---
+background-image: url(images/metadata_discovery.png)
+background-size: contain
+---
+background-image: url(images/data_discovery.png)
+background-size: contain
+---
 # ¿Dónde guardar los datos?
 - A principios de diciembre Jen preguntó a los 22 investigadores principales cuantos GB necesitarán para almacenar sus datos
 - Llegamos a una estimación de 60 TB
