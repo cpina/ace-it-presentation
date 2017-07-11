@@ -4,7 +4,9 @@ class: center, middle, inverse
 ---
 layout: false
 template: inverse
-# Dando la vuelta a la Antártida con software libre 
+### Dando la vuelta a la Antártida con software libre 
+![penguins](images/title.apng)
+
 .footnote[Carles Pina and Jen Thomas]
 ---
 class: center, middle
