@@ -50,9 +50,6 @@ background-size: contain
 background-image: url(images/chronojump.png)
 background-size: contain
 ---
-background-image: url(images/chronojump.png)
-background-size: contain
----
 background-image: url(images/grub2.png)
 background-size: contain
 ---
