@@ -69,6 +69,9 @@ El barco no tiene estabilizadores
 background-image: url(images/rocking.jpg)
 background-size: contain
 ---
+class: middle, center
+# La ciencia
+---
 # IMAGENES DE CIENCIA AQUI
 ???
 - Antarctic Cicumnavigation Expedition
