@@ -28,13 +28,41 @@ layout: false
 - Desde 2009 trabajo en Mendeley (departamento de Mendeley Desktop) trabajando en C++/Qt
 - Normalmente vivo en Londres (Reino Unido) pero nos tomamos un año sabático para viajar
 - Me gusta el software libre (uso Debian desde Debian Potato en el 2000)
-- Algunos proyectos:
- - qdacco (C++/Qt): está en Debian y Ubuntu
- - qphotosort (Python/Qt) y qnetload (C++/Qt)
- - Estoy colaborando con Chronojump (C# y Python)
- - He contribuido a Grub, Pidgin, geeqie, Amarok, Pydance, gnokii...
- - Aplicación Benches para Android y iOS (OpenStreetMap, Python, Flask)
-- En el año sabático acabamos en la Antártida
+- Algunos proyectos que hago/ayudo...
+---
+![qdacco](images/qdacco.png)
+
+(en Debian/Ubuntu)
+---
+![xnetload](images/xnetload.png)
+--
+
+
+![qnetload](images/qnetload.png)
+---
+background-image: url(images/benches1.png)
+background-size: contain
+---
+background-image: url(images/benches2.png)
+background-size: contain
+---
+background-image: url(images/chronojump.png)
+background-size: contain
+---
+background-image: url(images/chronojump.png)
+background-size: contain
+---
+background-image: url(images/grub2.png)
+background-size: contain
+---
+## Otras cosas
+- Pidgin (notificaciones)
+- geeqie (copiar path)
+- Pydance (soporte multilingue)
+- Amarok
+- gnokii
+- Django (después de la expedición)
+...
 ---
 class: middle, center
 template: inverse
@@ -933,4 +961,6 @@ class: inverse
 Esta obra está bajo una [Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional](https://creativecommons.org/licenses/by-sa/4.0/).
 
 # Slides
-Las slides han sido escritas usando Markdown y renderizadas usando remarkjs  (https://remarkjs.com) (¡es muy cómodo!)
+Las slides han sido escritas usando Markdown y renderizadas usando remarkjs (https://remarkjs.com) (¡es muy cómodo!)
+
+Para el apng de la página principal: apngasm (https://github.com/apngasm/apngasm) (o en Debian)
