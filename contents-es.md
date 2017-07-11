@@ -74,6 +74,7 @@ class: middle, center
 ---
 background-image: url(images/ace_final_map_official.png)
 background-size: contain
+.footnote[Copyright Swiss Polar Institute]
 ???
 - Inicios de noviembre: David Walton contacta a Jen (en 6 semanas nos pusimos apunto: pruebas médicas, entender qué hacer, empezar una aplicación para los científicos)
 - 20 de diciembre: inicio de parte 1 desde Cape Town (Sud África)
@@ -84,7 +85,10 @@ background-size: contain
 class: middle, center
 # R/V Akademik Tryoshnikov
 ---
-# IMAGEN DEL BARCO AQUI
+background-image: url(images/akademik_tryoshnikov.jpg)
+background-size: contain
+
+.footnote[Image from https://public.wmo.int/en/media/news-from-members/december-2016-research-vessel-akademik-tryoshnikov-will-be-sent-expedition]
 ???
 - Rompe hielos ruso
 - 133 metros de eslora
@@ -92,7 +96,10 @@ class: middle, center
 - Tripulación: 60 personas: cocineras, ingenieros, tecnicos, no habia informatica,
 - Alquilado para la expedición: casi todos los equipos llevaron su propio equipos. Sin informático abordo.
 ---
-El barco no tiene estabilizadores
+background-image: url(images/ace_team.jpg)
+background-size: contain
+
+.footnote[Copyright Swiss Polar Institute]
 ---
 background-image: url(images/rocking.jpg)
 background-size: contain
