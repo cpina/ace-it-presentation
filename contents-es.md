@@ -72,6 +72,9 @@ background-size: contain
 class: middle, center
 # La ciencia
 ---
+background-image: url(images/south_georgia_ciencia.jpg)
+background-size: contain
+---
 # IMAGENES DE CIENCIA AQUI
 ???
 - Antarctic Cicumnavigation Expedition
