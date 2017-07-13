@@ -15,9 +15,9 @@ layout: false
 - Quiénes somos
 - ¿Qué es ACE?
 - Gestión de datos
+- Django en la expedición
 - Sistema informático y telecomunicaciones
 - Sistema de email
-- Django en la expedición
 - Otros:
  - backups
  - GPS
@@ -119,7 +119,7 @@ background-size: contain
 ???
 - Inicios de noviembre 2017: David Walton contacta a Jen (en 6 semanas nos pusimos apunto: pruebas médicas, entender qué hacer, empezar una aplicación para los científicos)
 - expedicion pagada por un filantropo suizo
-- unica / especial porque estaba realizada en un verano solo, y combina una variedad de ciencia (del oceano, de la atmósfera y también de las islas)
+- unica / especial porque estaba realizada en un verano solo, y combina una variedad de ciencia (del océano, de la atmósfera y también de las islas)
 - 3 etapas
 - Inicios de noviembre: David Walton contacta a Jen (en 6 semanas nos pusimos apunto: pruebas médicas, entender qué hacer, empezar una aplicación para los científicos)
 - 20 de diciembre: inicio de parte 1 desde Cape Town (Sud África)
@@ -243,6 +243,36 @@ background-size: contain
 - Explicar como cambiar: dry dock o bien ¿playa cuando baja la marea?
 - Tienen que estar equilibrados o sinó no va bien y hay demasiada vibración.
 ---
+template: inverse
+# La web intranet
+---
+# Django
+- No sabíamos Django antes de empezar
+- Tiene muy buena documentación off-line
+- Yo tenía mucho código Python en mi ~/git (código mío o código como Calibre, unos 12 GB en total)
+---
+# ¿Por qué Django nos era muy cómodo?
+- Escribiendo un modelo genera formularios
+- Cambiando el modelo hace las migraciones en la base de datos
+- Sistema autenticación de usuarios
+- Sistema de permisos de usuarios
+- Sistema de plantillas integrado con los modelos
+- Muy fácil de extender como programador
+- La interfície de usuario (para los científicos) cómoda
+---
+# Modelos en Django
+```python
+class StorageCrate(models.Model):
+    name = models.CharField(max_length=255, unique=True)
+    location = models.CharField(max_length=255)
+    description = models.CharField(max_length=255, null=True, blank=True)
+    comment = models.TextField(null=True, blank=True)
+```
+--
+- Genera los formularios
+- Genera la tabla en la base de datos si no existia
+- Genera migraciones si el modelo existía y era diferente
+---
 # La base de datos
 - Teníamos que crear una base de datos para que los científicos introdujeran información de sus actividades - sus metadatos
 - Yo conocía Flask, Mysql, SQLAlchemy
@@ -296,12 +326,22 @@ background-size: contain
 - En lugar de tiles usé coastlines: describen el contorno
 - Pasé las coastlines del formato original a geojson (para que Leaflet lo cargara)
 ---
+# Resumen Django
+- Sin Django hubieramos tardado muchísimo más
+- Si es necesario Django permite fácilmente acceder a la base de datos directamente (y aún crear los models con él)
+- Los "commands" (parte de la aplicación de Django pero se usa desde la línea de comandos, no desde la web) de son muy cómodos de escribir
+- Estamos muy contentos con Django (aunque primero pensé que no sería tan útil)
+---
+background-image: url(images/for_fun/clouds_02.jpg)
+background-size: contain
+---
 template: inverse
 # Sistema informático expedición en el barco
 ---
 # Servidores hardware
-- En un portátil viejo: Ubuntu 16.10 (se calentaba, etc.). Fué cómodo porqué lo llevamos ya semi configurado de casa
+- Un portátil viejo: Ubuntu 16.10 (se calentaba, etc.). Fué cómodo porqué lo llevamos ya semi configurado de casa
 - (segundo mes hasta el final): Añadimos un portátil nuevo con Ubuntu 16.10
+- Usamos muchas tarjetas de red tipo USB (para conectar los portátiles a la red de la expedición, tripulación, Internet, red del puente de mando...)
 
 ![computer room](images/computer_room.jpg)
 
@@ -384,15 +424,16 @@ background-image: url(images/iridium3.jpg)
 background-size: contain
 ---
 # Necesidades de comunicaciones
-- Científicos necesitan:
+- Los científicos necesitan:
  - Bajar imagenes de satélite de hielo
  - Bajar modelos meteorológicos
  - Comunicarse con sus equipos
  - Comunicarse con família
-- Periodistas necesitan:
+- Los periodistas necesitan:
  - Subir fotos
  - ¡Subir vídeos!
  - Enviar textos
+ - Comunicarse con su família
 ---
 # Setup parte 1
 - Un router TP-Link (gama de hogar, no profesional) conectado al Iridium
@@ -706,45 +747,6 @@ background-image: url(images/for_fun/seal_01.jpg)
 background-size: contain
 ---
 template: inverse
-# La web intranet
----
-# Django
-- No sabíamos Django antes de empezar
-- Tiene muy buena documentación off-line
-- Yo tenía mucho código Python en mi ~/git (código mío o código como Calibre, unos 12 GB en total)
----
-# ¿Por qué Django nos era muy cómodo?
-- Escribiendo un modelo genera formularios
-- Cambiando el modelo hace las migraciones en la base de datos
-- Sistema autenticación de usuarios
-- Sistema de permisos de usuarios
-- Sistema de plantillas integrado con los modelos
-- Muy fácil de extender como programador
-- La interfície de usuario (para los científicos) cómoda
----
-# Modelos en Django
-```python
-class StorageCrate(models.Model):
-    name = models.CharField(max_length=255, unique=True)
-    location = models.CharField(max_length=255)
-    description = models.CharField(max_length=255, null=True, blank=True)
-    comment = models.TextField(null=True, blank=True)
-```
---
-- Genera los formularios
-- Genera la tabla en la base de datos si no existia
-- Genera migraciones si el modelo existía y era diferente
----
-# Resumen Django
-- Sin Django hubieramos tardado muchísimo más
-- Si es necesario Django permite fácilmente acceder a la base de datos directamente (y aún crear los models con él)
-- Los "commands" de Django son muy cómodos de escribir
-- Estamos muy contentos con Django aunque primero era reticiente
----
-background-image: url(images/for_fun/clouds_02.jpg)
-background-size: contain
----
-template: inverse
 # Backups
 ---
 # Origen
@@ -765,7 +767,7 @@ template: inverse
 ???
 Cada vez que queríamos añadir un recurso compartido sólo era añadir en esta tabla con el admin de Django
 ---
-# Evitamos cambiar configuraciones del ordenador
+# Evitamos cambiar configuraciones de los ordenadores de científicos
 - Muchos ordenadores Windows estaban conectados a otros dispositivos via conexión LAN
 --
 
@@ -949,7 +951,7 @@ template: inverse
 # Otras tareas
 ---
 template: inverse
-# Profundidad del oceano en la Intranet
+# Profundidad del océano en la Intranet
 ---
 # Profundidad ¿Por qué?
 - Equipo de bentos: estudian los animales del fondo del mar
