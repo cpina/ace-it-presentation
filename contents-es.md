@@ -72,6 +72,13 @@ background-size: contain
 - Ahora trabajo para el Instituto Polar de Suiza (Swiss Polar Institute, Lausanne, Switzerland)
 - Hobbies: pájaros, insectos, el medio ambiente, ciencia, viajar, música
 ---
+class: middle, center
+![data_management_bathymetry_polar_data_centre_BAS](images/bathymetry_polar_data_centre_bas_small.jpg) ![data_management_support_polar_data_centre_BAS](images/at_work_polar_data_centre_bas_small.jpg)
+
+![data_systems_polar_data_centre_BAS](images/systems_polar_data_centre_bas_small.png) ![collections_polar_data_centre_BAS](images/fossil_polar_data_centre_bas_small.jpg)
+
+Images: Polar Data Centre, British Antarctic Survey
+---
 background-image: url(images/rrs_james_clark_ross.jpg)
 background-size: contain
 .footnote[Copyright Adam Bradley]
