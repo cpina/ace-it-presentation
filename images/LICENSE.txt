@@ -5,3 +5,4 @@ Other photos:
 -ace_team.jpg: Copyright Swiss Polar Institute
 -ace_final_map_official.png: Copyright Swiss Polar Institute
 -logo_ACE.png: Copyright Swiss Polar Institute
+-Iridium_Coverage_Animation.gif: Wikipedia

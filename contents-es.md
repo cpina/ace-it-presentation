@@ -10,6 +10,7 @@ class: title-slide
 
 .right[Carles Pina and Jen Thomas]
 ---
+layout: false
 # Contenido
 - Quienes somos
 - ¿Qué es ACE?
@@ -17,7 +18,17 @@ class: title-slide
 - Sistema informático y telecomunicaciones
 - Sistema de email
 - Django en la expedición
-- Otros: backups, GPS, Ferrybox, profundidad, CTD, paquetes, LibreOffice...
+- Otros:
+ - backups
+ - GPS
+ - Ferrybox
+ - profundidad
+ - CTD
+ - paquetes
+ - LibreOffice...
+???
+
+Dar las gracias a Alex Pachecho, Ricardo Inquilla, Daniel Yucra y a la universidad por invitarnos.
 ---
 template: inverse
 # Quienes somos
@@ -55,6 +66,9 @@ background-image: url(images/chronojump.png)
 background-size: contain
 ---
 background-image: url(images/grub2.png)
+background-size: contain
+---
+background-image: url(images/olfactory_notifications.jpg)
 background-size: contain
 ---
 ## Otras cosas
@@ -169,8 +183,8 @@ Nos dicen que 500 GB (0.5 TB)
 
 Incluyó bajarse 300 MB para los Synologys: corrí a una cafeteria y después al hotel para bajarme los ficheros necesarios.
 ---
-# Material sobrante
-En un barco hay uno de recambio de casi todo.
+# Material de respuesto
+En un barco hay piezas de recambio para casi todo.
 
 Compramos material sobrante (discos, switches, etc.) ¡Durante un mes no teníamos acceso a ninguna tienda!
 ---
@@ -214,7 +228,7 @@ background-image: url(images/intranet_location.png)
 background-size: contain 
 ---
 # Mapa
-- Yo había usado la librería Leaflet (sobretodo por Benches)
+- Yo había usado la librería Leaflet (sobretodo para Benches)
 --
 
 - Queríamos hacer un mapa de la expedición:
@@ -241,9 +255,12 @@ template: inverse
 - En un portátil viejo: Ubuntu 16.10 (se calentaba, etc.). Fué cómodo porqué lo llevamos ya semi configurado de casa
 - (segundo mes hasta el final): Añadimos un portátil nuevo con Ubuntu 16.10
 
-## Tareas de los servidores
-- Django (ver más tarde)
-- Sistema de email (ver más tarde)
+![computer room](images/computer_room.jpg)
+
+---
+# Tareas de los servidores
+- Django (ver más adelnate)
+- Sistema de email (ver más adelante)
 - Subir/bajar ficheros internet (ver más adelante)
 - DNS (Bind) (para http://ace-intranet.lan, http://ace-mail.lan)
 - DHCP Server (ISC DHCP)
@@ -271,6 +288,7 @@ template: inverse
 
 
 ![NAS](images/Iridium_Coverage_Animation.gif)
+
 (imagen de Wikipedia)
 ---
 # Iridium
@@ -292,7 +310,9 @@ template: inverse
 - Por la noche a veces se pueden ver (como estrellas fugaces)
 --
 
-Estan lanzando satélites de nueva generación
+- Estan lanzando satélites de nueva generación
+--
+
 - Hay cobertura en el polo norte y sur! Pero MUY lento y inestable: se conecta y desconecta porqué no son geostacionarios y hay cambios de satélite
 ---
 background-image: url(images/iridium1.jpg)
@@ -309,7 +329,7 @@ background-size: contain
 ---
 # VSAT
 - No usamos VSAT durante la expedición
-- Cuando funcionaba (en el hemisferio norte) con el contrato que el barco tenía: ¡unos 10 Mbps estables!
+- Cuando lo pude probar (hemisferio norte, por el contrato que el barco tiene):  ¡unos 10 Mbps estables!
 - La antena apunta siempre (con motores) al satélite geostacionario
 ---
 background-image: url(images/iridium3.jpg)
@@ -327,7 +347,7 @@ background-size: contain
  - Enviar textos
 ---
 # Setup parte 1
-- Un router TP-Link conectado al Iridium
+- Un router TP-Link (gama de hogar, no profesional) conectado al Iridium
 - Dos cables con ancho de banda "ilimitado"
 - El sistema WiFi como red de invitados y como máximo el 50% o 70% de velocidad y menos prioridad
 
@@ -339,13 +359,16 @@ La priorización sólo no funcionaba bien porqué la conexión es inestable
 - Fué bastante mal:
  - Windows tiene time-outs cortos (e.g. para DNS)
  - Thunderbird tiene problemas con conexiones inestables (y mala información para el usuario)
- - Tuvimos que configurar muchos Thunderbirds de diferentes proveedores
+ - Tuvimos que configurar muchos Thunderbirds para diferentes proveedores (universidades, empresas, etc.)
  - Nunca sabíamos si había un error de configuración (servidores IMAP, SSL, usuario/contraseña) o bien de conexión
  - Configuramos Thunderbird para bajar sólo emails recientes, sólo si son más pequeños de 50 KB, etc. pero no ayudó mucho
- - Me dolía ver gente esperando para enviar un email delante de las pantallas
+ - Me dolía ver gente esperando para enviar un email delante de las pantallas. No era fiable y era muy estresante
 
 ???
 ¡Mucha gente casi golpeando portátiles!
+---
+background-image: url(images/for_fun/penguins_01.jpg)
+background-size: contain
 ---
 # Whatsapp
 En el WiFi como invitados mucha gente usaba WhatsApp.
@@ -392,7 +415,7 @@ Del "man rsync":
 
 rsync usa ssh para conectar, asegurar que pasamos timeouts o a veces se quedaba mucho más tiempo sin enviar nada con conexión
 
-# inplace
+# --inplace
 
 Si rsync se cancelaba dejaba el fichero incompleto: así seguía después. Por defecto hace un fichero temporal que se borra
 ---
@@ -401,6 +424,16 @@ Si rsync se cancelaba dejaba el fichero incompleto: así seguía después. Por d
 - En un entorno de estrés: tormentas, problemas técnicos, gente que su doctorado depende de la expedición, etc.
 - Periodistas esperandome a las 7 de la mañana diciendo "Me levanté a las 4 y no he podido enviar ningún WhatsApp!!!!"
 - Gente furiosa golpeando los portátiles
+- A mí me funcionaba bien con:
+ - fetchmail
+ - postfix
+ - mutt
+---
+background-image: url(images/carles_mail_system.png)
+background-size: contain
+---
+background-image: url(images/for_fun/iceberg_01.jpg)
+background-size: contain
 ---
 template: inverse
 # Internet parte 2
@@ -410,7 +443,7 @@ Cuando llegamos a Austrália:
 - Compré (para 3 meses) un servidor VPS
 - Configuré Postfix (SMTP) i Dovecot (IMAP)
 - Configuré un servidor (un portátil) en el barco con Roundcube (Webmail), fetchmail (cliente IMAP) y Postfix.
-- Con Django hicimios un sistema para crear usuarios en el servidor del barco y en el servidor de Internet
+- Con Django hicimos un sistema para crear usuarios en el servidor del barco y en el servidor de Internet
 ---
 # Crear los usuarios
 Como tenía poco tiempo el script de Django sencillamente imprimía los comandos y los copié-pegué en el servidor local o remoto:
@@ -445,12 +478,13 @@ echo jen.thomas | saslpasswd2 -u ace-expedition.net Bae5hahgho1iephuu5qu
 # Recepción de emails (sistema 1)
 - Con Django generé un .fetchmailrc que bajaba todos los emails de todos los usuarios (máximo de 50 KB).
 - Resultado:
- - Si no había emails tardaba unas 4 horas a ir a cada usuario y mirar si había algun email (el protocolo IMAP tiene muchas comunicaciones inecesarias con una latencia alta es muy lento)
+ - Si no había emails tardaba unas 4 horas a ir a cada usuario y mirar si había algun email (el protocolo IMAP tiene bastantes comunicaciones de ida y vuelta, penalizan mucho en comunicaciones con latencias altas)
  - Si la conexión no funcionaba: fetchmail "ignoraba" este usuario hasta la próxima pasada
  - Los emails podían tardar 8 horas a ser recibidos! (y sólo si eran del tamaño decidido)
 - fetchmail es ideal:
  - time outs altos por defecto
  - buena opción -v (con el protocolo IMAP paso a paso)
+ - buenos exit codes
 ---
 # Recepción de emails (sistema 2)
 - Con Django generé un .fetchmailrc de sólo los usuarios de la parte 2 del viaje (se redujo el tiempo de espera de 4 horas a unas 2 horas)
@@ -465,9 +499,12 @@ Dovecot deja los emails nuevos en /home/$USERNAME/Maildir/new
 
 Además el nombre del fichero contiene el timestamp de recepción! P. ej: 1498094976.24034_1.servidor64
 ---
+background-image: url(images/for_fun/clouds_01.jpg)
+background-size: contain
+---
 ## Escoger qué usuarios tienen mails a bajar
 ### Script en el servidor de Internet
-Un script en Python (en shell hubiera sido posible también) escaneaba todos los /home/* y imprimía en la stdout:
+Un script en Python escaneaba todos los /home/* y imprimía en la stdout:
 ```
 /home/carles.pinaestany/Maildir/new/1498094976.24034_1.servidor64
 /home/john.doe/Maildir/new/1375352537.24034_1.servidor64
@@ -479,19 +516,21 @@ Script: https://github.com/cpina/science-cruise-data-management/blob/master/Scie
 cmd = "ssh -o ConnectTimeout=120 -o ServerAliveInterval=120 root@{} \
 ./messages_to_download.py > '{}'".format(settings.IMAP_SERVER, output_file_path)
 ```
-Entonces en el "output_file_path" hay la salida del script del servidor y el script local ordena qué usuarios bajar primero (los usuarios con los mails más viejos).
+Entonces en el fichero "output_file_path" hay la salida del script del servidor. El script local ordena qué usuarios bajar primero (los usuarios con los mails más viejos).
+--
 
-El script de Python entonces genera "fetchmailrc" para este usuario y ejecuta:
+
+El script de Python entonces genera un "fetchmailrc" para este usuario y ejecuta:
 ```python
 fetchmail --timeout 120 --fetchmailrc {} --pidfile {}".format(file_name, pidfile)
 ```
-Hasta que funcione! (en un while)
+¡Hasta que funcione! (en un while, mirando los exit codes -uno era para "mensaje demasiado grande")
 
 Script: https://github.com/cpina/science-cruise-data-management/blob/master/ScienceCruiseDataManagement/main/management/commands/downloademailsbyage.py
 ---
 # Emails demasiado grandes
 - Durante unos días la gente no sabía si habían recibido emails demasiado grandes
-- Hice un email notifier. Usé Python con imaplib (imaplib para conectarse y ver qué emails son grandes)
+- Hice un notificador de emails grandes. Usé Python con imaplib (imaplib para conectarse y ver qué emails son grandes)
 
 Script: https://github.com/cpina/science-cruise-data-management/blob/master/ScienceCruiseDataManagement/main/management/commands/warningoversizeemail.py
 ---
@@ -520,22 +559,47 @@ warningoversizeemail.py hacia:
 El mail de notificación decía "si este email es muy importante reenvia la notificación al equipo de data management"
 ---
 # ¿Cómo bajamos los emails grandes?
-- Una idea sería usar fetchmail sin el límite de maximo email. Pero la conexión era MUY inestable, bajarse algo de más de 500 KB era difícil
+- Una idea sería usar fetchmail sin el límite de maximo email. Pero la conexión era MUY inestable, bajarse algo de más de 500 KB seguido era casi imposible
 --
 
 - Divide and conquer
 --
 
 
-# rsync!
+## ¡rsync!
 --
 
 ¡Usar rsync para bajar emails!
-(o "IMAP over rsync")
 ---
 # downloademail.py
-- Dado el usuario y email UID se baja el fichero con rsync a una carpeta IMAP nueva (Downloaded emails) (va probando hasta que funciona!)
-- Añade la carpeta "Downloaded emails" en las carpetas del usuario (Dovecot: muy bien! Es un fichero de texto que se llama "subscriptions"
+- ./downloademail.py $USERNAME $UID
+--
+
+- Baja el fichero $USERNAME/Maildir/dovecot-uidlist . Contiene:
+--
+
+
+```bash
+carles@servidor64:~/Maildir$ cat dovecot-uidlist 
+3 V1336238204 N87624 Gd445dd1a9d8c8e51350f0000d09efc50
+87623 W1257 S1224 :1499969465.29226_1.servidor64
+87624 :1499969500.29282_1.servidor64
+```
+--
+
+- Parsea el dovecot-uidlist para encontrar el filename de un $UID
+--
+
+- Baja (rsync) el fichero que contiene el mail: p. ej. $USERNAME/Maildir/new/1499969500.29282_1.servidor64. Puede tener que reintentar, etc.
+--
+
+- Guarda el fichero bajado en el servidor local en $USERNAME/Maildir/.DownloadedEmails
+--
+
+- Actualiza (si es necesario) el fichero local $USERNAME/Maildir/subscriptions
+---
+background-image: url(images/for_fun/iceberg_02.jpg)
+background-size: contain
 ---
 # Como enviar emails grandes?
 - Los usuarios venían y nos llevaban ficheros grandes (más de la capacidad del mail máxima). En una memória USB, carpeta compartida, etc.
@@ -559,7 +623,7 @@ Un script que subía ficheros de un directorio en orden alfabético.
 Los ficheros que nos pasaban los copiabamos con orden de preferencia:
 ```
 010-john-photos_of_fish.zip
-020-jen-video.zip
+020-jen-data.zip
 030-james-test_files.zip
 ```
 ---
@@ -574,7 +638,7 @@ Ver: https://github.com/cpina/rsync-queue/blob/master/rsync_queue.py#L96
 - En algunos casos datos científicos no estaban disponibles en Internet con rsync
 --
 
-- Lo mejor era bajarlos con wget en el servidor de Internet...
+- Lo mejor era bajarlos con wget en el servidor de Internet... (o hicimos scripts en Python para bajar ficheros que su nombre cambiaba con la fecha, horas, etc.).
 --
 
 - ...y usar rsync para bajarlos al barco
@@ -589,6 +653,9 @@ Hablar del sabotaje?
 - Desconectar el cable
 - Conectarlo a un sitio diferente
 - ...
+---
+background-image: url(images/for_fun/seal_01.jpg)
+background-size: contain
 ---
 template: inverse
 # La web intranet
@@ -629,6 +696,9 @@ class StorageCrate(models.Model):
 
 - Sistema de comandos para interactuar con los modelos
 ---
+background-image: url(images/for_fun/clouds_02.jpg)
+background-size: contain
+---
 template: inverse
 # Backups
 ---
@@ -664,6 +734,9 @@ Cada vez que queríamos añadir un recurso compartido sólo era añadir en esta 
 - Y una tabla en la base de datos con los últimos resultados
 --
 La idea es un script en Python que usa rsync y es hace los mount/rsync/umount basado en los datos que hay en el model (tabla)
+---
+background-image: url(images/for_fun/iceberg_03.jpg)
+background-size: contain
 ---
 template: inverse
 # GPS
@@ -718,6 +791,9 @@ En la primera isla descubrí que el GPS no funcionaba (o la red? O el Windows? o
 
 ???
 ¿Qué hay como Serial Port Splitter en GNU/Linux?
+---
+background-image: url(images/for_fun/penguins_04.jpg)
+background-size: contain
 ---
 template: inverse
 # Ferrybox
@@ -792,10 +868,14 @@ open("/var/ferrybox/log/testpointer.ack.ack", O_RDWR|O_CREAT|O_TRUNC,
 ```bash
 ssh fbuser@ferrybox.lan /home/fbuser/bin/output_last_information.sh
 ```
+
 Cada 5 minutos, desde un script en Python que captura el stdout, lo parsea y lo pone en una base de datos (https://github.com/cpina/science-cruise-data-management/blob/master/ScienceCruiseDataManagement/ship_data/management/commands/getferryboxdata.py)
 --
 
--Usando Django, una vista, template y Chart.js hice una visualización de Ferrybox
+- Usando Django, una vista, template y Chart.js hice una visualización de Ferrybox
+---
+background-image: url(images/ferry_box_screenshot.png)
+background-size: contain
 ---
 template: inverse
 # Missing files
@@ -811,7 +891,7 @@ template: inverse
 http://github.com/cpina/missing-files
 --
 
-- Había hecho uno parecido para contenido de ficheros
+- Había hecho uno parecido (para mis fotos) para contenido de ficheros
 ---
 template: inverse
 # Otras tareas
