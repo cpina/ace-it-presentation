@@ -85,6 +85,7 @@ background-size: contain
 - ...
 ---
 # Jen Thomas
+???
 - Nací en un pueblo en Inglaterra
 - Trabajaba 3.5 años como "Data Manager" del Instituto Británico de la Antartida (British Antarctic Survey, Cambridge, Reino Unido) 
 - Ya había hecho dos expediciones en un barco a la sub-Antártida 
@@ -102,7 +103,7 @@ background-image: url(images/rrs_james_clark_ross.jpg)
 background-size: contain
 .footnote[Copyright Adam Bradley]
 ---
-Mapping bird movements with Leaflet and Open Street Map
+Mapas de dispersión de aves usando Leaflet y Open Street Map
 
 ![mapping_bird_movements](images/bird_movements.png)
 ---
@@ -341,8 +342,8 @@ Coastline_high_res_polygon.geojson Coastline_high_res_polygon.shp
 ---
 # Resumen Django
 - Sin Django hubieramos tardado muchísimo más
-- Si es necesario Django permite fácilmente acceder a la base de datos directamente (y aún crear los models con él)
-- Los "commands" (parte de la aplicación de Django pero para interactuar desde la línea de comandos, no desde el navegador) son muy cómodos de escribir
+- Si es necesario Django permite fácilmente acceder a la base de datos directamente (y aún crear los objetos de los modelos)
+- Los "commands" (parte de la aplicación de Django pero se usan desde la línea de comandos, no desde el navegador) son muy cómodos de escribir
 - Estamos muy contentos con Django (aunque primero pensé que no sería tan útil)
 ---
 background-image: url(images/for_fun/clouds_02.jpg)
@@ -1000,11 +1001,12 @@ template: inverse
 template: inverse
 # Profundidad del océano en la Intranet
 ---
-# Profundidad ¿Por qué?
-- Equipo de bentos: estudian los animales del fondo del mar
-- Querían saber la profundidad
-- Tienen un dispositivo a la proa del barco que baja unos 700 metros y recoge muestras
-- A veces ponen una GoPro
+???
+-Profundidad ¿Por qué?
+ - Equipo de bentos: estudiaron los animales del fondo del mar
+ - Querían saber la profundidad para saber de dónde vinieron y entonces entender mejor las comunidades
+ - Tienen un dispositivo a la proa del barco que baja unos 700 metros y recoge muestras
+ - A veces pusieron una GoPro para ver que pasó con la red y cómo era el fondo del mar (rocoso, de arena etc)
 ---
 background-image: url(images/trawling_winch.jpg)
 background-size: contain
