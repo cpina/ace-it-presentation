@@ -115,9 +115,13 @@ class: middle, center
 ---
 background-image: url(images/ace_final_map_official.png)
 background-size: contain
-.footnote[Copyright Swiss Polar Institute]
+.footnote[Copyright: Swiss Polar Institute]
 ???
 - Inicios de noviembre 2017: David Walton contacta a Jen (en 6 semanas nos pusimos apunto: pruebas médicas, entender qué hacer, empezar una aplicación para los científicos)
+- expedicion pagada por un filantropo suizo
+- unica / especial porque estaba realizada en un verano solo, y combina una variedad de ciencia (del oceano, de la atmósfera y también de las islas)
+- 3 etapas
+- Inicios de noviembre: David Walton contacta a Jen (en 6 semanas nos pusimos apunto: pruebas médicas, entender qué hacer, empezar una aplicación para los científicos)
 - 20 de diciembre: inicio de parte 1 desde Cape Town (Sud África)
 - 22 de enero: inicio de parte 2 desde Hobart (Austrália)
 - 26 de febrero: inicio de parte 3 desde Punta Arenas (Chile)
@@ -128,10 +132,8 @@ Después volvimos a Europa en barco (llegamos el 12 de abril)
 class: middle, center
 # R/V Akademik Tryoshnikov
 ---
-background-image: url(images/akademik_tryoshnikov.jpg)
+background-image: url(images/akademik_tryoshnikov_grytviken.jpg)
 background-size: contain
-
-.footnote[Imagen de https://public.wmo.int/en/media/news-from-members/december-2016-research-vessel-akademik-tryoshnikov-will-be-sent-expedition]
 ???
 - Rompe hielos ruso
 - 133 metros de eslora
@@ -163,16 +165,38 @@ class: middle, center
 template: inverse
 # La gestión de datos
 ---
+class: middle, center
+## ¿Qué es y qué hicimos?
+???
 - Ayuda a los científicos de:
  - guardar los datos
  - colectar metadatos sobre la expedición
- - escribir metadatos
- - para hacer los datos más útiles y abiertos para el futuro
+ - crear un log de muestras
+---
+class: middle, center
+## ¿Por qué?
+???
+- escribir metadatos
+ - como, por que, por quien, cuando, donde, problemas
+- para hacer los datos más útiles y abiertos para el futuro
 ---
 background-image: url(images/metadata_discovery.png)
 background-size: contain
 ---
 background-image: url(images/data_discovery.png)
+background-size: contain
+---
+# Resumen de nuestro trabajo
+- guardar datos
+- una base de datos
+- interfaz de la base de datos 
+- intranet para acceder a los datos, ver información
+- mapa de la ruta
+- comunicaciones - email, internet
+- ayuda con dispositivos, portatiles, software....
+- aconsejar a los científicos en la gestión de datos
+---
+background-image: url(images/for_fun/penguins_02.jpg)
 background-size: contain
 ---
 # ¿Dónde guardar los datos?
@@ -184,7 +208,7 @@ background-size: contain
 ### Preguntamos al barco qué almacenamiento tienen
 --
 
-Nos dicen que 500 GB (0.5 TB)
+- Nos dicen que 500 GB (0.5 TB)
 ---
 # Datos, datos, datos...
 - Preguntamos, miramos, comparamos y al final compramos:
@@ -205,20 +229,22 @@ Nos dicen que 500 GB (0.5 TB)
 
 Incluyó bajarse 300 MB para los Synologys: corrí a una cafeteria y después al hotel para bajarme los ficheros necesarios.
 ---
-# Material de respuesto
-En un barco hay piezas de recambio para casi todo.
+# Material de repuesto
+En un barco necesitas piezas de recambio para casi todo.
 
 Compramos material sobrante (discos, switches, etc.) ¡Durante un mes no teníamos acceso a ninguna tienda!
+???
+- Algunos equipos que estan acustombrados en hacer estos viajes llevaban mas que 50 cajas de cosas por si acaso...
 ---
 background-image: url(images/propeller_blade.jpg)
 background-size: contain 
 
 ???
-Explicar como cambiar: dry dock o bien ¿playa cuando baja la marea?
-Tienen que estar equilibrados o sinó no va bien
+- Explicar como cambiar: dry dock o bien ¿playa cuando baja la marea?
+- Tienen que estar equilibrados o sinó no va bien y hay demasiada vibración.
 ---
-# La Base de Datos
-- Teníamos que crear una base de datos para que los científicos introdujeran información de sus actividades
+# La base de datos
+- Teníamos que crear una base de datos para que los científicos introdujeran información de sus actividades - sus metadatos
 - Yo conocía Flask, Mysql, SQLAlchemy
 - Pero ¿cómo hacer los formularios para entrar todo? (a mano con Flask tardaría mucho y con C++/Qt sería muy difícil!)
 - Estaba una noche en casa un amigo en Londres y le pregunté como lo haría él
