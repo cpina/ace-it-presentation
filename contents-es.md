@@ -329,7 +329,7 @@ background-size: contain
 ---
 # Resumen Django
 - Sin Django hubieramos tardado muchísimo más
-- Si es necesario Django permite fácilmente acceder a la base de datos directamente (y aún crear los models con él)
+- Si es necesario Django permite fácilmente acceder a la base de datos directamente (y aún crear los modelos con él)
 - Los "commands" (parte de la aplicación de Django pero se usa desde la línea de comandos, no desde la web) de son muy cómodos de escribir
 - Estamos muy contentos con Django (aunque primero pensé que no sería tan útil)
 ---
