@@ -187,21 +187,21 @@ background-image: url(images/data_discovery.png)
 background-size: contain
 ---
 # Resumen de nuestro trabajo
-- guardar datos
-- una base de datos
-- interfaz de la base de datos 
-- intranet para acceder a los datos, ver información
-- mapa de la ruta
-- comunicaciones - email, internet
-- ayuda con dispositivos, portatiles, software....
-- aconsejar a los científicos en la gestión de datos
+- Guardar datos
+- Una base de datos (eventos, metadatos, etc.)
+- Interfaz de la base de datos 
+- Intranet para acceder a los datos, ver información
+- Mapa de la ruta
+- Comunicaciones - email, internet
+- Ayuda con dispositivos, portátiles, software....
+- Aconsejar a los científicos en la gestión de datos
 ---
 background-image: url(images/for_fun/penguins_02.jpg)
 background-size: contain
 ---
 # ¿Dónde guardar los datos?
 - A principios de diciembre Jen preguntó a los 22 investigadores principales cuantos GB necesitarán para almacenar sus datos
-- Llegamos a una estimación de 60 TB
+- Estimamos en total unos 60 TB
 --
 
 
@@ -220,7 +220,11 @@ background-size: contain
  - ...
 --
 
-¡todo esto llegó a Sud África 2 días antes de salir!
+
+¡todo esto llegó a Sudáfrica 2 días antes de salir!
+
+???
+Tuvimos que atar todo para que no se cayera todo
 ---
 # Datos, datos, datos...
 ¡Lo pusimos a punto!
@@ -230,7 +234,7 @@ background-size: contain
 Incluyó bajarse 300 MB para los Synologys: corrí a una cafeteria y después al hotel para bajarme los ficheros necesarios.
 ---
 # Material de repuesto
-En un barco necesitas piezas de recambio para casi todo.
+En un barco se necesitan piezas de recambio para casi todo.
 
 Compramos material sobrante (discos, switches, etc.) ¡Durante un mes no teníamos acceso a ninguna tienda!
 ???
@@ -249,18 +253,20 @@ template: inverse
 # Django
 - No sabíamos Django antes de empezar
 - Tiene muy buena documentación off-line
-- Yo tenía mucho código Python en mi ~/git (código mío o código como Calibre, unos 12 GB en total)
+- Yo tenía mucho código Python en mi ~/git (código mío, de proyectos libres). Sirve a veces más que libros, manuales, etc.
 ---
 # ¿Por qué Django nos era muy cómodo?
-- Escribiendo un modelo genera formularios
+- Escribiendo un modelo genera formularios y base de datos
 - Cambiando el modelo hace las migraciones en la base de datos
 - Sistema autenticación de usuarios
 - Sistema de permisos de usuarios
 - Sistema de plantillas integrado con los modelos
 - Muy fácil de extender como programador
-- La interfície de usuario (para los científicos) cómoda
+- La interfaz de usuario (parte admin) cómoda sin esfuerzo
 ---
 # Modelos en Django
+Ejemplo de model en Django:
+
 ```python
 class StorageCrate(models.Model):
     name = models.CharField(max_length=255, unique=True)
@@ -270,13 +276,13 @@ class StorageCrate(models.Model):
 ```
 --
 - Genera los formularios
-- Genera la tabla en la base de datos si no existia
+- Genera la tabla en la base de datos si no existía
 - Genera migraciones si el modelo existía y era diferente
 ---
 # La base de datos
 - Teníamos que crear una base de datos para que los científicos introdujeran información de sus actividades - sus metadatos
 - Yo conocía Flask, Mysql, SQLAlchemy
-- Pero ¿cómo hacer los formularios para entrar todo? (a mano con Flask tardaría mucho y con C++/Qt sería muy difícil!)
+- Pero ¿cómo hacer los formularios para entrar todos los datos? (a mano con Flask tardarí mucho, con C++/Qt aún peor!)
 - Estaba una noche en casa un amigo en Londres y le pregunté como lo haría él
 --
 
@@ -284,7 +290,7 @@ class StorageCrate(models.Model):
 (yo pensaba que no quería Django, que era demasiado grande)
 --
 
-- Y me hizo un proyecto pequeño en Django para que viera como funciona
+- Y hicimos un proyecto pequeño en Django de ejemplo para que viera como funciona
 ---
 class: middle, center
 # ¡Gracias Fran y Django!
@@ -320,16 +326,23 @@ background-image: url(images/intranet_map.png)
 background-size: contain 
 ---
 # Proyección del mapa
-- Leaflet tiene soporte para diferente proyecciones (con un plugin)
+- Leaflet tiene soporte para diferentes proyecciones (con un plugin)
 - La Antártida normalmente se visualiza con proyección EPSG:3031 (el usado normalmente es Mercator)
 - No hay tiles (imágenes PNG como las de openstreetmap.org) renderizadas con la proyección EPSG:3031
-- En lugar de tiles usé coastlines: describen el contorno
-- Pasé las coastlines del formato original a geojson (para que Leaflet lo cargara)
+- En lugar de tiles usé shapefiles (*.shp): describen el contorno de la Antártida
+- Pasé los shapefiles del formato original (shp) a geojson (para que Leaflet lo cargara)
+--
+
+
+```bash
+ogr2ogr -f GeoJSON -simplify 1000 -t_srs EPSG:3031 \
+Coastline_high_res_polygon.geojson Coastline_high_res_polygon.shp
+```
 ---
 # Resumen Django
 - Sin Django hubieramos tardado muchísimo más
 - Si es necesario Django permite fácilmente acceder a la base de datos directamente (y aún crear los models con él)
-- Los "commands" (parte de la aplicación de Django pero se usa desde la línea de comandos, no desde la web) de son muy cómodos de escribir
+- Los "commands" (parte de la aplicación de Django pero para interactuar desde la línea de comandos, no desde el navegador) son muy cómodos de escribir
 - Estamos muy contentos con Django (aunque primero pensé que no sería tan útil)
 ---
 background-image: url(images/for_fun/clouds_02.jpg)
@@ -341,13 +354,14 @@ template: inverse
 # Servidores hardware
 - Un portátil viejo: Ubuntu 16.10 (se calentaba, etc.). Fué cómodo porqué lo llevamos ya semi configurado de casa
 - (segundo mes hasta el final): Añadimos un portátil nuevo con Ubuntu 16.10
-- Usamos muchas tarjetas de red tipo USB (para conectar los portátiles a la red de la expedición, tripulación, Internet, red del puente de mando...)
 
 ![computer room](images/computer_room.jpg)
 
+???
+Usamos muchas tarjetas de red tipo USB (para conectar los portátiles a la red de la expedición, tripulación, Internet, red del puente de mando...)
 ---
 # Tareas de los servidores
-- Django (ver más adelnate)
+- Sistema Django (ver más adelnate)
 - Sistema de email (ver más adelante)
 - Subir/bajar ficheros internet (ver más adelante)
 - DNS (Bind) (para http://ace-intranet.lan, http://ace-mail.lan)
@@ -356,8 +370,7 @@ template: inverse
 - Importar datos GPS (ver más adelante)
 - Copias de seguridad de diferentes ordenadores (ver más adelante)
 - Copias de seguridad entre NAS1 y NAS2 (rsync)
-- Reiniciar el router TP-Link a media noche (o por la mañana...)
-- Otras tareas (p. ej. reiniciar un router a medianoche)
+- Muchas otras tareas pequeñas (p. ej. reiniciar un router a medianoche)
 
 ???
 -OSX no resuelve dirección dominios si no tiene conexión a internet?
@@ -367,8 +380,8 @@ template: inverse
 # Internet en el barco
 ---
 # Introducción
-- Teníamos 2 antenas Iridium.
-- Inicialmente una para llamadas, otra para Internet
+- Teníamos 2 sistemas Iridium
+- Inicialmente un sistema para llamadas, otro para Internet
 - Esto son, 128 kbits para _oficialmente_ 80 personas
 --
 
@@ -386,7 +399,7 @@ template: inverse
 - Nombre Iridium porqué originalmente habia 77 satélites: el número atómico de Iridium 
 --
 
-- Tienen satélites de sobras: los activan y ponen en el plano cuando hay problemas
+- Tienen satélites sin usar: los activan y ponen en el plano cuando hay problemas
 --
 
 - Hay cobertura en el polo norte y sur! Pero MUY lento y inestable: se conecta y desconecta porqué no son geostacionarios y hay cambios de satélite
@@ -401,7 +414,7 @@ template: inverse
 - Estan lanzando satélites de nueva generación
 --
 
-- Hay cobertura en el polo norte y sur! Pero MUY lento y inestable: se conecta y desconecta porqué no son geostacionarios y hay cambios de satélite
+- ¡Hay cobertura en el polo norte y sur! Pero MUY lento y inestable: se conecta y desconecta porqué no son geostacionarios y hay cambios de satélite
 ---
 background-image: url(images/iridium1.jpg)
 background-size: contain
@@ -419,6 +432,7 @@ background-size: contain
 - No usamos VSAT durante la expedición
 - Cuando lo pude probar (hemisferio norte, por el contrato que el barco tiene):  ¡unos 10 Mbps estables!
 - La antena apunta siempre (con motores) al satélite geostacionario
+- A unos 35.900 Km de la tierra (geoestacionario)
 ---
 background-image: url(images/iridium3.jpg)
 background-size: contain
@@ -427,18 +441,17 @@ background-size: contain
 - Los científicos necesitan:
  - Bajar imagenes de satélite de hielo
  - Bajar modelos meteorológicos
- - Comunicarse con sus equipos
- - Comunicarse con família
 - Los periodistas necesitan:
  - Subir fotos
  - ¡Subir vídeos!
- - Enviar textos
- - Comunicarse con su família
+- Todos necesitan/quieren:
+ - Comunicarse con sus equipos (resolver problemas)
+ - Comunicarse con su família, amigos
 ---
 # Setup parte 1
 - Un router TP-Link (gama de hogar, no profesional) conectado al Iridium
 - Dos cables con ancho de banda "ilimitado"
-- El sistema WiFi como red de invitados y como máximo el 50% o 70% de velocidad y menos prioridad
+- Sistema WiFi del router como red de invitados (guest network) limitando la velocidad (50% o 70% del total) y menos prioridad
 
 ???
 La priorización sólo no funcionaba bien porqué la conexión es inestable
@@ -450,7 +463,7 @@ La priorización sólo no funcionaba bien porqué la conexión es inestable
  - Thunderbird tiene problemas con conexiones inestables (y mala información para el usuario)
  - Tuvimos que configurar muchos Thunderbirds para diferentes proveedores (universidades, empresas, etc.)
  - Nunca sabíamos si había un error de configuración (servidores IMAP, SSL, usuario/contraseña) o bien de conexión
- - Configuramos Thunderbird para bajar sólo emails recientes, sólo si son más pequeños de 50 KB, etc. pero no ayudó mucho
+ - Configuramos Thunderbird para bajar sólo emails recientes, sólo si son más pequeños de 50 KB, etc.
  - Me dolía ver gente esperando para enviar un email delante de las pantallas. No era fiable y era muy estresante
 
 ???
@@ -460,7 +473,7 @@ background-image: url(images/for_fun/penguins_01.jpg)
 background-size: contain
 ---
 # WhatsApp
-En el WiFi como invitados mucha gente usaba WhatsApp.
+En el WiFi red invitados mucha gente usaba WhatsApp.
 
 - En iPhone no se puede escribir si WhatsApp piensa que no hay conexión
 - En Android los mensajes salían y llegaban pero a veces tardaba horas
@@ -502,7 +515,7 @@ Del "man rsync":
 ---
 # rsync -e "ssh -o ConnectTimeout=120"
 
-rsync usa ssh para conectar, asegurar que pasamos timeouts o a veces se quedaba mucho más tiempo sin enviar nada con conexión
+rsync usa ssh para conectar, reducimos los timeouts para que se reconectara más rápido.
 
 # --inplace
 
@@ -533,9 +546,10 @@ Cuando llegamos a Austrália:
 - Configuré Postfix (SMTP) i Dovecot (IMAP)
 - Configuré un servidor (un portátil) en el barco con Roundcube (Webmail), fetchmail (cliente IMAP) y Postfix.
 - Con Django hicimos un sistema para crear usuarios en el servidor del barco y en el servidor de Internet
+- Usé fetchmail, postfix, etc. que me había funcionado bien para mí para los 80 expedicionarios
 ---
 # Crear los usuarios
-Como tenía poco tiempo el script de Django sencillamente imprimía los comandos y los copié-pegué en el servidor local o remoto:
+Como tenía poco tiempo el script de Django sencillamente imprimía por pantalla los comandos y los copié-pegué en el servidor local o remoto:
 ## Local
 ```bash
 useradd --create-home carles.pinaestany
@@ -567,13 +581,15 @@ echo jen.thomas | saslpasswd2 -u ace-expedition.net Bae5hahgho1iephuu5qu
 # Recepción de emails (sistema 1)
 - Con Django generé un .fetchmailrc que bajaba todos los emails de todos los usuarios (máximo de 50 KB).
 - Resultado:
- - Si no había emails tardaba unas 4 horas a ir a cada usuario y mirar si había algun email (el protocolo IMAP tiene bastantes comunicaciones de ida y vuelta, penalizan mucho en comunicaciones con latencias altas)
+ - Si no había emails fetchmail tardaba unas 4 horas para comprobar que no había emails (se conectaba como cada usuario) (el protocolo IMAP tiene bastantes comunicaciones de ida y vuelta, penalizan mucho en comunicaciones con latencias altas)
  - Si la conexión no funcionaba: fetchmail "ignoraba" este usuario hasta la próxima pasada
  - Los emails podían tardar 8 horas a ser recibidos! (y sólo si eran del tamaño decidido)
 - fetchmail es ideal:
  - time outs altos por defecto
  - buena opción -v (con el protocolo IMAP paso a paso)
  - buenos exit codes
+???
+Aprendí como va el protocolo IMAP, ssh... gracias a las conexiones lentas
 ---
 # Recepción de emails (sistema 2)
 - Con Django generé un .fetchmailrc de sólo los usuarios de la parte 2 del viaje (se redujo el tiempo de espera de 4 horas a unas 2 horas)
@@ -593,19 +609,22 @@ background-size: contain
 ---
 ## Escoger qué usuarios tienen mails a bajar
 ### Script en el servidor de Internet
-Un script en Python escaneaba todos los /home/* y imprimía en la stdout:
+Un script en Python escaneaba todos los /home/* y imprimía en la salida estándard:
 ```
 /home/carles.pinaestany/Maildir/new/1498094976.24034_1.servidor64
 /home/john.doe/Maildir/new/1375352537.24034_1.servidor64
 ```
 Script: https://github.com/cpina/science-cruise-data-management/blob/master/ScienceCruiseDataManagement/utilities/messages_to_download.py
+
+???
+Quizás hacer "ssh carles@pina.cat ls" para ver que lo ejecuta en el otro servidor y se ve en local
 ---
 ### Script en el servidor del barco
 ```python
 cmd = "ssh -o ConnectTimeout=120 -o ServerAliveInterval=120 root@{} \
 ./messages_to_download.py > '{}'".format(settings.IMAP_SERVER, output_file_path)
 ```
-Entonces en el fichero "output_file_path" hay la salida del script del servidor. El script local ordena qué usuarios bajar primero (los usuarios con los mails más viejos).
+Entonces en el fichero "output_file_path" hay la salida del script del servidor. El script local decide qué usuarios bajar primero (los usuarios con los mails más viejos).
 --
 
 
@@ -616,16 +635,22 @@ fetchmail --timeout 120 --fetchmailrc {} --pidfile {}".format(file_name, pidfile
 ¡Hasta que funcione! (en un while, mirando los exit codes -uno era para "mensaje demasiado grande")
 
 Script: https://github.com/cpina/science-cruise-data-management/blob/master/ScienceCruiseDataManagement/main/management/commands/downloademailsbyage.py
+
+(también imprime estadísticas)
 ---
 # Emails demasiado grandes
 - Durante unos días la gente no sabía si habían recibido emails demasiado grandes
-- Hice un notificador de emails grandes. Usé Python con imaplib (imaplib para conectarse y ver qué emails son grandes)
+- Hice un notificador de emails grandes. Usé Python con imaplib (imaplib para conectarse y ver qué emails son grandes) (inspirado con el código de "notificaciones olfativas")
 
 Script: https://github.com/cpina/science-cruise-data-management/blob/master/ScienceCruiseDataManagement/main/management/commands/warningoversizeemail.py
 ---
 # Emails demasiado grandes
-En todos los scripts muy importante pensar que la conexión es inestable. El oversize email notifier empezó a funcionar consistentemente cuando hice:
+En todos los scripts es muy importante pensar que la conexión es inestable. El oversize email notifier empezó a funcionar consistentemente cuando hice en su código:
 ```python
+import socket
+
+socket.setdefaulttimeout(30)
+
 while True:
     try:
         print("Checking: {} {}/{}".format(email_account.email_address, index+1, len(emails_active_leg)))
@@ -707,7 +732,6 @@ background-size: contain
 Ver: https://github.com/cpina/rsync-queue
 
 Un script que subía ficheros de un directorio en orden alfabético.
---
 
 Los ficheros que nos pasaban los copiabamos con orden de preferencia:
 ```
@@ -718,16 +742,16 @@ Los ficheros que nos pasaban los copiabamos con orden de preferencia:
 ---
 # La cola: rsync_queue.py
 - Cuando un fichero era subido: se mandaba un mail a nosotros con el enlace y se movía el fichero a uploaded
-- A las 8: killall rsync_queue.py (y este manda un mail a nosotros con el estado de subido del fichero)
-- Internamente usa rsync con la opción --progress y así puede informar via email o puede generar un fichero de log con la salida
+- A las 8: killall rsync_queue.py (y este manda un mail a nosotros con el progreso del fichero que se está subiendo)
+- Internamente usa rsync con la opción --progress y así puede informar via email o puede generar un fichero de log con la salida. Va analizando la salida de rsync
 
 Ver: https://github.com/cpina/rsync-queue/blob/master/rsync_queue.py#L96
 ---
 # Otros datos científicos
-- En algunos casos datos científicos no estaban disponibles en Internet con rsync
+- En algunos casos datos necesarios en el barco estaban en Internet sólo con protocols FTP o HTTP (no con rsync que era lo ideal)
 --
 
-- Lo mejor era bajarlos con wget en el servidor de Internet... (o hicimos scripts en Python para bajar ficheros que su nombre cambiaba con la fecha, horas, etc.).
+- Teníamos scripts en el servidor de Internet (para bajarlo fiablemente) y después scripts con rsync para bajarlo al barco
 --
 
 - ...y usar rsync para bajarlos al barco
@@ -736,7 +760,7 @@ Ver: https://github.com/cpina/rsync-queue/blob/master/rsync_queue.py#L96
 - Conecté el Iridium de teléfono a la red de datos para subir ficheros cuando no había llamadas
 - En el servidor de internet: redirigí el puerto 2222 al puerto 22
 - En el servidor del barco: tenía un default gw (Iridium1). Pero paquetes que iban al puerto 2222 los marcaba para ir a un gw diferente: Iridium2
-- Tenía dos rsync_queue.py: uno que usaba el puerto 22 y el otro el puerto 2222.
+- Tenía dos rsync_queue.py: uno que usaba el puerto 22 y el otro el puerto 2222. Con iptables, etc. conseguí enrutarlo a gateways diferentes.
 ???
 Hablar del sabotaje?
 - Desconectar el cable
@@ -749,16 +773,17 @@ background-size: contain
 template: inverse
 # Backups
 ---
-# Origen
-- De recursos compartidos
+# Origen de los backups
+- De recursos compartidos de Windows
 - De discos duros
 - De zona "staging"
+- De otro servidor Linux (usamos rsync)
 ---
 # Backups de recursos compartidos
 - Fuímos a cada ordenador que recogía datos en el barco (muchos con Windows)
 - Compartimos la carpeta (en sólo lectura)
 - Asignamos una IP estática
-- Teníamos un model en Django que específicabamos:
+- Teníamos un modelo en Django que contenía:
  - IP
  - Usuario
  - Contraseña
@@ -767,7 +792,7 @@ template: inverse
 ???
 Cada vez que queríamos añadir un recurso compartido sólo era añadir en esta tabla con el admin de Django
 ---
-# Evitamos cambiar configuraciones de los ordenadores de científicos
+## Evitamos cambiar configuraciones de los ordenadores de científicos
 - Muchos ordenadores Windows estaban conectados a otros dispositivos via conexión LAN
 --
 
@@ -780,7 +805,9 @@ Cada vez que queríamos añadir un recurso compartido sólo era añadir en esta 
 - Teníamos un mail con el resultado del último backup
 - Y una tabla en la base de datos con los últimos resultados
 --
-La idea es un script en Python que usa rsync y es hace los mount/rsync/umount basado en los datos que hay en el model (tabla)
+
+
+La idea es un script en Python que usa rsync y este hace los mount/rsync/umount basado en los datos que hay en el model (tabla)
 ---
 background-image: url(images/for_fun/iceberg_03.jpg)
 background-size: contain
@@ -789,18 +816,18 @@ template: inverse
 # GPS
 ---
 # GPS Introducción
-- Llegué y era importante que tuvieramos todos los datos del GPS guardados
-- Para saber "¿Dónde estábamos en la fecha+hora D?" (esto alimentaba la base de datos automáticamente)
-- No había nada para esto
+- Era importante que tuviéramos todos los datos de los GPS guardados
+- Para saber "¿Dónde estábamos en la fecha+hora D?"
+- En el barco NO había ningún sistema que ya lo guardara en una base de datos, tampoco en ningún fichero de texto, etc.
 ---
 # GPS Trimble
-- Un ordenador con Windows de la expedición ya tenía acceso a un GPS (por puerto serie)
+- Un ordenador con Windows de la expedición ya tenía acceso a un GPS (por puerto serie) para el EchoSounder
 --
 
 - Este Windows ya tenía instalado el software Serial Port Splitter (https://www.eltima.com/products/serialsplitter/)
 --
 
-- Bajé + instalé GPS NMEA Router software (http://arundale.com/docs/ais/nmearouter.html)
+- Bajé, instalé y configuré "GPS NMEA Router" (http://arundale.com/docs/ais/nmearouter.html)
 --
 
 - Compartí el directorio donde se guardaban los logs
@@ -809,15 +836,33 @@ template: inverse
 - Escribí un parser de NMEA leyendo los ficheros en tiempo real (con rotación de ficheros): lo insertaba a la base de datos (https://github.com/cpina/science-cruise-data-management/blob/master/ScienceCruiseDataManagement/ship_data/management/commands/nmea_file2db.py)
 
 (el parser NMEA es bastante interesante por la clase TailDirectory: lee continuamente del fichero, usa un callback para líneas enteras, comprueba nuevos ficheros en el directorio, etc.)
+
+???
+Ya hay un módulo de Python que puede parsear NMEA, no hace falta escribir un parser
+---
+# Strings NMEA
+```
+$GPDTM,W84,,,,,,W84*66
+$PORZD,A,009.4*31
+$GPZDA,000000,31,12,2016,00,00*4C
+$PORZX,000,0,,,0000,A*0E
+$GPRMC,000001,A,4610.2061,S,05205.1274,E,06.4,224.191,311216,,,D*54
+$GPGGA,000001,4610.2061,S,05205.1274,E,1,12,0.9,37.4,M,,,,*33
+$GPVTG,224.2,T,,M,06.43,N,11.91,K,D*07
+$GPHDT,232.39,T*0C
+$GPROT,-000.16,A*2B
+$PRDCU,111,232.39,00.19,00.54,00.37,R,02.56,00.30,L,A*08
+$GPGSA,A,3,15,13,20,10,12,18,24,71,72,73,74,,,,,,,,,,,,,,1.8,0.9,1.5*3B
+```
 ---
 # GPS Puente de comandamiento (1/2)
-En la primera isla descubrí que el GPS no funcionaba (o la red? O el Windows? o la base de datos? O el visualizador?)
+En la primera isla descubrí que el GPS no funcionaba (¿o la red? ¿o el Windows? ¿o la base de datos? ¿o el visualizador?)
 --
 
-- La tripulación lo apagó
+- Subí corriendo y... la ¡tripulación lo había apagado!
 --
 
-- Buscamos un segundo GPS en el barco: encontramos el del puente de comandamiento
+- Preguntamos para un segundo GPS en el barco: encontramos el del puente de comandamiento
 --
 
 - La tripulación usó Franson GpsGate y "envió" los datos del GPS a nuestra IP via UDP
@@ -826,10 +871,10 @@ En la primera isla descubrí que el GPS no funcionaba (o la red? O el Windows? o
 - (la tripulación añadió una nueva IP de una nueva red a su tarjeta de red a su switch, yo añadí un nuevo dispositivo USB para la nueva red)
 --
 
-- Con ngrep (y tcpdump) ví que sí, llegaban los datos... ¡pero no sabia como guardarlos!
+- Con ngrep (y tcpdump) ví que sí, llegaban los datos... ¡pero no sabía como guardarlos!
 ---
 # GPS Puente de comandamiento (2/2)
-- Investigué, bajé y compilé kplex (http://www.stripydog.com/kplex/index.html): lee del puerto UDP, lo sirve en TCP (útil para tenerlo en otros ordenadores en tiempo real en mi red), lo guarda a un fichero
+- Bajé y compilé kplex (http://www.stripydog.com/kplex/index.html y lo configuré: recibe desde un puerto UDP, lo guarda en un fichero, lo sirve via TCP (útil para tenerlo en otros ordenadores en tiempo real en la red de la expedición)
 --
 
 - Pero kplex no tiene soporte para "un fichero diferente cada dia"... hice un script que modificaba el fichero de configuración y reiniciaba kplex cada dia a media noche
@@ -889,18 +934,18 @@ background-size: contain
 - Nos dijeron que "/ferrybox/bin/ferrycon audit -R" mostraba todos los datos
 --
 
-- Hice un script que cada noche hacía "ferrycon audit -R" y guardaba los datos del dia anterior en un fichero
+- Hice un script que cada noche hacía "ferrycon audit -R" y guardaba los datos del dia anterior en un fichero (parseando la salida de "ferrycon audit -R" y guardando los datos del dia anterior)
 --
 
 - Copié el binario de rsync de Debian Etch a ~/bin/rsync , desde otro ordenador copiaba los ficheros usando "rsync --rsync-path=/home/ferrybox/bin/rsync ferrybox@ferrybox.lan:/var/ferrybox/data ."
 --
 
-- Y ya teníamos un fichero correcto al dia!
-
+- Y cada dia teníamos el fichero del dia anterior!
 ---
 # Ferrybox: tener información a tiempo real
 - Nos dijeron (soporte Ferrybox) que "/ferrybox/bin/ferrycon audit -R -p -f testpointer.ack" mostraba los datos y escribía donde se había acabado de escribir (y la próxima vez sólo mostraba lo nuevo)
 --
+
 
 - No funcionaba:
 ```
@@ -915,7 +960,7 @@ open("/var/ferrybox/log/testpointer.ack.ack", O_RDWR|O_CREAT|O_TRUNC,
 ```
 --
 
-- Creé el directorio, puse los permisos y ya se pudo generar el fichero adecuado para exeuctar "ferrycon audit -R -p -f testpointer.ack"
+- Creé el directorio, puse los permisos y ya se pudo generar el fichero adecuado para ejecutar "ferrycon audit -R -p -f testpointer.ack"
 ---
 # Ferrybox: enseñar la información a tiempo real
 - En el servidor hice un script en Python para ejecutar:
@@ -938,14 +983,16 @@ template: inverse
 - Cada hora se hacía una copia de los ficheros de ordenadores usando rsync
 --
 
-- Algunos científicos cambiaban los nombres de los ficheros: algunos ficheros estaban duplicados (con diferentes nombres)
+- Algunos científicos cambiaban los nombres de los ficheros: algunos ficheros estaban con dos nombres
 --
 
-- Queríamos ver si había ficheros en un directorio que no estaban en otro directorio (en este caso sólo el nombre de los ficheros, no por contenido). Así nació:
+- Queríamos ver si había ficheros en un directorio que no estaban en otro directorio (en este caso sólo el nombre de los ficheros, no por contenido).
+
+Así nació:
 http://github.com/cpina/missing-files
 --
 
-- Había hecho uno parecido (para mis fotos) para contenido de ficheros
+- Había hecho uno parecido (para mis fotos) mirando el contenido de ficheros
 ---
 template: inverse
 # Otras tareas
