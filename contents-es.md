@@ -12,7 +12,7 @@ class: title-slide
 ---
 layout: false
 # Contenido
-- Quienes somos
+- Quiénes somos
 - ¿Qué es ACE?
 - Gestión de datos
 - Sistema informático y telecomunicaciones
@@ -25,13 +25,14 @@ layout: false
  - profundidad
  - CTD
  - paquetes
- - LibreOffice...
+ - instalar LibreOffice sin el instalador
+ - ...
 ???
 
 Dar las gracias a Alex Pachecho, Ricardo Inquilla, Daniel Yucra y a la universidad por invitarnos.
 ---
 template: inverse
-# Quienes somos
+# ¿Quiénes somos?
 ---
 layout: false
 # Carles Pina i Estany
@@ -72,12 +73,16 @@ background-image: url(images/olfactory_notifications.jpg)
 background-size: contain
 ---
 ## Otras cosas
+(pequeñas, viejas o no mantenidas)
+
+- Catux-USB (2004)
+- Django (después de la expedición)
 - Pidgin (notificaciones)
 - geeqie (copiar path)
 - Pydance (soporte multilingue)
 - Amarok
 - gnokii
-- Django (después de la expedición)
+- ...
 ---
 # Jen Thomas
 - Nací en un pueblo en Inglaterra
@@ -112,11 +117,13 @@ background-image: url(images/ace_final_map_official.png)
 background-size: contain
 .footnote[Copyright Swiss Polar Institute]
 ???
-- Inicios de noviembre: David Walton contacta a Jen (en 6 semanas nos pusimos apunto: pruebas médicas, entender qué hacer, empezar una aplicación para los científicos)
+- Inicios de noviembre 2017: David Walton contacta a Jen (en 6 semanas nos pusimos apunto: pruebas médicas, entender qué hacer, empezar una aplicación para los científicos)
 - 20 de diciembre: inicio de parte 1 desde Cape Town (Sud África)
-- 2X de enero: inicio de parte 2 desde Hobart (Austrália)
-- 2X de febrero: inicio de parte 3 desde Punta Arenas (Chile)
-- 2X de marzo: llegamos otra vez a Cape Town (Sud África)
+- 22 de enero: inicio de parte 2 desde Hobart (Austrália)
+- 26 de febrero: inicio de parte 3 desde Punta Arenas (Chile)
+- 22 de marzo: llegamos otra vez a Cape Town (Sud África)
+
+Después volvimos a Europa en barco (llegamos el 12 de abril)
 ---
 class: middle, center
 # R/V Akademik Tryoshnikov
