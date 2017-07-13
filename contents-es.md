@@ -392,7 +392,7 @@ La priorización sólo no funcionaba bien porqué la conexión es inestable
 background-image: url(images/for_fun/penguins_01.jpg)
 background-size: contain
 ---
-# Whatsapp
+# WhatsApp
 En el WiFi como invitados mucha gente usaba WhatsApp.
 
 - En iPhone no se puede escribir si WhatsApp piensa que no hay conexión
@@ -444,7 +444,7 @@ Si rsync se cancelaba dejaba el fichero incompleto: así seguía después. Por d
 # Resumen comunicaciones parte 1
 - Mucha frustración: gente que no podía enviar mails o recibir durante días
 - En un entorno de estrés: tormentas, problemas técnicos, gente que su doctorado depende de la expedición, etc.
-- Periodistas esperandome a las 7 de la mañana diciendo "Me levanté a las 4 y no he podido enviar ningún WhatsApp!!!!"
+- Periodistas esperandome a las 7 de la mañana diciendo "¡¡¡Me levanté a las 4 y no he podido enviar ningún WhatsApp!!!"
 - Gente furiosa golpeando los portátiles
 - A mí me funcionaba bien con:
  - fetchmail
