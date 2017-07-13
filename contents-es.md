@@ -72,6 +72,14 @@ background-size: contain
 - Ahora trabajo para el Instituto Polar de Suiza (Swiss Polar Institute, Lausanne, Switzerland)
 - Hobbies: pájaros, insectos, el medio ambiente, ciencia, viajar, música
 ---
+background-image: url(images/rrs_james_clark_ross.jpg)
+background-size: contain
+.footnote[Copyright Adam Bradley]
+---
+Mapping bird movements with Leaflet and Open Street Map
+
+![mapping_bird_movements](images/bird_movements.png)
+---
 class: middle, center
 template: inverse
 # Introducción
