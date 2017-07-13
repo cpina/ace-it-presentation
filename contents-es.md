@@ -229,9 +229,9 @@ class: middle, center
 # science-cruise-management
 http://github.com/cpina/science-cruise-data-management
 
-- Empecé a programar durante una semana... ¡la documentación de Django está muy bien! (y disponible offline)
+- Empecé a programar toda la semana... ¡la documentación de Django está muy bien! (y disponible offline)
 - Visité a Fran para preguntarle más cosas
-- Hicimos toda la Intranet con Django
+- Jen y yo hicimos toda la Intranet con Django
 ---
 background-image: url(images/intranet_homepage.png)
 background-size: contain
@@ -678,12 +678,16 @@ template: inverse
 # Django
 - No sabíamos Django antes de empezar
 - Tiene muy buena documentación off-line
-- Yo tenía mucho código Python en mi ~/git (código mío o código como Calibre)
+- Yo tenía mucho código Python en mi ~/git (código mío o código como Calibre, unos 12 GB en total)
 ---
-# ¿Por qué era muy cómodo?
+# ¿Por qué Django nos era muy cómodo?
 - Escribiendo un modelo genera formularios
 - Cambiando el modelo hace las migraciones en la base de datos
-- Tiene sistema de permisos de usuarios
+- Sistema autenticación de usuarios
+- Sistema de permisos de usuarios
+- Sistema de plantillas integrado con los modelos
+- Muy fácil de extender como programador
+- La interfície de usuario (para los científicos) cómoda
 ---
 # Modelos en Django
 ```python
@@ -696,20 +700,13 @@ class StorageCrate(models.Model):
 --
 - Genera los formularios
 - Genera la tabla en la base de datos si no existia
-- Genera migraciones si existía diferente
+- Genera migraciones si el modelo existía y era diferente
 ---
-# Models en Django
-- Es muy fácil acceder a la base de datos y crear objetos automáticamente
-- 
----
-# Django
-- Sistema de plantillas
---
-
-- Sistema de API en JSON
---
-
-- Sistema de comandos para interactuar con los modelos
+# Resumen Django
+- Sin Django hubieramos tardado muchísimo más
+- Si es necesario Django permite fácilmente acceder a la base de datos directamente (y aún crear los models con él)
+- Los "commands" de Django son muy cómodos de escribir
+- Estamos muy contentos con Django aunque primero era reticiente
 ---
 background-image: url(images/for_fun/clouds_02.jpg)
 background-size: contain
@@ -775,7 +772,8 @@ template: inverse
 --
 
 - Escribí un parser de NMEA leyendo los ficheros en tiempo real (con rotación de ficheros): lo insertaba a la base de datos (https://github.com/cpina/science-cruise-data-management/blob/master/ScienceCruiseDataManagement/ship_data/management/commands/nmea_file2db.py)
-- (el parser NMEA es bastante interesante por la clase TailDirectory: lee continuamente del fichero, usa un callback para líneas enteras, comprueba nuevos ficheros en el directorio, etc.)
+
+(el parser NMEA es bastante interesante por la clase TailDirectory: lee continuamente del fichero, usa un callback para líneas enteras, comprueba nuevos ficheros en el directorio, etc.)
 ---
 # GPS Puente de comandamiento (1/2)
 En la primera isla descubrí que el GPS no funcionaba (o la red? O el Windows? o la base de datos? O el visualizador?)
@@ -796,16 +794,22 @@ En la primera isla descubrí que el GPS no funcionaba (o la red? O el Windows? o
 - Con ngrep (y tcpdump) ví que sí, llegaban los datos... ¡pero no sabia como guardarlos!
 ---
 # GPS Puente de comandamiento (2/2)
-- Investigué, bajé y compilé kplex: lee del puerto UDP, lo sirve en TCP (útil para tenerlo en otros ordenadores en tiempo real en mi red), lo guarda a un fichero
+- Investigué, bajé y compilé kplex (http://www.stripydog.com/kplex/index.html): lee del puerto UDP, lo sirve en TCP (útil para tenerlo en otros ordenadores en tiempo real en mi red), lo guarda a un fichero
 --
 
-- Pero kplex (http://www.stripydog.com/kplex/index.html) no tiene soporte para "un fichero diferente cada dia"... hice un script que modificaba el fichero de configuración y reiniciaba kplex cada dia a media noche
---
+- Pero kplex no tiene soporte para "un fichero diferente cada dia"... hice un script que modificaba el fichero de configuración y reiniciaba kplex cada dia a media noche
 
-- (nota a posteriori: logrotate con copytruncate podía haber sustituido el script para kplex y reinicio de kplex)
+(después de la expedición me dí cuenta que con logrotate no hubiera necesitado el script para cambiar el fichero de configuración ni reiniciar kplex)
 
 ???
 ¿Qué hay como Serial Port Splitter en GNU/Linux?
+---
+# Datos GPS
+- 3 tablas para diferentes datos recibidos de los GPS (posición, velocidad, fecha y hora)
+- Cada tabla unos 16 miliones de registros
+- Los científicos ponían la hora en los eventos (fácil) y el sistema ponía la posición
+- Se usaba para generar la ruta en el mapa
+- Los científicos también ponían la hora en una Web para saber la posición (para sus notas)
 ---
 background-image: url(images/for_fun/penguins_04.jpg)
 background-size: contain
