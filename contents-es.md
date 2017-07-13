@@ -1108,3 +1108,5 @@ Esta obra está bajo una [Licencia Creative Commons Atribución-CompartirIgual 4
 Las diapositivas han sido escritas usando Markdown y renderizadas usando remarkjs (https://remarkjs.com) (¡es muy cómodo!)
 
 Para el apng de la página principal: apngasm (paquete Debian)
+
+Diapositivas: https://github.com/cpina/ace-it-presentation
