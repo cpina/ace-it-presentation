@@ -1088,12 +1088,12 @@ class: inverse
 - Jen Thomas ([jenny_t152@yahoo.co.uk](jenny_t152@yahoo.co.uk))
 - Carles Pina i Estany ([carles@pina.cat](carles@pina.cat))
 
-## License
+## Licencia
 ![CreativeCommons](external/creative-commons.png)
 
 Esta obra está bajo una [Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional](https://creativecommons.org/licenses/by-sa/4.0/).
 
-## Slides
-Las slides han sido escritas usando Markdown y renderizadas usando remarkjs (https://remarkjs.com) (¡es muy cómodo!)
+## Diapositivas
+Las diapositivas han sido escritas usando Markdown y renderizadas usando remarkjs (https://remarkjs.com) (¡es muy cómodo!)
 
 Para el apng de la página principal: apngasm (paquete Debian)
