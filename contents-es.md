@@ -998,11 +998,9 @@ http://github.com/cpina/missing-files
 template: inverse
 # Otras tareas
 ---
-template: inverse
 # Profundidad del océano en la Intranet
----
-???
--Profundidad ¿Por qué?
+
+- Profundidad ¿Por qué?
  - Equipo de bentos: estudiaron los animales del fondo del mar
  - Querían saber la profundidad para saber de dónde vinieron y entonces entender mejor las comunidades
  - Tienen un dispositivo a la proa del barco que baja unos 700 metros y recoge muestras
@@ -1039,16 +1037,16 @@ El "import" lo había usado para poner en Internet unas presentación dinámica 
 ---
 # EchoViewer y NMEA strings
 
-- El software echoviewer puede enviar la profundidad a puertos UDP en format NMEA
+- El software echoviewer puede enviar la profundidad a puertos UDP en formato NMEA
 --
 
-- Manda un string con la profundiad en metro, pies i fantoms (!)
+- Manda un string con la profundiad en metro, pies y fantoms (!)
 --
 
 - Con kplex lo guardaba en un fichero (igual que el GPS "puente de comandamiento")
 --
 
-- Con un script nuevo lo inserta en la base de datos a tiempo real
+- Con un script nuevo lo insertaba a la base de datos a tiempo real
 --
 
 - En la página principal de la Intranet mostraba el valor para el equipo bentos
@@ -1152,7 +1150,6 @@ Pero el primer usuario... ¡lo tenía en francés! (y no se podía cambiar)
 --
 
 - Configurar ordenador como router para dar acceso a equipo ROPOS desde punte de comandamiento a sus euqipos
-
 - Y un sin fin más!
 ---
 # Recomendaciones para una expedición similar
