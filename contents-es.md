@@ -10,8 +10,14 @@ class: title-slide
 
 .right[Carles Pina and Jen Thomas]
 ---
-class: center, middle
 # Contenido
+- Quienes somos
+- ¿Qué es ACE?
+- Gestión de datos
+- Sistema informático y telecomunicaciones
+- Sistema de email
+- Django en la expedición
+- Otros: backups, GPS, Ferrybox, profundidad, CTD, paquetes, LibreOffice...
 ---
 template: inverse
 # Quienes somos
@@ -29,10 +35,15 @@ layout: false
 (en Debian/Ubuntu)
 ---
 ![xnetload](images/xnetload.png)
+
+(lo usamos mucho en la Antártida)
 --
 
 
 ![qnetload](images/qnetload.png)
+
+(xnetload no está mantenido, después del viaje hice qnetload)
+https://github.com/cpina/qnetload
 ---
 background-image: url(images/benches1.png)
 background-size: contain
@@ -84,18 +95,13 @@ class: middle, center
 background-image: url(images/akademik_tryoshnikov.jpg)
 background-size: contain
 
-.footnote[Image from https://public.wmo.int/en/media/news-from-members/december-2016-research-vessel-akademik-tryoshnikov-will-be-sent-expedition]
+.footnote[Imagen de https://public.wmo.int/en/media/news-from-members/december-2016-research-vessel-akademik-tryoshnikov-will-be-sent-expedition]
 ???
 - Rompe hielos ruso
 - 133 metros de eslora
 - 23 metros de manga
 - Tripulación: 60 personas: cocineras, ingenieros, tecnicos, no habia informatica,
 - Alquilado para la expedición: casi todos los equipos llevaron su propio equipos. Sin informático abordo.
----
-background-image: url(images/ace_team.jpg)
-background-size: contain
-
-.footnote[Copyright Swiss Polar Institute]
 ---
 background-image: url(images/rocking.jpg)
 background-size: contain
@@ -105,6 +111,8 @@ class: middle, center
 ---
 background-image: url(images/ace_team.jpg)
 background-size: contain
+
+.footnote[Copyright Swiss Polar Institute]
 ---
 background-image: url(images/south_georgia_ciencia.jpg)
 background-size: contain
@@ -183,7 +191,7 @@ http://github.com/cpina/science-cruise-data-management
 
 - Empecé a programar durante una semana... ¡la documentación de Django está muy bien! (y disponible offline)
 - Visité a Fran para preguntarle más cosas
-- Hiciimos toda la Intranet con Django
+- Hicimos toda la Intranet con Django
 ---
 background-image: url(images/intranet_homepage.png)
 background-size: contain
@@ -209,8 +217,8 @@ background-image: url(images/intranet_map.png)
 background-size: contain 
 ---
 # Proyección del mapa
-- Leaflet tiene soporte para proyecciones (con un plugin)
-- La Antártida normalmente se visualiza con proyección EPSG:3031
+- Leaflet tiene soporte para diferente proyecciones (con un plugin)
+- La Antártida normalmente se visualiza con proyección EPSG:3031 (el usado normalmente es Mercator)
 - No hay tiles (imágenes PNG como las de openstreetmap.org) renderizadas con la proyección EPSG:3031
 - En lugar de tiles usé coastlines: describen el contorno
 - Pasé las coastlines del formato original a geojson (para que Leaflet lo cargara)
@@ -610,7 +618,6 @@ class StorageCrate(models.Model):
 
 - Sistema de comandos para interactuar con los modelos
 ---
----
 template: inverse
 # Backups
 ---
@@ -983,4 +990,4 @@ Esta obra está bajo una [Licencia Creative Commons Atribución-CompartirIgual 4
 ## Slides
 Las slides han sido escritas usando Markdown y renderizadas usando remarkjs (https://remarkjs.com) (¡es muy cómodo!)
 
-Para el apng de la página principal: apngasm (https://github.com/apngasm/apngasm) (o paquete Debian)
+Para el apng de la página principal: apngasm (paquete Debian)
