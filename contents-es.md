@@ -977,6 +977,9 @@ Cada 5 minutos, desde un script en Python que captura el stdout, lo parsea y lo 
 background-image: url(images/ferry_box_screenshot.png)
 background-size: contain
 ---
+background-image: url(images/for_fun/penguins_03.jpg)
+background-size: contain
+---
 template: inverse
 # Missing files
 ---
@@ -1053,6 +1056,9 @@ El "import" lo había usado para poner en Internet unas presentación dinámica 
 --
 
 - Lo tenía en la base de datos para consultar fácil por cuando lo pedían
+---
+background-image: url(images/for_fun/penguins_05.jpg)
+background-size: contain
 ---
 template: inverse
 # CTD Winch
@@ -1181,6 +1187,6 @@ Esta obra está bajo una [Licencia Creative Commons Atribución-CompartirIgual 4
 ## Diapositivas
 Las diapositivas han sido escritas usando Markdown y renderizadas usando remarkjs (https://remarkjs.com) (¡es muy cómodo!)
 
-Para el apng de la página principal: apngasm (paquete Debian)
+Para el apng de la página del título: apngasm (paquete Debian)
 
 Diapositivas: https://github.com/cpina/ace-it-presentation
