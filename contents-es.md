@@ -1182,6 +1182,9 @@ template: inverse
 Pero el primer usuario... ¡lo tenía en francés! (y no se podía cambiar)
 ---
 # Otras tareas
+- Crear una base de datos de unas 30.000 muestras (importando desde hojas de cálculo)
+--
+
 - Alguien escribió un texto en un fichero de texto y quería pasarlo via WhatsApp
 --
 
