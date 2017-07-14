@@ -455,6 +455,9 @@ background-size: contain
 background-image: url(images/for_fun/penguins_01.jpg)
 background-size: contain
 ---
+template: inverse
+# Internet parte 1
+---
 # Setup parte 1
 - Un router TP-Link (gama de hogar, no profesional) conectado al Iridium
 - Dos cables con ancho de banda "ilimitado"
@@ -550,7 +553,7 @@ Cuando llegamos a Austrália:
 - Configuré Postfix (SMTP) i Dovecot (IMAP)
 - Configuré un servidor (un portátil) en el barco con Roundcube (Webmail), fetchmail (cliente IMAP) y Postfix.
 - Con Django hicimos un sistema para crear usuarios en el servidor del barco y en el servidor de Internet
-- Usé fetchmail, postfix, etc. que me había funcionado bien para mí para los 80 expedicionarios
+- Usé fetchmail, postfix, etc. que me había funcionado bien para mí, para los 80 expedicionarios
 ---
 # Crear los usuarios
 Como tenía poco tiempo el script de Django sencillamente imprimía por pantalla los comandos y los copié-pegué en el servidor local o remoto:
@@ -582,7 +585,10 @@ echo jen.thomas | saslpasswd2 -u ace-expedition.net Bae5hahgho1iephuu5qu
 
 - Limité el número de conexiones del Postfix del barco al Postfix de Internet a máximo 2 para evitar saturar la conexión
 ---
-# Recepción de emails (sistema 1)
+background-image: url(images/for_fun/clouds_01.jpg)
+background-size: contain
+---
+# Recepción de emails (parte 2, sistema 1)
 - Con Django generé un .fetchmailrc que bajaba todos los emails de todos los usuarios (máximo de 50 KB).
 - Resultado:
  - Si no había emails fetchmail tardaba unas 4 horas para comprobar que no había emails (se conectaba como cada usuario) (el protocolo IMAP tiene bastantes comunicaciones de ida y vuelta, penalizan mucho en comunicaciones con latencias altas)
@@ -595,10 +601,10 @@ echo jen.thomas | saslpasswd2 -u ace-expedition.net Bae5hahgho1iephuu5qu
 ???
 Aprendí como va el protocolo IMAP, ssh... gracias a las conexiones lentas
 ---
-# Recepción de emails (sistema 2)
+# Recepción de emails (parte 2, sistema 2)
 - Con Django generé un .fetchmailrc de sólo los usuarios de la parte 2 del viaje (se redujo el tiempo de espera de 4 horas a unas 2 horas)
 ---
-# Recepción de emails (sistema 3, definitivo)
+# Recepción de emails (parte 2, sistema 3, definitivo)
 Pensé que quería sólo recoger los emails de los usuarios que tenían emails. Y en orden de recepción de los emails.
 
 Miré como organiza Dovecot los emails y a ver si podía saber fácilmente qué usuarios tenían emails en el servidor de Internet que deberían ser bajados.
@@ -608,10 +614,7 @@ Dovecot deja los emails nuevos en /home/$USERNAME/Maildir/new
 
 Además el nombre del fichero contiene el timestamp de recepción! P. ej: 1498094976.24034_1.servidor64
 ---
-background-image: url(images/for_fun/clouds_01.jpg)
-background-size: contain
----
-## Escoger qué usuarios tienen mails a bajar
+## Escoger qué usuarios tenían mails a bajar
 ### Script en el servidor de Internet
 Un script en Python escaneaba todos los /home/* y imprimía en la salida estándard:
 ```
@@ -636,7 +639,7 @@ El script de Python entonces genera un "fetchmailrc" para este usuario y ejecuta
 ```python
 fetchmail --timeout 120 --fetchmailrc {} --pidfile {}".format(file_name, pidfile)
 ```
-¡Hasta que funcione! (en un while, mirando los exit codes -uno era para "mensaje demasiado grande")
+¡En un "while" hasta que funcione!
 
 Script: https://github.com/cpina/science-cruise-data-management/blob/master/ScienceCruiseDataManagement/main/management/commands/downloademailsbyage.py
 
@@ -719,8 +722,8 @@ carles@servidor64:~/Maildir$ cat dovecot-uidlist
 background-image: url(images/for_fun/iceberg_02.jpg)
 background-size: contain
 ---
-# Como enviar emails grandes?
-- Los usuarios venían y nos llevaban ficheros grandes (más de la capacidad del mail máxima). En una memória USB, carpeta compartida, etc.
+# ¿Cómo enviar emails grandes?
+- Los usuarios venían y nos llevaban ficheros grandes (más de la capacidad del mail máxima) en una memória USB, carpeta compartida, etc.
 - A veces lo subíamos con un script (until rsync - sigue probando) al servidor de Internet en /var/www/uploaded/misc/nombre_fichero.zip
 - Otras veces lo poníamos en una cola durante la noche
 ---
@@ -728,7 +731,7 @@ background-size: contain
 (esto fué la parte 2 y 3, la 1 era caos)
 
 - Los periodistas tenían una carpeta compartida y copiaban ficheros allá
-- Los ficheros y directorios se subían a http://ace-expedition.net/files/FECHA/ (con un máximo de 30 MB al dia)
+- Los ficheros y directorios se subían a http://ace-expedition.net/files/FECHA/ (con un máximo de 30 MB al día)
 - Se bajaban datos para científicos
 - Se subía "la cola" (hasta las 8 de la mañana)
 ---
@@ -881,7 +884,7 @@ En la primera isla descubrí que el GPS no funcionaba (¿o la red? ¿o el Window
 - Bajé y compilé kplex (http://www.stripydog.com/kplex/index.html y lo configuré: recibe desde un puerto UDP, lo guarda en un fichero, lo sirve via TCP (útil para tenerlo en otros ordenadores en tiempo real en la red de la expedición)
 --
 
-- Pero kplex no tiene soporte para "un fichero diferente cada dia"... hice un script que modificaba el fichero de configuración y reiniciaba kplex cada dia a media noche
+- Pero kplex no tiene soporte para "un fichero diferente cada día"... hice un script que modificaba el fichero de configuración y reiniciaba kplex cada día a media noche
 
 (después de la expedición me dí cuenta que con logrotate no hubiera necesitado el script para cambiar el fichero de configuración ni reiniciar kplex)
 
@@ -934,17 +937,17 @@ background-size: contain
 
 - Desactivé los procesos en Python que leían del puerto serie...
 ---
-# Ferrybox: tener un volcado al dia
+# Ferrybox: tener un volcado al día
 - Nos dijeron que "/ferrybox/bin/ferrycon audit -R" mostraba todos los datos
 --
 
-- Hice un script que cada noche hacía "ferrycon audit -R" y guardaba los datos del dia anterior en un fichero (parseando la salida de "ferrycon audit -R" y guardando los datos del dia anterior)
+- Hice un script que cada noche hacía "ferrycon audit -R" y guardaba los datos del día anterior en un fichero (parseando la salida de "ferrycon audit -R" y guardando los datos del día anterior)
 --
 
 - Copié el binario de rsync de Debian Etch a ~/bin/rsync , desde otro ordenador copiaba los ficheros usando "rsync --rsync-path=/home/ferrybox/bin/rsync ferrybox@ferrybox.lan:/var/ferrybox/data ."
 --
 
-- Y cada dia teníamos el fichero del dia anterior!
+- Y cada día teníamos el fichero del día anterior!
 ---
 # Ferrybox: tener información a tiempo real
 - Nos dijeron (soporte Ferrybox) que "/ferrybox/bin/ferrycon audit -R -p -f testpointer.ack" mostraba los datos y escribía donde se había acabado de escribir (y la próxima vez sólo mostraba lo nuevo)
@@ -1081,7 +1084,7 @@ background-size: contain
 - Muchos proyectos usan agua del CTD
 ---
 # CTD: el problema
-- Un dia me dijeron que la tripulación no podía cambiar parámetros del CTD (no aparecía el teclado en pantalla)
+- Un día me dijeron que la tripulación no podía cambiar parámetros del CTD (no aparecía el teclado en pantalla)
 --
 
 - Encontramos que el CTD Winch tenía un cable de red y que la pantalla mostraba una IP cuando se iniciaba
