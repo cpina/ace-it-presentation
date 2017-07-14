@@ -8,7 +8,7 @@ class: title-slide
 ### Dando la vuelta a la Antártida con software libre 
 ![penguins](images/title.apng)
 
-.right[Carles Pina and Jen Thomas]
+.right[Carles Pina y Jen Thomas]
 ---
 layout: false
 # Contenido
