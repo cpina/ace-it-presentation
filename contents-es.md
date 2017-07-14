@@ -435,20 +435,25 @@ background-size: contain
 - Cuando lo pude probar (hemisferio norte, por el contrato que el barco tiene):  ¡unos 10 Mbps estables!
 - La antena apunta siempre (con motores) al satélite geostacionario
 - A unos 35.900 Km de la tierra (geoestacionario)
+???
+VSAT - Very Small Aperture Terminal (Terminal de Apertura muy Pequeña)
 ---
 background-image: url(images/iridium3.jpg)
 background-size: contain
 ---
 # Necesidades de comunicaciones
-- Los científicos necesitan:
+- Los científicos necesitaban:
  - Bajar imagenes de satélite de hielo
  - Bajar modelos meteorológicos
-- Los periodistas necesitan:
+- Los periodistas necesitaban:
  - Subir fotos
  - ¡Subir vídeos!
-- Todos necesitan/quieren:
+- Todos necesitaban/querían:
  - Comunicarse con sus equipos (resolver problemas)
  - Comunicarse con su família, amigos
+---
+background-image: url(images/for_fun/penguins_01.jpg)
+background-size: contain
 ---
 # Setup parte 1
 - Un router TP-Link (gama de hogar, no profesional) conectado al Iridium
@@ -470,9 +475,6 @@ La priorización sólo no funcionaba bien porqué la conexión es inestable
 
 ???
 ¡Mucha gente casi golpeando portátiles!
----
-background-image: url(images/for_fun/penguins_01.jpg)
-background-size: contain
 ---
 # WhatsApp
 En el WiFi red invitados mucha gente usaba WhatsApp.
