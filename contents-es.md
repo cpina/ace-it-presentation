@@ -189,7 +189,7 @@ background-size: contain
 ---
 # Resumen de nuestro trabajo
 - Guardar datos
-- Una base de datos (eventos, metadatos, etc.)
+- Una base de datos (actividades, metadatos, etc.)
 - Interfaz de la base de datos 
 - Intranet para acceder a los datos, ver información
 - Mapa de la ruta
@@ -793,6 +793,7 @@ Los ficheros que nos pasaban los copiabamos con orden de preferencia:
 
 Ver: https://github.com/cpina/rsync-queue/blob/master/rsync_queue.py#L96
 ---
+class: middle, center
 # Internet parte 2
 ## Bajando más datos
 ---
@@ -819,7 +820,7 @@ background-size: contain
 template: inverse
 # Backups
 ---
-# Origen de los backups
+# ¿De qué queríamos hacer copias de seguridad?
 - De recursos compartidos de Windows
 - De discos duros
 - De zona "staging"
@@ -867,7 +868,7 @@ template: inverse
 - En el barco NO había ningún sistema que ya lo guardara en una base de datos, tampoco en ningún fichero de texto, etc.
 ---
 # GPS Trimble
-- Un ordenador con Windows de la expedición ya tenía acceso a un GPS (por puerto serie) para el EchoSounder
+- Un ordenador con Windows de la expedición ya tenía acceso a un GPS (por puerto serie) para el echo sounder
 --
 
 - Este Windows ya tenía instalado el software Serial Port Splitter (https://www.eltima.com/products/serialsplitter/)
@@ -933,7 +934,7 @@ En la primera isla descubrí que el GPS no funcionaba (¿o la red? ¿o el Window
 # Datos GPS
 - 3 tablas para diferentes datos recibidos de los GPS (posición, velocidad, fecha y hora)
 - Cada tabla unos 16 miliones de registros
-- Los científicos ponían la hora en los eventos (fácil) y el sistema ponía la posición
+- Los científicos ponían la hora de sus actividades (fácil) y el sistema ponía la posición
 - Se usaba para generar la ruta en el mapa
 - Los científicos también ponían la hora en una Web para saber la posición (para sus notas)
 ---
@@ -944,22 +945,25 @@ template: inverse
 # Ferrybox
 ---
 # Ferrybox
-- Un Ferrybox lee continuamente datos del agua. Normalmente temperatura, salinidad, cantidad de oxígeno, fluorescencia
+- Un Ferrybox lee continuamente datos de las propriadades de una fuente de agua. Normalmente temperatura, salinidad, cantidad de oxígeno y fluorescencia.
 --
 
-- La Ferrybox del barco tenía un problema: sólo guardaba los datos cuando se llegaba a un puerto (los científicos lo querían en tiempo real)
+- Fue muy útil para los científicos ver cuándo cambiaron las propriedades del mar para cambiar sus pruebas y entender sus datos.
+---
+background-image: url(images/ferry_box.jpg)
+background-size: contain
+---
+# Ferrybox: problema
+- La Ferrybox del barco tenía un problema: sólo guardaba los datos cuando se llegaba a un puerto (los científicos lo querían en tiempo real).
 --
 
-- La Ferrybox era una Debian Etch
+- La Ferrybox era una Debian Etch.
 --
 
 - Para escribir en ficheros: mount -o rw,remount /
 --
 
-- Cambié la configuración de red para unirlo a la red de la expedición
----
-background-image: url(images/ferry_box.jpg)
-background-size: contain
+- Cambié la configuración de red para unirlo a la red de la expedición.
 ---
 # Ferrybox: tener un volcado en tiempo real
 - El processo "ferrycon" lee de /dev/ttyS[0,1,2,3] que son los dispositivos
@@ -1063,6 +1067,9 @@ background-size: contain
 background-image: url(images/trawling_star.jpg)
 background-size: contain
 ---
+# Usando el resonador
+![Echosounder display and krill swarm](images/palmer_echo_sounder.png)
+---
 # Mostrar la pantalla de un Windows en la Intranet
 --
 
@@ -1083,9 +1090,9 @@ background-size: contain
 ???
 El "import" lo había usado para poner en Internet unas presentación dinámica (basada en datos de Mysql) de LibreOffice.org
 ---
-# EchoViewer y NMEA strings
+# Echoview y NMEA strings
 
-- El software echoviewer puede enviar la profundidad a puertos UDP en formato NMEA
+- El software Echoview puede enviar la profundidad a puertos UDP en formato NMEA
 --
 
 - Manda un string con la profundiad en metro, pies y fantoms (!)
@@ -1108,19 +1115,17 @@ background-size: contain
 template: inverse
 # CTD Winch
 ---
-# CTD
-- Dispositivo que ligado a un winch (grua) y cuando baja lee la "Conductivity, Temperature and Depth"
----
 background-image: url(images/ctd_lab.jpg)
 background-size: contain
 ---
 background-image: url(images/ctd_water.jpg)
 background-size: contain
----
-# CTD
-- Al bajar (teníamos cable hasta 8000 metros pero en la expedición sólo usábamos hasta 1500 metros
-- Se cierran las botellas cuando se sube el CTD para recoger agua del fondo del mar
-- Muchos proyectos usan agua del CTD
+???
+- muy importante para muchos proyectos
+- podia bajar hasta 8000 metros, pero en la expedicion solo bajo hasta 1500 m (3000 una vez para ver el agua fria de muy fondo)
+- recojo agua en botellas para muestras de agua (propriedades fisicas, quimicas, biologas, plastico)
+- tenia sensores - conductividad, temperatura y profundidad
+- un operador lo sigio durante toda la bajada y subida
 ---
 # CTD: el problema
 - Un día me dijeron que la tripulación no podía cambiar parámetros del CTD (no aparecía el teclado en pantalla)
