@@ -139,7 +139,7 @@ background-size: contain
 - Rompe hielos ruso
 - 133 metros de eslora
 - 23 metros de manga
-- Tripulación: 60 personas: cocineras, ingenieros, tecnicos, no habia informatica,
+- Tripulación: 60 personas: cocineras, ingenieros, tecnicos, no había informatica,
 - Alquilado para la expedición: casi todos los equipos llevaron su propio equipos. Sin informático abordo.
 ---
 background-image: url(images/rocking.jpg)
@@ -239,7 +239,7 @@ En un barco se necesitan piezas de recambio para casi todo.
 
 Compramos material sobrante (discos, switches, etc.) ¡Durante un mes no teníamos acceso a ninguna tienda!
 ???
-- Algunos equipos que estan acustombrados en hacer estos viajes llevaban mas que 50 cajas de cosas por si acaso...
+- Algunos equipos que están acustombrados en hacer estos viajes llevaban mas que 50 cajas de cosas por si acaso...
 ---
 background-image: url(images/propeller_blade.jpg)
 background-size: contain 
@@ -296,7 +296,7 @@ class StorageCrate(models.Model):
 class: middle, center
 # ¡Gracias Fran y Django!
 ---
-# science-cruise-management
+# science-cruise-data-management
 http://github.com/cpina/science-cruise-data-management
 
 - Empecé a programar toda la semana... ¡la documentación de Django está muy bien! (y disponible offline)
@@ -362,7 +362,7 @@ template: inverse
 Usamos muchas tarjetas de red tipo USB (para conectar los portátiles a la red de la expedición, tripulación, Internet, red del puente de mando...)
 ---
 # Tareas de los servidores
-- Sistema Django (ver más adelnate)
+- Sistema Django
 - Sistema de email (ver más adelante)
 - Subir/bajar ficheros internet (ver más adelante)
 - DNS (Bind) (para http://ace-intranet.lan, http://ace-mail.lan)
@@ -391,13 +391,14 @@ template: inverse
 
 ![NAS](images/Iridium_Coverage_Animation.gif)
 
-(imagen de Wikipedia)
+L. Wood, SaVi: satellite constellation visualization, First Annual CCSR Research Symposium (CRS 2011), Centre for Communication Systems Research, 30 June 2011.
+  http://arxiv.org/abs/1204.3265
 ---
 # Iridium
 - La constelación tiene 66 satélites operativos
 --
 
-- Nombre Iridium porqué originalmente habia 77 satélites: el número atómico de Iridium 
+- Nombre Iridium porqué originalmente había 77 satélites: el número atómico de Iridium 
 --
 
 - Tienen satélites sin usar: los activan y ponen en el plano cuando hay problemas
@@ -406,7 +407,7 @@ template: inverse
 - Hay cobertura en el polo norte y sur! Pero MUY lento y inestable: se conecta y desconecta porqué no son geostacionarios y hay cambios de satélite
 --
 
-- Los satélites estan a unos 780 Km de la tierra (GPS a unos 20.000 Km)
+- Los satélites están a unos 780 Km de la tierra (GPS a unos 20.000 Km)
 --
 
 - Por la noche a veces se pueden ver (como estrellas fugaces)
