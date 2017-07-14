@@ -601,8 +601,16 @@ echo jen.thomas | saslpasswd2 -u ace-expedition.net Bae5hahgho1iephuu5qu
 
 - Limité el número de conexiones del Postfix del barco al Postfix de Internet a máximo 2 para evitar saturar la conexión
 ---
-background-image: url(images/server_diagram.png)
-background-size: contain
+# Servidor de Internet
+
+![server_diagram](images/server_diagram.png)
+
+- Apache2 (para que la gente pudiera bajar ficheros)
+- Dovecot (IMAP, para que los emails se pudieran bajar)
+- Postfix (para recibir emails desde el barco y para enviar emails a internet)
+--
+
+- ssh (para todo lo demás)
 ---
 background-image: url(images/for_fun/clouds_01.jpg)
 background-size: contain
