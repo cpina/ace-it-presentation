@@ -1219,6 +1219,12 @@ Pero el primer usuario... ¡lo tenía en francés! (y no se podía cambiar)
 
 Nota: usé casi todo lo que sé (de hackdays, de cuando era pequeño y jugaba con el puerto paralelo, universidad, trabajos anteriores, etc.)
 ---
+template: inverse
+# ¡Muchas gracias!
+
+# ¿Preguntas?
+---
+layout: false
 background-image: url(images/logo_ACE.png)
 background-size: contain
 ---
