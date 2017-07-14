@@ -1136,7 +1136,7 @@ template: inverse
 
 Pero el primer usuario... ¡lo tenía en francés! (y no se podía cambiar)
 ---
-# Otras cosas... 
+# Otras tareas
 - Alguien escribió un texto en un fichero de texto y quería pasarlo via WhatsApp
 --
 
