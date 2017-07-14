@@ -452,11 +452,15 @@ background-size: contain
  - Comunicarse con sus equipos (resolver problemas)
  - Comunicarse con su família, amigos
 ---
-background-image: url(images/for_fun/penguins_01.jpg)
+background-image: url(images/sea_ice.jpg)
 background-size: contain
 ---
 template: inverse
 # Internet parte 1
+---
+class: middle, center
+# Internet parte 1
+## Setup de las redes de comunicación
 ---
 # Setup parte 1
 - Un router TP-Link (gama de hogar, no profesional) conectado al Iridium
@@ -465,6 +469,10 @@ template: inverse
 
 ???
 La priorización sólo no funcionaba bien porqué la conexión es inestable
+---
+class: middle, center
+# Internet parte 1
+## Medios de comunicación
 ---
 # Email
 - Recomandamos usar Thunderbird en cada portátil y usar la conexión cable
@@ -489,6 +497,10 @@ En el WiFi red invitados mucha gente usaba WhatsApp.
 --
 
 - Anécdota: científicos escribieron un mensaje en un fichero de texto y lo querían mandar por WhatsApp... (y tenían iPhone)
+---
+class: middle, center
+# Internet parte 1
+## Bajando datos
 ---
 # Bajar datos científicos
 - Con un rsync bajábamos datos científicos de noche (90 minutos para 15 MB más o menos, con las desconexiones, pero muy variable)
@@ -547,6 +559,10 @@ background-size: contain
 template: inverse
 # Internet parte 2
 ---
+class: middle, center
+# Internet parte 2
+## Configuración de email
+---
 # Sistema de email
 Cuando llegamos a Austrália:
 - Compré (para 3 meses) un servidor VPS
@@ -588,7 +604,11 @@ echo jen.thomas | saslpasswd2 -u ace-expedition.net Bae5hahgho1iephuu5qu
 background-image: url(images/for_fun/clouds_01.jpg)
 background-size: contain
 ---
-# Recepción de emails (parte 2, sistema 1)
+class: middle, center
+# Internet parte 2
+## Recepción de emails
+---
+# Recepción de emails (sistema 1)
 - Con Django generé un .fetchmailrc que bajaba todos los emails de todos los usuarios (máximo de 50 KB).
 - Resultado:
  - Si no había emails fetchmail tardaba unas 4 horas para comprobar que no había emails (se conectaba como cada usuario) (el protocolo IMAP tiene bastantes comunicaciones de ida y vuelta, penalizan mucho en comunicaciones con latencias altas)
@@ -601,10 +621,10 @@ background-size: contain
 ???
 Aprendí como va el protocolo IMAP, ssh... gracias a las conexiones lentas
 ---
-# Recepción de emails (parte 2, sistema 2)
+# Recepción de emails (sistema 2)
 - Con Django generé un .fetchmailrc de sólo los usuarios de la parte 2 del viaje (se redujo el tiempo de espera de 4 horas a unas 2 horas)
 ---
-# Recepción de emails (parte 2, sistema 3, definitivo)
+# Recepción de emails (sistema 3, definitivo)
 Pensé que quería sólo recoger los emails de los usuarios que tenían emails. Y en orden de recepción de los emails.
 
 Miré como organiza Dovecot los emails y a ver si podía saber fácilmente qué usuarios tenían emails en el servidor de Internet que deberían ser bajados.
@@ -613,6 +633,10 @@ Miré como organiza Dovecot los emails y a ver si podía saber fácilmente qué 
 Dovecot deja los emails nuevos en /home/$USERNAME/Maildir/new
 
 Además el nombre del fichero contiene el timestamp de recepción! P. ej: 1498094976.24034_1.servidor64
+---
+class: middle, center
+# Internet parte 2
+## Más de sistema 3 de los emails 
 ---
 ## Escoger qué usuarios tenían mails a bajar
 ### Script en el servidor de Internet
@@ -644,6 +668,11 @@ fetchmail --timeout 120 --fetchmailrc {} --pidfile {}".format(file_name, pidfile
 Script: https://github.com/cpina/science-cruise-data-management/blob/master/ScienceCruiseDataManagement/main/management/commands/downloademailsbyage.py
 
 (también imprime estadísticas)
+---
+class: middle, center
+# Internet parte 2
+## Sistema 3 de emails
+### Emails grandes
 ---
 # Emails demasiado grandes
 - Durante unos días la gente no sabía si habían recibido emails demasiado grandes
@@ -719,13 +748,14 @@ carles@servidor64:~/Maildir$ cat dovecot-uidlist
 
 - Actualiza (si es necesario) el fichero local $USERNAME/Maildir/subscriptions
 ---
-background-image: url(images/for_fun/iceberg_02.jpg)
-background-size: contain
----
 # ¿Cómo enviar emails grandes?
 - Los usuarios venían y nos llevaban ficheros grandes (más de la capacidad del mail máxima) en una memória USB, carpeta compartida, etc.
-- A veces lo subíamos con un script (until rsync - sigue probando) al servidor de Internet en /var/www/uploaded/misc/nombre_fichero.zip
-- Otras veces lo poníamos en una cola durante la noche
+- A veces los subíamos con un script (until rsync - sigue probando) al servidor de Internet en /var/www/uploaded/misc/nombre_fichero.zip
+- Otras veces los poníamos en una cola durante la noche
+---
+class: middle, center
+# Internet parte 2
+## Siguiendo con emails y otros ficheros grandes
 ---
 # Subir/bajar ficheros durante la noche
 (esto fué la parte 2 y 3, la 1 era caos)
@@ -754,14 +784,14 @@ Los ficheros que nos pasaban los copiabamos con orden de preferencia:
 
 Ver: https://github.com/cpina/rsync-queue/blob/master/rsync_queue.py#L96
 ---
+# Internet parte 2
+## Bajando más datos
+---
 # Otros datos científicos
-- En algunos casos datos necesarios en el barco estaban en Internet sólo con protocols FTP o HTTP (no con rsync que era lo ideal)
+- En algunos casos, datos necesarios estaban en Internet sólo con protocolos FTP o HTTP (no con rsync que era lo ideal)
 --
 
-- Teníamos scripts en el servidor de Internet (para bajarlo fiablemente) y después scripts con rsync para bajarlo al barco
---
-
-- ...y usar rsync para bajarlos al barco
+- Teníamos scripts en el servidor de Internet (para bajarlos fiablemente) y después scripts con rsync para bajarlos al barco
 ---
 # Usando los dos Iridiums para datos
 - Conecté el Iridium de teléfono a la red de datos para subir ficheros cuando no había llamadas
