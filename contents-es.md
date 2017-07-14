@@ -8,7 +8,7 @@ class: title-slide
 ### Dando la vuelta a la Antártida con software libre 
 ![penguins](images/title.apng)
 
-.right[Carles Pina y Jen Thomas]
+.right[Universidad de Cañete, 2017. Carles Pina y Jen Thomas]
 ---
 layout: false
 # Contenido
