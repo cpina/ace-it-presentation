@@ -605,12 +605,10 @@ echo jen.thomas | saslpasswd2 -u ace-expedition.net Bae5hahgho1iephuu5qu
 
 ![server_diagram](images/server_diagram.png)
 
-- Apache2 (para que la gente pudiera bajar ficheros)
-- Dovecot (IMAP, para que los emails se pudieran bajar)
-- Postfix (para recibir emails desde el barco y para enviar emails a internet)
---
-
-- ssh (para todo lo demás)
+- Apache2 (servir ficheros)
+- Dovecot (servir emails en IMAP), Postfix
+- Python3, wget, etc. para bajar datos
+- ssh, rsync, etc. para servir datos al barco
 ---
 background-image: url(images/for_fun/clouds_01.jpg)
 background-size: contain
