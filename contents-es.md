@@ -8,7 +8,7 @@ class: title-slide
 ### Dando la vuelta a la Antártida con software libre 
 ![penguins](images/title.apng)
 
-.right[Universidad de Cañete, 2017. Carles Pina y Jen Thomas]
+.right[Universidad Nacional de Cañete, 2017. Carles Pina y Jen Thomas]
 ---
 layout: false
 # Contenido
@@ -570,6 +570,9 @@ Cuando llegamos a Austrália:
 - Configuré un servidor (un portátil) en el barco con Roundcube (Webmail), fetchmail (cliente IMAP) y Postfix.
 - Con Django hicimos un sistema para crear usuarios en el servidor del barco y en el servidor de Internet
 - Usé fetchmail, postfix, etc. que me había funcionado bien para mí, para los 80 expedicionarios
+---
+background-image: url(images/roundcube.png)
+background-size: contain
 ---
 # Crear los usuarios
 Como tenía poco tiempo el script de Django sencillamente imprimía por pantalla los comandos y los copié-pegué en el servidor local o remoto:
