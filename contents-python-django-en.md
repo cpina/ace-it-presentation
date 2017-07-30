@@ -235,6 +235,22 @@ I need to build a database
 
 And Jen had done the Django tutorial... on building a blog.
 ---
+# Django 
+- Without Django it would have been much harder!
+- Django courses for data managers? How to build _databases_ with Django?
+
+---
+# Django closing the circle
+We wanted to thanks Django somehow for all the fantastic help.
+
+- We decided to fix at least one bug that we experience during the expedition
+--
+
+- Bug reported #28120 and fixed! (it was easy)
+---
+# Django is easy
+I was 
+---
 template: inverse
 # Internet on the ship
 ---
@@ -282,6 +298,15 @@ background-size: contain
 ---
 # Play video
 ## iridium-pip-install.ogv
+---
+# Ideas if you went to an expedition
+- Take LOTS OF CODE with you (e.g. Calibre, other projects, etc.). This was more useful than books and documentation
+--
+
+- Use an IDE like Pycharm that allows you to follow code of your libraries easier
+--
+
+- Download the offline Django documentation: you will feel almost online!
 ---
 class: inverse
 ## Contact
