@@ -46,8 +46,6 @@ background-size: contain
 ---
 background-image: url(images/rocking.jpg)
 background-size: contain
---
-# We rocked together!
 ---
 class: middle, center
 # Science 
