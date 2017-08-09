@@ -47,6 +47,13 @@ background-size: contain
 background-image: url(images/rocking.jpg)
 background-size: contain
 ---
+# Unique things
+- Only 11 expeditions have done the full circumnavigation
+--
+
+- Only one expedition was Python 3!
+(well, I had to use some Python 2.4 for a script in one of the devices)
+---
 class: middle, center
 # Science 
 ---
@@ -77,7 +84,7 @@ template: inverse
 
 
 # Why?
-- Backup to avoid losing data and have the data after the 2 year embargo
+- Backup to avoid losing data and for the institution to have the data after the 2 year embargo
 - Log events to make all the data more useful and be able to discard data if some equipment was faulty
 - To know what was collected
 - Make data easier to discover
@@ -187,7 +194,7 @@ class StorageCrate(models.Model):
 - If the model didn't exist: creates the tables in the database
 - If the model already existed: creates the migration code
 - Deals with foreign keys, relations, etc.
-- The Mysql tables are like we would have created (we used Mysql straight away as well)
+- The Mysql tables have the same structures than we would have created (and we used Mysql without Django for some tasks)
 ---
 class: middle, center
 # science-cruise-data-management
@@ -235,8 +242,33 @@ And Jen had done the Django tutorial... on building a blog.
 ---
 # Django 
 - Without Django it would have been much harder!
-- Django courses for data managers? How to build _databases_ with Django?
+--
 
+- Django tutorials for data managers? How to build _databases_ with Django?
+--
+
+- Django developers are very nice and helpful!
+```
+You wrote X, do you mean?
+```
+--
+
+And the Django documentation is very well written!
+---
+# Django good things
+- We were very happy how to change the admin forms
+- _commands_ are fantastic!
+---
+# Django bad things for our use case
+- Some modules use resources (CSS, js, etc.) from the Internet (e.g. debug module). This didn't work for us
+- Hard to change (only via changing the template?) the main admin page
+- Execute commands remotely easier (e.g. verifying versions builtin?)
+---
+# PIP
+pip wasn't bad connection friendly:
+- No progress bar
+- Difficult to see what was being downloaded (e.g. to download using alternative systems and use it, or reuse in between computers, etc.). apt-get has "--show-uris"
+- When bad networking: error messages weren't clear
 ---
 # Django closing the circle
 We wanted to thanks Django somehow for all the fantastic help.
