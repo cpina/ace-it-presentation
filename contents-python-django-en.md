@@ -5,34 +5,36 @@ class: center, middle, inverse
 layout: false
 template: inverse
 class: title-slide
-### Python and Django during ACE (Antarctic Circumnavigation Expedition) 2016-2017
+### Python and Django during ACE (Antarctic Circumnavigation Expedition)
 ![images](images/title.apng)
 
-.right[Carles Pina i Estany (carles@pina.cat)]
+.right[PyCon UK, 2017. Carles Pina i Estany (carles@pina.cat)]
 ---
 layout: false
-# Contents
-- What is ACE?
----
 # What do we do for work?
 ## Carles
 - C++/Qt software engineer at Mendeley
-- Python fan (scripts at work, evenings and weekends, Python code Dojos, etc.)
+- Some Python (scripts at work, evenings and weekends, Python code Dojos, etc.)
 - Using GNU/Linux for a long time
+- Long time ago: system administrator / network administrator
 --
 
 
 ## Jen
 - Worked 2 years at the British Antarctic Survey (BAS) as a data manager
-- 2 years ago did the Django girls course
-- Less computer savy and very much into animals and nature
+- More into animals (special birds) than into programming
 ---
 # ¿What were our roles on the boat?
-- Jen was the data manager
-- Carles was the software engineer to help building the data management system, telecomunications, connecting science equipment, setting up the storage, etc.
+- Jen was the data manager (of all 22 teams!)
+- I was the data manager assistant/software engineer end up:
+ - Help building the data management system (Django)
+ - Telecomunications setup
+ - Connecting science equipment
+ - Setting up the storage
 ---
 class: middle, center
 # What is ACE?
+## (Antarctic Circumnavigation Expedition)
 ---
 background-image: url(images/ace_final_map_official.png)
 background-size: contain
@@ -47,12 +49,16 @@ background-size: contain
 background-image: url(images/rocking.jpg)
 background-size: contain
 ---
-# Unique things
-- Only 11 expeditions have done the full circumnavigation
+# Why is ACE different?
+- Usually science expeditions focus on some part of the Antarctic (e.g. near South Georgia)
 --
 
-- Only one expedition was Python 3!
-(well, I had to use some Python 2.4 for a script in one of the devices)
+- First expedition of the Swiss Polar Institute
+
+--
+- It was organised very quickly
+???
+Mention that we were called 6 weeks in advance
 ---
 class: middle, center
 # Science 
@@ -61,12 +67,18 @@ background-image: url(images/ace_team.jpg)
 background-size: contain
 
 .footnote[Copyright Swiss Polar Institute]
+???
+Lots of teams: 22. Many people
 ---
 background-image: url(images/south_georgia_ciencia.jpg)
 background-size: contain
+???
+Terrestrial science
 ---
 background-image: url(images/waves.jpg)
 background-size: contain
+???
+Ocean science
 ---
 background-image: url(images/releasing_radiosonde.jpg)
 background-size: contain
@@ -83,10 +95,9 @@ template: inverse
 --
 
 
-# Why?
+## Why?
 - Backup to avoid losing data and for the institution to have the data after the 2 year embargo
-- Log events to make all the data more useful and be able to discard data if some equipment was faulty
-- To know what was collected
+- Discard data if any device was faulty
 - Make data easier to discover
 ---
 # We had many IT tasks
@@ -165,6 +176,8 @@ I asked Fran... and he said...
 
 
 Fran created an example... and I loved it!
+???
+Thought "nooooo..." because it's big, we didn't have time
 ---
 # One week of Django
 I went back home and really enjoyed learning Django:
@@ -234,61 +247,56 @@ with less code.
 
 Data manager thinks:
 ```bash
-I need to build a database
+We need to build a database
 ```
 --
 
-And Jen had done the Django tutorial... on building a blog.
+![images](images/clipart/light-bulb-idea.jpg)
+
+Django for data managers?
+???
+And for other professions: cooks, biologists, etc.
 ---
-# Django 
+# Django, ACE
 - Without Django it would have been much harder!
 --
 
-- Django tutorials for data managers? How to build _databases_ with Django?
---
-
-- Django developers are very nice and helpful!
-```
-You wrote X, do you mean?
+- Django developers are very nice and helpful! Thanks for the concise error messages:
+```bash
+main.Project.title: (fields.E120) CharFields must define a 'max_length' attribute.
 ```
 --
-
-And the Django documentation is very well written!
+- Django documentation is very well written!
 ---
 # Django good things
-- We were very happy how to change the admin forms
+- Admin forms were easy to adapt and change (we could work around if not possible)
 - _commands_ are fantastic!
 ---
-# Django bad things for our use case
+# Django not too good things for our use case
 - Some modules use resources (CSS, js, etc.) from the Internet (e.g. debug module). This didn't work for us
 - Hard to change (only via changing the template?) the main admin page
-- Execute commands remotely easier (e.g. verifying versions builtin?)
 ---
 # PIP
-pip wasn't bad connection friendly:
+pip wasn't "bad connection friendly":
 - No progress bar
-- Difficult to see what was being downloaded (e.g. to download using alternative systems and use it, or reuse in between computers, etc.). apt-get has "--show-uris"
+- We didn't se how to see easily the URIs being download (e.g. apt-get --show-uris to download them overnight)
 - When bad networking: error messages weren't clear
 ---
 # Django closing the circle
 We wanted to thanks Django somehow for all the fantastic help.
 
-- We decided to fix at least one bug that we experience during the expedition
+- I decided to fix at least one bug that we experience during the expedition
 --
 
-- Bug reported #28120 and fixed! (it was easy)
----
-# Django is easy
-I was 
+- Bug (found during the expedition) reported and fixed! (#28120) (thanks for the quick feedback)
 ---
 template: inverse
-# Internet on the ship
+# Appendix: Internet on the ship
 ---
-# Introducción
+# Introduction
 - We had 2 Iridium systems
 - Initially one for calls, another one for Internet
 - This is, 128 kbits for (officialy) 80 people
-
 - The Iridium connections are very unstable
 ---
 ![NAS](images/Iridium_Coverage_Animation.gif)
@@ -333,7 +341,7 @@ background-size: contain
 - Take LOTS OF CODE with you (e.g. Calibre, other projects, etc.). This was more useful than books and documentation
 --
 
-- Use an IDE like Pycharm that allows you to follow code of your libraries easier
+- Use an IDE like Pycharm that allows you to navigate code of your libraries easier
 --
 
 - Download the offline Django documentation: you will feel almost online!
