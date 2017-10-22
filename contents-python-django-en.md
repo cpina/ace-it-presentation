@@ -135,9 +135,9 @@ template: inverse
 --
 
 
-Jen also meant a database interface!
+Jen also meant a Web system to introduce data in the database!
 ---
-background-image: url(images/for_fun/penguins_02.jpg)
+background-image: url(images/for_fun/iceberg-light.jpg)
 background-size: contain
 ---
 template: inverse
@@ -213,6 +213,9 @@ class: middle, center
 # science-cruise-data-management
 http://github.com/cpina/science-cruise-data-management
 ---
+background-image: url(images/for_fun/penguins_01.jpg)
+background-size: contain
+---
 background-image: url(images/intranet_homepage.png)
 background-size: contain
 ---
@@ -225,14 +228,22 @@ background-size: contain
 background-image: url(images/intranet_map.png)
 background-size: contain 
 ---
-# Django summary
+# In retrospect
+Django was a very good tool to do what we had to do:
 - Without Django we would have taken much longer! 
 - Django didn't get on the way as I had thought
-- Django "commands" were very easy to implement and useful to access the models from command line parameters
+- Django _commands_ were very easy to implement and useful to access the models from command line parameters, widely used for many of our scripts
+- Django developers are very nice and helpful! Thanks for the concise error messages:
+```bash
+main.Project.title: (fields.E120) CharFields must define a 'max_length' attribute.
+```
+--
+- Django documentation is very well written!
+- Admin forms were easy to adapt and change
 ???
 If Django didn't exist I should have implemented for the expedition, in a hacky way
 ---
-background-image: url(images/for_fun/clouds_02.jpg)
+background-image: url(images/for_fun/ice_01.jpg)
 background-size: contain
 ---
 # What is Django?
@@ -257,38 +268,57 @@ Django for data managers?
 ???
 And for other professions: cooks, biologists, etc.
 ---
-# Django, ACE
-- Without Django it would have been much harder!
---
-
-- Django developers are very nice and helpful! Thanks for the concise error messages:
-```bash
-main.Project.title: (fields.E120) CharFields must define a 'max_length' attribute.
-```
---
-- Django documentation is very well written!
----
-# Django good things
+## Django very useful features for us
 - Admin forms were easy to adapt and change (we could work around if not possible)
 - _commands_ are fantastic!
----
-# Django not too good things for our use case
+
+--
+
+## Django not too good things for our use case
 - Some modules use resources (CSS, js, etc.) from the Internet (e.g. debug module). This didn't work for us
 - Hard to change (only via changing the template?) the main admin page
 ---
-# PIP
+## pip 
 pip wasn't "bad connection friendly":
 - No progress bar
-- We didn't se how to see easily the URIs being download (e.g. apt-get --show-uris to download them overnight)
+- We didn't see how to see easily the URIs being download (e.g. apt-get --show-uris to download them overnight)
 - When bad networking: error messages weren't clear
+
+--
+
+man rsync, --progress:
+```bash
+This  option  tells  rsync  to  print  information  showing  the
+progress of the transfer. This gives a bored user  something  to
+watch.
+```
+I'd say "it helps my impatience".
+
+--
+
+## Python help
+Python off-line help could have been better (we relied on examples and source code)
 ---
 # Django closing the circle
 We wanted to thanks Django somehow for all the fantastic help.
 
-- I decided to fix at least one bug that we experience during the expedition
+- I thought of fixing at least one bug that we experienced during the expedition
 --
 
-- Bug (found during the expedition) reported and fixed! (#28120) (thanks for the quick feedback)
+- Bug #28120 reported and fixed! (thanks for the quick code review, merge...)
+---
+# Python/Django ideas if you went to an expedition
+- Take lots of code with you (e.g. Calibre, other projects, etc.). This was more useful than books and documentation
+--
+
+- Use an IDE like Pycharm that allows you to navigate code of your libraries easier
+--
+
+- Download the offline Django documentation: you will feel almost online!
+
+--
+
+Actually also download Wikipedia!
 ---
 template: inverse
 # Appendix: Internet on the ship
@@ -334,17 +364,10 @@ background-size: contain
 background-image: url(images/slow_ping.jpg)
 background-size: contain
 ---
-# Play video
-## iridium-pip-install.ogv
----
-# Ideas if you went to an expedition
-- Take LOTS OF CODE with you (e.g. Calibre, other projects, etc.). This was more useful than books and documentation
---
+template: inverse
+# Thanks you!
 
-- Use an IDE like Pycharm that allows you to navigate code of your libraries easier
---
-
-- Download the offline Django documentation: you will feel almost online!
+# Questions?
 ---
 class: inverse
 ## Contact
@@ -353,7 +376,7 @@ class: inverse
 ## License
 ![CreativeCommons](external/creative-commons.png)
 
-Esta obra está bajo [Licencia Creative Commons Atribución-CompartirIgual 4.0 Internacional](https://creativecommons.org/licenses/by-sa/4.0/).
+This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
 
 ## Slides
 Slides have been written using Markdown and rendered using remarkjs (https://remarkjs.com)
