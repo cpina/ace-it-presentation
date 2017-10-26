@@ -5,7 +5,7 @@ class: center, middle, inverse
 layout: false
 template: inverse
 class: title-slide
-### Python and Django during ACE (Antarctic Circumnavigation Expedition)
+### Python and Django during the Antarctic Circumnavigation Expedition (ACE)
 ![images](images/title.apng)
 
 .right[PyCon UK, 2017. Carles Pina i Estany (carles@pina.cat)]
@@ -21,20 +21,27 @@ layout: false
 
 
 ## Jen
-- Worked 2 years at the British Antarctic Survey (BAS) as a data manager
-- More into animals (special birds) than into programming
+- Worked for 3.5 years at the British Antarctic Survey (BAS) as a data manager
+- Now works for the Swiss Polar Institute, following up on the data management of ACE
+- More into wildlife and science (especially birds) than programming
 ---
-# ¿What were our roles on the boat?
-- Jen was the data manager (of all 22 teams!)
-- I was the data manager assistant/software engineer end up:
- - Help building the data management system (Django)
- - Telecomunications setup
- - Connecting science equipment
- - Setting up the storage
+# What were our roles on the ship?
+As a team we: 
+- managed the data of all 22 science projects
+ - set up the data management recording system (Django);
+ - set up the data storage and back-ups;
+ - liaised with scientists to back up data, record metadata in a database and create metadata records;
+
+- telecommunications setup:
+ - onboard network;
+ - e-mail system;
+ - file uploader / Dropbox equivalent;
+
+- connecting science equipment. 
 ---
 class: middle, center
 # What is ACE?
-## (Antarctic Circumnavigation Expedition)
+## Antarctic Circumnavigation Expedition
 ---
 background-image: url(images/ace_final_map_official.png)
 background-size: contain
@@ -50,12 +57,18 @@ background-image: url(images/rocking.jpg)
 background-size: contain
 ---
 # Why is ACE different?
-- Usually science expeditions focus on some part of the Antarctic (e.g. near South Georgia)
+- Usually science expeditions focus on a small area of the Antarctic
+--
+
+- Only other similar expedition was Discovery II in the 1950's
+--
+
+- Sampled and studied marine and terrestrial habitats
 --
 
 - First expedition of the Swiss Polar Institute
-
 --
+
 - It was organised very quickly
 ???
 Mention that we were called 6 weeks in advance
@@ -78,7 +91,7 @@ Terrestrial science
 background-image: url(images/waves.jpg)
 background-size: contain
 ???
-Ocean science
+Marine science
 ---
 background-image: url(images/releasing_radiosonde.jpg)
 background-size: contain
@@ -89,28 +102,29 @@ template: inverse
 ---
 ## What is it?
 - Backup all the collected data
-- Keep a log of what's happening, where, when
-- Keep a sample database
-- Create metadata records
+- Keep a log of what's happening: 
+ - ultimate goal - to be able to describe where, when, by whom and for what reason the data were collected
+- Keep a database of all samples collected
+- Create metadata records of all data sets so they can be discovered
 --
 
 
 ## Why?
-- Backup to avoid losing data and for the institution to have the data after the 2 year embargo
-- Discard data if any device was faulty
-- Make data easier to discover
+- Backup to avoid losing data and to archive it properly for the future
+- The data can be made publicly available after the 2 year embargo
+- Make data easier to discover and usable by others in the future
 ---
 # We had many IT tasks
 - Setup the data storage (2 NAS, 64 TB, 2 UPS, etc.)
 --
 
-- Create utilities to backup from hard disks, shared volumes, etc.
+- Create utilities to backup from USB hard disks and network-attached computers
 
 --
-- Create an Intranet webpage for the data entry, utilities, etc.
+- Create an intranet webpage for the data entry, utilities and to disseminate information on board
 
 --
-- Design and implement a mail system that works with unstable 128 kbits for 80 people
+- Design and implement an e-mail system that works with an unstable 128 kbit connection for 80 people
 
 --
 - Create a way to upload videos for the news (we had journalists on board)
@@ -119,7 +133,7 @@ template: inverse
 - Download data (ice images, weather models) for the scientists
 
 --
-- Help scientists connecting different equipment (like snow flake counter)
+- Help scientists to connect different equipment (like snow flake counter)
 
 --
 - Fix a winch (software part)
@@ -128,14 +142,15 @@ template: inverse
 - ...
 ---
 # science-data-management
-- Jen asked: Will you help me building a database?
---
-
-- I answered: yes! (and thought of Mysql and _create table_...)
+Jen said: Can you help me build a database?
 --
 
 
-Jen also meant a Web system to introduce data in the database!
+I answered: yes! (and thought of MySQL and _create table_...)
+--
+
+
+Jen also meant a web system to enter data in the database!
 ---
 background-image: url(images/for_fun/iceberg-light.jpg)
 background-size: contain
@@ -150,7 +165,7 @@ I knew:
 - Flask
 --
 
-- Mysql
+- MySQL
 --
 
 - SQLAlchemy
@@ -160,7 +175,7 @@ I knew:
 --
 
 
-But... How should I create the forms to enter data into the database?
+But... How could I create the forms to enter data into the database?
 --
 
 
@@ -181,7 +196,7 @@ Thought "nooooo..." because it's big, we didn't have time
 ---
 # One week of Django
 I went back home and really enjoyed learning Django:
-- Writing a Django models is easier than Mysql _create table_ (with foreign keys, etc.)
+- Writing Django models is easier than MySQL _create table_ (with foreign keys, etc.)
 - Easier to change the models and migrate
 - We needed authentication of users
 - Permissions for tables were useful
@@ -207,7 +222,7 @@ class StorageCrate(models.Model):
 - If the model didn't exist: creates the tables in the database
 - If the model already existed: creates the migration code
 - Deals with foreign keys, relations, etc.
-- The Mysql tables have the same structures than we would have created (and we used Mysql without Django for some tasks)
+- It creates relational database models like we would have done
 ---
 class: middle, center
 # science-cruise-data-management
@@ -231,8 +246,8 @@ background-size: contain
 # In retrospect
 Django was a very good tool to do what we had to do:
 - Without Django we would have taken much longer! 
-- Django didn't get on the way as I had thought
-- Django _commands_ were very easy to implement and useful to access the models from command line parameters, widely used for many of our scripts
+- Django didn't get in the way as much as I had thought
+- Django _commands_ were very easy to implement and useful for accessing the models from command line parameters, widely used for many of our scripts
 - Django developers are very nice and helpful! Thanks for the concise error messages:
 ```bash
 main.Project.title: (fields.E120) CharFields must define a 'max_length' attribute.
@@ -241,7 +256,7 @@ main.Project.title: (fields.E120) CharFields must define a 'max_length' attribut
 - Django documentation is very well written!
 - Admin forms were easy to adapt and change
 ???
-If Django didn't exist I should have implemented for the expedition, in a hacky way
+If Django didn't exist I would have had to implement it for the expedition, in a hacky way
 ---
 background-image: url(images/for_fun/ice_01.jpg)
 background-size: contain
@@ -268,20 +283,20 @@ Django for data managers?
 ???
 And for other professions: cooks, biologists, etc.
 ---
-## Django very useful features for us
-- Admin forms were easy to adapt and change (we could work around if not possible)
+## Very useful Django features for us
+- Admin forms were easy to adapt and change (we could work around something if it wasn't possible)
 - _commands_ are fantastic!
 
 --
 
-## Django not too good things for our use case
+## Django things that were not so helpful...
 - Some modules use resources (CSS, js, etc.) from the Internet (e.g. debug module). This didn't work for us
 - Hard to change (only via changing the template?) the main admin page
 ---
-## pip 
+## pip and rsync 
 pip wasn't "bad connection friendly":
 - No progress bar
-- We didn't see how to see easily the URIs being download (e.g. apt-get --show-uris to download them overnight)
+- We didn't see how to easily see the URIs being download (e.g. apt-get --show-uris to download them overnight)
 - When bad networking: error messages weren't clear
 
 --
@@ -300,14 +315,14 @@ I'd say "it helps my impatience".
 Python off-line help could have been better (we relied on examples and source code)
 ---
 # Django closing the circle
-We wanted to thanks Django somehow for all the fantastic help.
+We wanted to thank Django somehow for all the fantastic help.
 
 - I thought of fixing at least one bug that we experienced during the expedition
 --
 
 - Bug #28120 reported and fixed! (thanks for the quick code review, merge...)
 ---
-# Python/Django ideas if you went to an expedition
+# Python/Django ideas if you go on an expedition
 - Take lots of code with you (e.g. Calibre, other projects, etc.). This was more useful than books and documentation
 --
 
@@ -338,16 +353,16 @@ L. Wood, SaVi: satellite constellation visualization, First Annual CCSR Research
 - 66 Iridium satellites
 --
 
-- Iridium name: originally had to be 77 satellites: atomic number of Iridium
+- Iridium name: originally supposed to be 77 satellites: atomic number of Iridium
 --
 
 - There are spare satellites for when there are problems
 --
 
-- Signal on the north and south pole! But VERY slow and unstable: it connects and disconnects because satellites are not geostacionary
+- Signal on the north and south pole! But VERY slow and unstable: it connects and disconnects because satellites are not geostationary
 --
 
-- Satellites are around 780 Km from the Eart (GPS and Inmarsat around 20.000 Km)
+- Satellites are around 780 Km above the Earth (GPS and Inmarsat around 20,000 Km)
 --
 
 - Sometimes the satellites are visible: Iridium flares!
@@ -372,7 +387,7 @@ template: inverse
 class: inverse
 ## Contact
 - Carles Pina i Estany ([carles@pina.cat](carles@pina.cat))
-
+- Jen Thomas ([jenny.thomas@epfl.ch](jenny.thomas@epfl.ch))
 ## License
 ![CreativeCommons](external/creative-commons.png)
 
@@ -381,6 +396,6 @@ This work is licensed under a [Creative Commons Attribution 4.0 International Li
 ## Slides
 Slides have been written using Markdown and rendered using remarkjs (https://remarkjs.com)
 
-For the main slide apng: apngasm (Debian package)
-
 Slides: https://github.com/cpina/ace-it-presentation / https://cpina.github.io/ace-it-presentation/
+
+ACE: http://spi-ace-expedition.ch/ 
