@@ -1,7 +1,7 @@
 # ace-it-presentation
 Presentation in Spanish (at the moment, I might translate it) of some of the IT systems of the ACE 2016-2017 expedition.
 
-ACE stands for Antarctic Circumpolar Expedition.
+ACE stands for Antarctic Circumnavigation Expedition.
 
 To save it into a PDF follow the steps:
 1. Open it using Chrome or Chromium
