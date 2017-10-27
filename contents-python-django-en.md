@@ -380,7 +380,7 @@ background-image: url(images/slow_ping.jpg)
 background-size: contain
 ---
 template: inverse
-# Thanks you!
+# Thank you!
 
 # Questions?
 ---
