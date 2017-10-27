@@ -312,7 +312,7 @@ I'd say "it helps my impatience".
 --
 
 ## Python documentation 
-Python off-line documentation could have been better (we relied on examples and source code)
+More comprehensive off-line documentation could have been better (we relied on examples and source code)
 ---
 # Django closing the circle
 We wanted to thank Django somehow for all the fantastic help.
