@@ -1,12 +1,12 @@
-# ace-it-presentation
-Presentation in Spanish (at the moment, I might translate it) of some of the IT systems of the ACE 2016-2017 expedition.
-
-ACE stands for Antarctic Circumnavigation Expedition.
+# Presentations
+Different presentations of Python, Django or IT during the ACE (Antarctic Circumnavigation Expedition) 2016 expedition.
 
 To save it into a PDF follow the steps:
-1. Open it using Chrome or Chromium
-2. Press Control+P to print it into a file
-3. Execute (on a GNU/Linux system): `pdfcrop --bbox "79 211 535 554" non-cropped-presentation.pdf presentation.pdf`
+1. cd to the git directory
+2. python3 -m http.server
+3. Using Chrome or Chromium: http://localhost:8080
+4. Press Control+P to print it into a file
+5. Execute (on a GNU/Linux system): `pdfcrop --bbox "79 211 535 554" non-cropped-presentation.pdf presentation.pdf`
 
 How to find the right parameters for bbox? Execute before:
 `pdfcrop --verbose file.pdf`
