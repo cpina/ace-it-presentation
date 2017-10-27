@@ -311,8 +311,8 @@ I'd say "it helps my impatience".
 
 --
 
-## Python help
-Python off-line help could have been better (we relied on examples and source code)
+## Python documentation 
+Python off-line documentation could have been better (we relied on examples and source code)
 ---
 # Django closing the circle
 We wanted to thank Django somehow for all the fantastic help.
