@@ -1,3 +1,7 @@
+# Result
+See the presentations here:
+https://cpina.github.io/ace-it-presentation/
+
 # Presentations
 Different presentations of Python, Django or IT during the ACE (Antarctic Circumnavigation Expedition) 2016 expedition.
 
