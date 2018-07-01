@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Volta a l'Antàrtida</title>
+    <meta charset="utf-8">
+    <style type="txt/css">
+      @font-face{
+        font-family: 'Droid Serif';
+	src: url('fonts/DroidSerif.ttf');
+      }
+      @font-face{
+        font-family: 'Yanone Kaffeesatz';
+	src: url('fonts/YanoneKaffeesatz-Regular.ttf');
+      }
+      @font-face{
+        font-family: 'Ubuntu Mono';
+	src: url('fonts/UbuntuMono-Regular.ttf');
+      }
+    </style>
+    <style>
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .footnote {
+         position: absolute;
+	 bottom: 0.5em;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+      .inverse {
+        background: #272822;
+        color: #777872;
+        text-shadow: 0 0 20px #333;
+      }
+      .inverse h1, .inverse h2 {
+        color: #f3f3f3;
+        line-height: 0.8em;
+      }
+      .inverse a {
+        color: #777872;
+      }
+      /* Slide-specific styling */
+      #slide-inverse .footnote {
+        bottom: 12px;
+        left: 20px;
+      }
+      /* Hides slide number on the title slide */
+      .title-slide .remark-slide-number {
+      	display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+    </textarea>
+    <script src="external/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create({
+        countIncrementalSlides: false,
+	highlightLines: true,
+	sourceUrl: 'contents-volta-antartida-cat.md',
+	ratio: '4:3' // for printing
+      });
+    </script>
+  </body>
+</html>

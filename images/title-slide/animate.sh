@@ -5,9 +5,11 @@ for jpeg_file in originals/*
 do
 	text_counter=$(printf "%02d" "$counter")
 	name="frame$text_counter.png"
-	convert -resize 600x600 "$jpeg_file" "$name"
+	convert "$jpeg_file" "$name"
 	counter=$(expr $counter + 1)
+	echo "$jpeg_file"
 done
 
-apngasm ../title.apng "frame01.png" 4 1
+# apngasm ../title.apng "frame01.png" 4 1
+convert -delay 200 *.png test.mp4
 
