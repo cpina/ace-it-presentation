@@ -87,6 +87,7 @@ class: inverse
 ## Contactes
 - Jen Thomas ([jenny_t152@yahoo.co.uk](jenny_t152@yahoo.co.uk))
 - Carles Pina i Estany ([carles@pina.cat](carles@pina.cat))
+
 ## Llicència
 ![CreativeCommons](external/creative-commons.png)
 
