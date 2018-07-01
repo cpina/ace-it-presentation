@@ -21,16 +21,16 @@ layout: false
 # Què feiem al vaixell
 - Gestió de dades
  - Programar eines per ajudar als científics a copiar, organitzar les dades
- - Assegurar que les dades estan disponibles pel futur
+ - Assegurar que les dades estiguin disponibles després de l'expedició per tothom
 - Configuració d'equips informàtics:
  - Xarxa interna al vaixell
  - Comunicacions externes
-- Configurar connexions d'equips científics
+- Configurar recullir dades d'equips científics
 ---
 class: middle, center
 # Què és ACE?
 ## Antarctic Circumnavigation Expedition
-## Expedició de circumnavegació a l'Antàrtida
+## Expedició Circumnavegació a l'Antàrtida
 ---
 background-image: url(images/ace_final_map_official.png)
 background-size: contain
@@ -42,9 +42,6 @@ class: middle, center
 background-image: url(images/akademik_tryoshnikov_grytviken.jpg)
 background-size: contain
 ---
-background-image: url(images/rocking.jpg)
-background-size: contain
----
 # Per què és ACE diferent?
 - Normalment les expedicions científiques van només a una zona de l'Antàrtida
 --
@@ -52,30 +49,30 @@ background-size: contain
 - L'única altre expedició similar ha estat Discovery II al 1950
 --
 
-- ACE ha agafat mostres i estudiat amb equips d'investigació oceà i terra
+- ACE ha recullit mostres i estudiat disciplines marines i terrestres
 --
 
-- La primera expedició de l'SPI (Institut Polar Suïss)
+- És la primera expedició de l'SPI (Institut Polar Suïss)
 ---
 class: middle, center
-# Science 
+# Ciència
 ---
 background-image: url(images/ace_team.jpg)
 background-size: contain
 
 .footnote[Copyright Swiss Polar Institute]
 ???
-Lots of teams: 22. Many people
+22 equips
 ---
 background-image: url(images/south_georgia_ciencia.jpg)
 background-size: contain
 ???
-Terrestrial science
+Terrestre
 ---
 background-image: url(images/waves.jpg)
 background-size: contain
 ???
-Marine science
+Marí
 ---
 background-image: url(images/releasing_radiosonde.jpg)
 background-size: contain
@@ -91,4 +88,4 @@ class: inverse
 ## Llicència
 ![CreativeCommons](external/creative-commons.png)
 
-This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
+Aquesta obra està subjecta a una llicència de [Reconeixement 4.0 Internacional de Creative Commons](https://creativecommons.org/licenses/by-sa/4.0/deed.ca).
