@@ -30,7 +30,7 @@ layout: false
 class: middle, center
 # Què és ACE?
 ## Antarctic Circumnavigation Expedition
-## Expedició Circumnavegació a l'Antàrtida
+## Expedició Circumnavegant a l'Antàrtida
 ---
 background-image: url(images/ace_final_map_official.png)
 background-size: contain
