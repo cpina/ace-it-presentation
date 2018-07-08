@@ -12,11 +12,10 @@ class: title-slide
 ---
 layout: false
 # Qui som
-## Carles
+## Jen
 --
 
-
-## Jen
+## Carles
 ---
 # Què feiem al vaixell
 - Gestió de dades
@@ -25,12 +24,16 @@ layout: false
 - Configuració d'equips informàtics:
  - Xarxa interna al vaixell
  - Comunicacions externes
-- Configurar recullir dades d'equips científics
+- Configuració d'equips científics (part dades, connexió a la xarxa, etc.)
 ---
-class: middle, center
+# Què és SPI?
+- Swiss Polar Institute  (Institut Polar Suís)
+- Fundat el 2016
+---
 # Què és ACE?
-## Antarctic Circumnavigation Expedition
-## Expedició Circumnavegant a l'Antàrtida
+- Primera expedició de l'SPI
+- Antarctic Circumnavigation Expedition (Expedició Circumnavagació a l'Antàrtida)
+- La meva primera expedició (i tercera per la Jen)
 ---
 background-image: url(images/ace_final_map_official.png)
 background-size: contain
@@ -42,7 +45,7 @@ class: middle, center
 background-image: url(images/akademik_tryoshnikov_grytviken.jpg)
 background-size: contain
 ---
-# Per què és ACE diferent?
+# Per què ACE és diferent?
 - Normalment les expedicions científiques van només a una zona de l'Antàrtida
 --
 
@@ -54,13 +57,39 @@ background-size: contain
 
 - És la primera expedició de l'SPI (Institut Polar Suïss)
 ---
+# Primera estapa
+- Primer cop dormint a un vaixell al mar
+- Un mes al vaixell
+- Preparar: lligar les coses?
+- Sense botigues per comprar "el típic cable que falta"
+- Gairebé sense Internet
+- Conèixer el vaixell, la gent, etc.
+- Tempestes
+???
+TODO: posar foto cabina
+---
+# Dia a dia
+- Esmorzar, dinar, berenar i sopar amb els científics
+- Descobrir aparells: CTD, Ferrybox, comptador de flocs de neu, etc.
+- Treballar de despertar-se fins anar a dormir (amb pauses), sense caps de setmana
+???
+Ensenyar gots CTD
+TODO: Posar foto CTD
+---
+# El cap científic
+- David Walton va ser el cap científic
+
+- Qui prioritza durant l'expedició: visitar illes? Fer estacions? Desplegar equips?
+
+- Diferents membres necessiten fer diferentes coses: teniem equips marítims i terrestres
+---
 class: middle, center
 # Ciència
 ---
 background-image: url(images/ace_team.jpg)
 background-size: contain
 
-.footnote[Copyright Swiss Polar Institute]
+.footnote[22 equips. Copyright Swiss Polar Institute]
 ???
 22 equips
 ---
