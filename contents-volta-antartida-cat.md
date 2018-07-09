@@ -29,10 +29,16 @@ layout: false
 # Què és SPI?
 - Swiss Polar Institute  (Institut Polar Suís)
 - Fundat el 2016
+- Investigació dels pols i àrees extrems
+
+Més informació:
+- https://polar.epfl.ch/page-134197-en.html
+- https://polar.epfl.ch
 ---
 # Què és ACE?
 - Primera expedició de l'SPI
 - Antarctic Circumnavigation Expedition (Expedició Circumnavagació a l'Antàrtida)
+- 3 mesos donant la volta l'Antàrtida (amb 3 parades)
 - La meva primera expedició (i tercera per la Jen)
 ---
 background-image: url(images/ace_final_map_official.png)
@@ -41,6 +47,8 @@ background-size: contain
 ---
 class: middle, center
 # R/V Akademik Tryoshnikov
+
+Vaixell Rús (i cultura, menjar, etc.)
 ---
 background-image: url(images/akademik_tryoshnikov_grytviken.jpg)
 background-size: contain
@@ -56,25 +64,41 @@ background-size: contain
 --
 
 - És la primera expedició de l'SPI (Institut Polar Suïss)
+--
+
+- Es va posar apunt amb temps record (van contactar amb nosaltres només 6 setmanes abans de la sortida)
 ---
-# Primera estapa
+# Sortint de port...
+- Un mes: de Sudàfrica a Austràlia
 - Primer cop dormint a un vaixell al mar
-- Un mes al vaixell
-- Preparar: lligar les coses?
-- Sense botigues per comprar "el típic cable que falta"
+- Preparar: lligar els ordinadors?
 - Gairebé sense Internet
-- Conèixer el vaixell, la gent, etc.
+- Conèixer el vaixell: cabina, oficina (sense finestres), gent, xarxa, aparells
 - Tempestes
-???
-TODO: posar foto cabina
+- Sense botigues per comprar "el típic cable que falta" (o que s'espatlla). Teniem dos de tot
+---
+background-image: url(images/propeller_blade.jpg)
+background-size: contain
+---
+background-image: url(images/cabin.jpg)
+background-size: contain
+---
+background-image: url(images/computer_room.jpg)
+background-size: contain
 ---
 # Dia a dia
 - Esmorzar, dinar, berenar i sopar amb els científics
-- Descobrir aparells: CTD, Ferrybox, comptador de flocs de neu, etc.
+- Aprendre aparells: CTD, Ferrybox, comptador de flocs de neu, etc. (properes diapositives)
 - Treballar de despertar-se fins anar a dormir (amb pauses), sense caps de setmana
 ???
 Ensenyar gots CTD
 TODO: Posar foto CTD
+---
+background-image: url(images/ctd_lab.jpg)
+background-size: contain
+---
+background-image: url(images/ctd_water.jpg)
+background-size: contain
 ---
 # El cap científic
 - David Walton va ser el cap científic
@@ -102,6 +126,12 @@ background-image: url(images/waves.jpg)
 background-size: contain
 ???
 Marí
+---
+background-image: url(images/microcat.jpg)
+background-size: contain
+---
+background-image: url(images/ferrybox-pipe.jpg)
+background-size: contain
 ---
 background-image: url(images/releasing_radiosonde.jpg)
 background-size: contain
