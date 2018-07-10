@@ -127,7 +127,7 @@ background-size: contain
 ???
 Marí
 ---
-background-image: url(images/microcat.jpg)
+background-image: url(images/microcat_rotated.jpg)
 background-size: contain
 ---
 background-image: url(images/ferrybox-pipe.jpg)
