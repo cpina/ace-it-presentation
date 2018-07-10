@@ -114,7 +114,7 @@ background-size: contain
 22 equips
 ---
 class: middle, center
-# Ciència
+# Cinc dies més tard...
 ---
 background-image: url(images/south_georgia_ciencia.jpg)
 background-size: contain
