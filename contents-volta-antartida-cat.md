@@ -26,6 +26,9 @@ layout: false
  - Comunicacions externes
 - Configuració d'equips científics (part dades, connexió a la xarxa, etc.)
 ---
+background-image: url(images/computer_room.jpg)
+background-size: contain
+---
 # Què és SPI?
 - Swiss Polar Institute  (Institut Polar Suís)
 - Fundat el 2016
@@ -35,11 +38,13 @@ Més informació:
 - https://polar.epfl.ch/page-134197-en.html
 - https://polar.epfl.ch
 ---
+class: middle, center
 # Què és ACE?
-- Primera expedició de l'SPI
-- Antarctic Circumnavigation Expedition (Expedició Circumnavagació a l'Antàrtida)
-- 3 mesos donant la volta l'Antàrtida (amb 3 parades)
-- La meva primera expedició (i tercera per la Jen)
+Antarctic Circumnavigation Expedition 
+
+Expedició Circumnavagació a l'Antàrtida
+
+http://spi-ace-expedition.ch/
 ---
 background-image: url(images/ace_final_map_official.png)
 background-size: contain
@@ -60,7 +65,7 @@ background-size: contain
 - L'única altre expedició similar ha estat Discovery II al 1950
 --
 
-- ACE ha recullit mostres i estudiat disciplines marines i terrestres
+- ACE ha recullit mostres i estudiat disciplines marines, terrestres i de l'atmosfera a la vegada
 --
 
 - És la primera expedició de l'SPI (Institut Polar Suïss)
@@ -81,9 +86,6 @@ background-image: url(images/propeller_blade.jpg)
 background-size: contain
 ---
 background-image: url(images/cabin.jpg)
-background-size: contain
----
-background-image: url(images/computer_room.jpg)
 background-size: contain
 ---
 # Dia a dia
@@ -127,7 +129,7 @@ background-size: contain
 ???
 Marí
 ---
-background-image: url(images/microcat.jpg)
+background-image: url(images/microcat_rotated.jpg)
 background-size: contain
 ---
 background-image: url(images/ferrybox-pipe.jpg)

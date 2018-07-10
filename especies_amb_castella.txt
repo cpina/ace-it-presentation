@@ -1,0 +1,16 @@
+Gentoo penguin, pinguino pico rojo
+Macaroni penguin, pinguino frente dorada
+Wandering albatross, albatros errante
+Black-browed albatross, albatros ceja negra
+Light mantled sooty albatross, albatross manto claro
+Southern giant petrel, petrel gigante
+Southern fulmar, petrel plateado
+Cape petrel, petrel damero
+Antarctic Tern, gaviotin antartico
+Killer whale, orcinus orca
+Humback whale, megaptera novaeangliae
+Fin whale, balaenoptera physalus
+Blue whale, balaenoptera musculus 
+Southern elephant seal, mirounga leonina
+Antarctic fur seal, arctocephalus gazella
+Leopard seal, hydrurga leptonyx
