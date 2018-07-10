@@ -106,15 +106,15 @@ background-size: contain
 
 - Diferents membres necessiten fer diferentes coses: teniem equips marítims i terrestres
 ---
-class: middle, center
-# Ciència
----
 background-image: url(images/ace_team.jpg)
 background-size: contain
 
 .footnote[22 equips. Copyright Swiss Polar Institute]
 ???
 22 equips
+---
+class: middle, center
+# Ciència
 ---
 background-image: url(images/south_georgia_ciencia.jpg)
 background-size: contain
