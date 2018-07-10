@@ -26,7 +26,7 @@ layout: false
  - Comunicacions externes
 - Configuració d'equips científics (part dades, connexió a la xarxa, etc.)
 ---
-background-image: url(images/computer_room.jpg)
+background-image: url(images/computer_room_big.jpg)
 background-size: contain
 ---
 # Què és SPI?
@@ -85,16 +85,13 @@ background-size: contain
 background-image: url(images/propeller_blade.jpg)
 background-size: contain
 ---
-background-image: url(images/cabin.jpg)
-background-size: contain
----
 # Dia a dia
 - Esmorzar, dinar, berenar i sopar amb els científics
 - Aprendre aparells: CTD, Ferrybox, comptador de flocs de neu, etc. (properes diapositives)
 - Treballar de despertar-se fins anar a dormir (amb pauses), sense caps de setmana
-???
-Ensenyar gots CTD
-TODO: Posar foto CTD
+---
+background-image: url(images/cabin.jpg)
+background-size: contain
 ---
 background-image: url(images/ctd_lab.jpg)
 background-size: contain
