@@ -26,6 +26,9 @@ layout: false
  - Comunicacions externes
 - Configuració d'equips científics (part dades, connexió a la xarxa, etc.)
 ---
+background-image: url(images/computer_room.jpg)
+background-size: contain
+---
 # Què és SPI?
 - Swiss Polar Institute  (Institut Polar Suís)
 - Fundat el 2016
@@ -83,9 +86,6 @@ background-image: url(images/propeller_blade.jpg)
 background-size: contain
 ---
 background-image: url(images/cabin.jpg)
-background-size: contain
----
-background-image: url(images/computer_room.jpg)
 background-size: contain
 ---
 # Dia a dia
