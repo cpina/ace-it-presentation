@@ -106,8 +106,6 @@ background-size: contain
 
 - Diferents membres necessiten fer diferentes coses: teniem equips marítims i terrestres
 ---
-<<<<<<< HEAD
-=======
 background-image: url(images/1-scientists-plan-their-upcoming-visit-of-south-georgia-sharif-mirshak.jpg)
 background-size: contain
 
@@ -116,7 +114,6 @@ background-size: contain
 class: middle, center
 # Ciència
 ---
->>>>>>> Added photo of discussion
 background-image: url(images/ace_team.jpg)
 background-size: contain
 
