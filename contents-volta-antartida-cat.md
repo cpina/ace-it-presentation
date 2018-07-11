@@ -124,6 +124,12 @@ background-size: contain
 background-image: url(images/ctd_water.jpg)
 background-size: contain
 ---
+background-image: url(images/microcat_rotated.jpg)
+background-size: contain
+---
+background-image: url(images/ferrybox-pipe.jpg)
+background-size: contain
+---
 # El cap científic
 - David Walton va ser el cap científic
 
@@ -148,21 +154,31 @@ class: middle, center
 ---
 background-image: url(images/south_georgia_ciencia.jpg)
 background-size: contain
-???
-Terrestre
 ---
+background-image: url(images/ace_final_map_official.png)
+background-size: contain
+
+.footnote[Swiss Polar Institute]
+---
+# where to put this
 background-image: url(images/waves.jpg)
 background-size: contain
 ???
 Marí
 ---
-background-image: url(images/microcat_rotated.jpg)
+background-image: url(images/ropos-submersible-being-deployed-in-front-of-the-mertz-cian-hogg.jpg)
 background-size: contain
+
+.footnote[ROPOS
+
+Ian Hogg]
 ---
-background-image: url(images/ferrybox-pipe.jpg)
+background-image: url(images/ace_final_map_official.png]
 background-size: contain
+
+.footnote[Swiss Polar Institute]
 ---
-background-image: url(images/releasing_radiosonde.jpg)
+background-image: url(images/south_georgia_ciencia.jpg)
 background-size: contain
 ---
 # Alguns numeros
