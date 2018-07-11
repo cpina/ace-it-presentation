@@ -134,9 +134,6 @@ background-size: contain
 
 .footnote[Sharif Mirshak]
 ---
-class: middle, center
-# Ciència
----
 background-image: url(images/ace_team.jpg)
 background-size: contain
 
