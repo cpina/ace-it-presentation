@@ -87,6 +87,10 @@ background-size: contain
 ---
 # Cinc dies mes tard...
 ---
+background-image: url(images/ace_final_map_official.jpg)
+background-size: contain
+---
+TODO: posar mapa de etapa 1 amb les illes
 background-image: url(images/S689A0644.JPG)
 background-sie: contain
 
@@ -106,6 +110,7 @@ TODO: Posar foto de Kng Penguins
 # Dia a dia
 - Esmorzar, dinar, berenar i sopar amb els científics
 - Aprendre aparells: CTD, Ferrybox, comptador de flocs de neu, etc. (properes diapositives)
+- Ciencia 24 hores per a aprovechar
 - Treballar de despertar-se fins anar a dormir (amb pauses), sense caps de setmana
 ---
 background-image: url(images/cabin.jpg)
