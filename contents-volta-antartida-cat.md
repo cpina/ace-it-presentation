@@ -85,6 +85,24 @@ background-size: contain
 background-image: url(images/propeller_blade.jpg)
 background-size: contain
 ---
+# Cinc dies mes tard...
+---
+background-image: url(images/S689A0644.JPG)
+background-sie: contain
+
+.footnote[Ile des Cochons, Crozet; Peter Ryan]
+---
+background-image: url(images/S689A0696.JPG)
+background-size: contain
+
+.footnote[Ile des Cochons, Crozet; Peter Ryan]
+---
+background-image: url(images/S689A0724.JPG)
+background-size: contain
+
+.footnote[Ile des Cochons, Peter Ryan]
+TODO: Posar foto de Kng Penguins
+---
 # Dia a dia
 - Esmorzar, dinar, berenar i sopar amb els científics
 - Aprendre aparells: CTD, Ferrybox, comptador de flocs de neu, etc. (properes diapositives)
