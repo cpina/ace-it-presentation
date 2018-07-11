@@ -166,6 +166,13 @@ background-size: contain
 background-image: url(images/releasing_radiosonde.jpg)
 background-size: contain
 ---
+# Alguns numeros
+
+- km travelled
+- mostres de coses
+- no gent de no paisos
+- no illes visitades
+---
 template: inverse
 # Preguntes?
 ---
