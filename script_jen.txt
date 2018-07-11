@@ -1,22 +1,30 @@
 ﻿# Leg 1
+
+Aerial photography of sea bird colonies
+
+A large proportion of the Antarctic coast and sub-Antarctic islands are understudied because they are inaccessible by ship or foot, or just not on the usual routes. Because of that, estimates of the populations of sea birds are likely fairly inaccurate. A lot of the populations, particularly of the ocean wanderers such as albatrosses are in decline, mainly due to fishing practices so understanding where their colonies are and having more up-to-date population numbers is critical to their conservation. 
+[photo albatross]
+
+To that end, whenever there was the opportunity to do so, one team took to the air in the helicopters. Flying without the doors on on one side to get better images, they took high resolution images of penguin and other sea-bird colonies in as many places as possible. 
+[photo of helicopter]
+
+The first place they did this was at Crozet, one of the island groups on leg 1. The island looked very much like you were in the north of Scotland and is placed in the roaring forties, making  the weather a challenge with a constant battering of wind and waves. 
+[aerial photos]
+
+A student has now begun piecing these images together and is using software and programming techniques to count the individuals in the colonies. This will ultimately feed into world population estimates for these species. 
+
 Island biogeography 
 
-Albatross and sea bird distrubution
-
-In addition to the team listening to the hidden world under the water, there was a team spending daylight hours out on deck or in bad weather, on the bridge, watching for mammals and birds. 
-
-They  had some fantastic sightings of whales, but we didn’t miss out on them all!
-[photo of killer whales, humpbacks]
-
-At the islands that we visited and along the Antarctic coast they did aerial surveys of bird colonies which showed some interesting and larger sights for some penguins that previously thought, and others that had declined. As these areas are so difficult to reach and do proper studies at, or in many cases are only visited very rarely, it was very important to be able to get estimates of the circumpolar population. 
-[photo of penguin colony from the air]
-
-Albatrosses for example, a large pelagic, or seagoing bird, breed only in the Southern Hemisphere. Despite that,they are occasionally seen in the Northern Hemisphere and are known to fly huge distances when they aren’t breeding. 15 of the 22 species of albatross are threatened, primarily by fishing activities.  Other threats include invasive species and climate change among others. Rats have recently been eradicated from South Georgia and will hopefully soon be eradicated from one of the other islands that we visited. 
-[photo of albatross, near boat or flying]
+As well as looking at the larger,more obvious wildlife on the islands, another team were looking at the smaller creatures. In particular, springtails and other invertebrates that they could find. Using genetic techniques, they are now starting to unravel their findings to understand the origins of what they have found. Did the species turn up there naturally or is it an invasive species? This will help us to understand how life around Antarctic has evolved and spread so far. 
+[photo of springtails] – read why these in particular
+[photo of person with pooter]
 
 # Leg 2
-Microplastics
 
+Sea mammals
+
+Some lucky teams got to spend all of their time outside watching for birds and mammals. They  had some fantastic sightings of whales, but we didn’t miss out on them all!
+[photo of killer whales, humpbacks]
 
 Whales
 A team from Australia used expired military sonobuoys, or listening devices that can be deployed and sit underwater to listen for whales and other sounds under the ocean. 
@@ -25,19 +33,68 @@ Every few hours, they threw a sonobuoy over the side which triggered a float to 
 
 Ropos
 
+On leg 2 the ship sailed due south to the Antarctic continent to the area of the Mertz glacier and Cape Denison. 
+[photo of coast]
+
+Mertz is so named after the explorer who lost his life on the glacier when his team was exploring with Mawson in the year ???. 
+
+It calved in the year ??? and left behind an unexplored seabed that has been covered likely since the last calving event in the year ???.
+[photos of calving event]
+
+This fantastic remotely operated vehicle came on board just for leg 2. their aim was to look under the recently calved glacier, Mertz. It was fortunate to have a small number of successful dives under the ice: as you can imagine, the robot has to be deployed in just the right conditions. 
+[photo of ropos being deployed]
+
+One way to keep the ship stable enough was to pull it right in against the ice. This is where this dive took place. The robot was lowered and could be moved around by its controllers sat on the ship. They manoeuvred it into position underneath the ice. 
+[aerial photo of ship against ice]
+
+The controllers used a live video feed from the cameras on the robot to look around and take photographs of interesting features, and used the many sampling arms and containers to bring back organisms from the sea floor as well as samples of the sand. 
+[underwater photo or video]
+
+Some really unusual behaviour was seen which was not expected and had not been seen before. And it wasn’t a one-off: we saw it multiple times. It is only during exploratory expeditions and experiments like this that these things are found! Other benthic teams have also found a new species from a group that they thought they had got a handle on! 
+
 Leg 3
+
 Ice cores
 
-We were lucky enough to share a flight with them in the helicopter at the last island we stopped at in the South Atlantic. Bouvetoya, a Norwegian island, is considered the most remote island in the world, being around 2000 km from any other land!
-[aerial photo of Bouvetoya]
+The circulation of the Southern Ocean affects ocean circulation worldwide and influences worldwide climate. The sub-Antarctic islands are ideally situated to capture these changes, so using the air bubbles and chemical composition of ice from these islands can help us to understand the past climate in this region. 
+
+The team drilled short ice cores from several islands, as well as the Mertz glacier. They reached a depth of around XX metres, giving records back to around 20-30 years. Each core is analysed in detail, looking at its chemical composition, including the organic components and volcanic ash – records of past volcanic activity is recorded easily by the layers of ash falling onto the ice when the eruption occurs. 
+
+Past ice cores from Antarctica and Greenland have reached ice of 800,000 years old, showing fantastic insights into the Earth’s past climate. They demonstrate snow accumulation and melting,  as well as the levels of carbon dioxide in the atmosphere and how this can relate to global temperatures. 
+
+Being able to provide a baseline for previous climates allows us to establish how our planet will be affected by current warming as well as how glacial melt may occur in the future. 
+
+Microplastics
+Cutting down on our use of plastics is constantly in the news nowadays and in particular there is plenty of encouragement to cut out the production of microplastics, small almost invisible pieces of plastic that end up in our waterways, oceans and ultimately our food. These tidy beads and threads of plastics that come from synthetic clothing, cleaning and washing products and the breakdown of larger plastics are ingested by organisms in our oceans and ultimately aggregate in larger animals, ending up in our food chain. 
+
+A circumpolar study of microplastics was done by taking samples of sea water every 3 hours around the Southern Ocean. Thousands of fragments were discovered using a microscope and an even more powerful microscope is now being used to identify what the fibres are: luckily the majority seem to be natural, and the numbers per litre of water filtered were significantly less than the number found when the ship went north and south through the Atlantic. Even these numbers were small when compared to the numbers discovered in the Mediterranean. It is thought that the fronts in the Southern Ocean could act as a kind of barrier to avoid these contaminants from entering the waters closer to Antarctica, but there is no doubt that some do enter these waters, as do large pieces of plastic.  
 
 South Georgia
+
+South Georgia is a haven for wildlife and heaven for any wildlife enthusiast. There is a permanent base on the island which is regularly visited by cruise ships in the summer season and a fishery of krill, a small crustacean, and one of the keystone species in the Southern Ocean ecosystem, operates in the waters not too far away. It was once though a base of a whaling station where thousands of whales were killed and oil extracted. 
+
+The old buildings are now kept as historical monuments and are regularly visited by tourists. 
+
+One of the main attractions to the site is the grave of Ernest Shackleton, one of the most famous Antarctic explorers. 
+
+A large amount of scientific research is done on this island and its invasive species are particularly well studied, although there are many areas that are still inaccessible by foot because of the glaciers that cover the island. 
 
 [photo of south georgia pipit]
 [photo of elephant and fur seals]
 [photo of penguins]
 
 
+
+
+
+
+
+
+
+
+
+
+# Bits of extra information
 Peter I island
 
 
@@ -53,6 +110,7 @@ Scott Island
 
 
 Bouvetoya
+[aerial photo of Bouvetoya]
 
 
 
