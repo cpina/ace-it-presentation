@@ -87,8 +87,10 @@ background-size: contain
 ---
 # Cinc dies mes tard...
 ---
-background-image: url(images/ace_final_map_official.jpg)
+background-image: url(images/ace_final_map_official.png)
 background-size: contain
+
+.footnote[Swiss Polar Institute]
 ---
 TODO: posar mapa de etapa 1 amb les illes
 background-image: url(images/S689A0644.JPG)
