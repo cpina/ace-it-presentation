@@ -48,7 +48,7 @@ http://spi-ace-expedition.ch/
 ---
 background-image: url(images/ace_final_map_official.png)
 background-size: contain
-.footnote[Copyright: Swiss Polar Institute]
+.footnote[Swiss Polar Institute]
 ---
 class: middle, center
 # R/V Akademik Tryoshnikov
@@ -85,7 +85,11 @@ background-size: contain
 background-image: url(images/propeller_blade.jpg)
 background-size: contain
 ---
-# Cinc dies mes tard...
+background-image: url(images/cabin.jpg)
+background-size: contain
+---
+class: middle, center
+# Cinc dies més tard...
 ---
 background-image: url(images/ace_final_map_official.png)
 background-size: contain
@@ -96,17 +100,17 @@ TODO: posar mapa de etapa 1 amb les illes
 background-image: url(images/S689A0644.JPG)
 background-sie: contain
 
-.footnote[Ile des Cochons, Crozet; Peter Ryan]
+.footnote[**Ile des Cochons, Crozet**; Peter Ryan]
 ---
 background-image: url(images/S689A0696.JPG)
 background-size: contain
 
-.footnote[Ile des Cochons, Crozet; Peter Ryan]
+.footnote[**Ile des Cochons, Crozet**; Peter Ryan]
 ---
 background-image: url(images/S689A0724.JPG)
 background-size: contain
 
-.footnote[Ile des Cochons, Peter Ryan]
+.footnote[**Ile des Cochons, Crozet**; Peter Ryan]
 TODO: Posar foto de Kng Penguins
 ---
 # Dia a dia
@@ -115,13 +119,13 @@ TODO: Posar foto de Kng Penguins
 - Ciencia 24 hores per a aprovechar
 - Treballar de despertar-se fins anar a dormir (amb pauses), sense caps de setmana
 ---
-background-image: url(images/cabin.jpg)
-background-size: contain
----
 background-image: url(images/ctd_lab.jpg)
 background-size: contain
 ---
 background-image: url(images/ctd_water.jpg)
+background-size: contain
+---
+background-image: url(images/ctd_cup.jpg)
 background-size: contain
 ---
 background-image: url(images/microcat_rotated.jpg)
@@ -145,33 +149,29 @@ background-size: contain
 background-image: url(images/ace_team.jpg)
 background-size: contain
 
-.footnote[22 equips. Copyright Swiss Polar Institute]
+.footnote[22 equips. Swiss Polar Institute]
 ???
 22 equips
----
-class: middle, center
-# Cinc dies més tard...
----
-background-image: url(images/south_georgia_ciencia.jpg)
-background-size: contain
 ---
 background-image: url(images/ace_final_map_official.png)
 background-size: contain
 
 .footnote[Swiss Polar Institute]
 ---
-# where to put this
-background-image: url(images/waves.jpg)
-background-size: contain
-???
-Marí
----
 background-image: url(images/ropos-submersible-being-deployed-in-front-of-the-mertz-cian-hogg.jpg)
 background-size: contain
 
-.footnote[ROPOS
+.footnote[**ROPOS**
 
 Ian Hogg]
+---
+background-image: url(images/animaux-benthiques.jpg)
+background-size: contain
+---
+background-image: url(images/scott-island-cf-bernard.jpg)
+background-size: contain
+
+.footnote[**Illa de Scott**&nbsp;&nbsp;&nbsp;&nbsp;François Bernard]
 ---
 background-image: url(images/ace_final_map_official.png]
 background-size: contain
