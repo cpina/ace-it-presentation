@@ -39,8 +39,8 @@ Més informació:
 - https://polar.epfl.ch
 ---
 class: middle, center
-# Què és ACE?
-Antarctic Circumnavigation Expedition 
+# ACE
+**A**ntarctic **C**ircumnavigation **E**xpedition 
 
 Expedició Circumnavagació a l'Antàrtida
 
