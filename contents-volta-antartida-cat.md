@@ -114,11 +114,37 @@ background-size: contain
 background-image: url(images/Sking_penguin_with_chick.JPG)
 background-size: contain
 ---
+background-image: url(images/ )
+background-size: contains
+
+.footnote[]
+---
+background-image: url(images/ )
+background-size: contains
+
+.footnote[]
+---
+background-image: url(images/ )
+background-size: contains
+
+.footnote[]
+---
+background-image: url(images/ )
+background-size: contains
+
+.footnote[]
+---
+
+
+
 # Dia a dia
 - Esmorzar, dinar, berenar i sopar amb els científics
 - Aprendre aparells: CTD, Ferrybox, comptador de flocs de neu, etc. (properes diapositives)
 - Ciencia 24 hores per a aprovechar
 - Treballar de despertar-se fins anar a dormir (amb pauses), sense caps de setmana
+---
+background-image: url(images/chef.jpg)
+background-size: contain
 ---
 background-image: url(images/ctd_lab.jpg)
 background-size: contain
