@@ -73,7 +73,12 @@ background-size: contain
 
 - Es va posar apunt amb temps record (van contactar amb nosaltres només 6 setmanes abans de la sortida)
 ---
-# Sortint de port...
+**ETAPA 1** Sud-áfrica a Australia
+<center><img width=600 src="images/ace_final_map_official.png"/></center>
+
+.footnote[Swiss Polar Institute]
+---
+#Sortint de port...
 - Un mes: de Sudàfrica a Austràlia
 - Primer cop dormint a un vaixell al mar
 - Preparar: lligar els ordinadors?
@@ -91,10 +96,8 @@ background-size: contain
 class: middle, center
 # Cinc dies més tard...
 ---
-**ETAPA 1** Sud-áfrica a Australia
-<center><img width=600 src="images/ace_final_map_official.png"/></center>
-
-.footnote[Swiss Polar Institute]
+background-image: url(images/albatross.JPG)
+background-size: contain
 ---
 background-image: url(images/S689A0644.JPG)
 background-size: contain
@@ -119,8 +122,6 @@ background-size: contain
 ---
 background-image: url(images/Sfur_seal_rope_around_neck.JPG)
 background-size: contain
-
-.footnote[Jen Thomas]
 ---
 class: middle, center
 ![microplastics_gels](images/microplastics_gels.jpeg)
@@ -136,8 +137,6 @@ background-size: contain
 ---
 background-image: url(images/Sneuston_net.JPG)
 background-size: contain
-
-.footnote[Jen Thomas]
 ---
 background-image: url(images/microplastics_sediment_collection.jpg)
 background-size: contain
@@ -217,14 +216,9 @@ background-size: contain
 ---
 background-image: url(images/Santarctic_coast.JPG)
 background-size: contain
-
-.footnote[J. Thomas]
----
 ---
 background-image: url(images/mertz_breakup.jpeg)
 background-size: contain
-
-.footnote[]
 ---
 background-image: url(images/ropos-submersible-being-deployed-in-front-of-the-mertz-cian-hogg.jpg)
 background-size: contain
@@ -242,11 +236,6 @@ background-size: contain
 background-image: url(images/animaux-benthiques.jpg)
 background-size: contain
 ---
-background-image: url(images/scott-island-cf-bernard.jpg)
-background-size: contain
-
-.footnote[**Illa de Scott**&nbsp;&nbsp;&nbsp;&nbsp;François Bernard]
----
 **ETAPA 3** Xile a Sud-áfrica
 <center><img width=600 src="images/ace_final_map_official.png"/></center>
 
@@ -257,33 +246,21 @@ background-size: contain
 ---
 background-image: url(images/Selephant_seal_in_tussock.JPG)
 background-size: contain
-
-.footnote[J. Thomas]
 ---
 background-image: url(images/Selephant_seal_pair.JPG)
 background-size: contain
-
-.footnote[J. Thomas]
 ---
 background-image: url(images/Sfur_seal_in_tussock.JPG)
 background-size: contain
-
-.footnote[J. Thomas]
 ---
 background-image: url(images/Sshackletons_grave.JPG)
 background-size: contain
-
-.footnote[J. Thomas]
 ---
 background-image: url(images/Swhaling_ships.JPG)
 background-size: contain
-
-.footnote[J. Thomas]
 ---
 background-image: url(images/Sgrytviken_whaling_station.JPG)
 background-size: contain
-
-.footnote[J. Thomas]
 ---
 background-image: url(images/penguin_adelie_iceberg_01.jpg)
 background-size: contain
