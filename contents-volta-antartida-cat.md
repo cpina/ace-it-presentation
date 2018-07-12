@@ -215,7 +215,7 @@ background-size: contain
 
 .footnote[**Illa de Scott**&nbsp;&nbsp;&nbsp;&nbsp;François Bernard]
 ---
-**ETAPA 3** Chile a Sud-áfrica
+**ETAPA 3** Xile a Sud-áfrica
 <center><img width=600 src="images/ace_final_map_official.png"/></center>
 
 .footnote[Swiss Polar Institute]
@@ -253,17 +253,17 @@ background-size: contain
 
 .footnote[J. Thomas]
 ---
-# Alguns numeros
+# Dades
 
-- 33.463 km viatjat
-- temperatura mínima: -12 C
-- latitud mínima: 74 S
-- 27.969 mostres
-- 147 científics, més 15 de suport
-- 12 grups d'illes visitades 
-- 21 TB de dades....4.500 DVDs o música per a escolter durant 40 anys!
+- Distància recorreguda: 33.463 km
+- Temperatura mínima: -12 ℃
+- Latitud mínima: 74 S
+- Mostres recullides: 27.969
+- Científics: 147. 15 de suport
+- Grups d'illes visitades: 12
+- Dades recullides: 21 TB. Aproximadament 4.500 DVDs
 ---
-# Material
+# Enllaços
 
 - http://spi-ace-expedition.ch/
 
