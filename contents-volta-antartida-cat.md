@@ -114,29 +114,37 @@ background-size: contain
 background-image: url(images/Sking_penguin_with_chick.JPG)
 background-size: contain
 ---
-background-image: url(images/ )
-background-size: contains
+background-image: url(images/plastic_oceans_david_jones.jpg)
+background-size: contain
+---
+background-image: url(images/Sfur_seal_rope_around_neck.JPG)
+background-size: contain
+
+.footnote[Jen Thomas]
+---
+background-image: url(images/microbeads_toothpaste.jpeg)
+background-size: contain
+---
+background-image: url(images/microplastics_water_collection_with_bucket.jpg)
+background-size: contain
+
+.footnote[Giuseppe Suaria]
+---
+background-image: url(images/Sneuston_net.JPG)
+background-size: contain
+
+.footnote[Jen Thomas]
+---
+background-image: url(images/microplastics_sediment_collection.jpg)
+background-size: contain
+
+.footnote[Peter Ryan]
+---
+background-image: url(images/microfibres.jpeg)
+background-size: contain
 
 .footnote[]
 ---
-background-image: url(images/ )
-background-size: contains
-
-.footnote[]
----
-background-image: url(images/ )
-background-size: contains
-
-.footnote[]
----
-background-image: url(images/ )
-background-size: contains
-
-.footnote[]
----
-
-
-
 # Dia a dia
 - Esmorzar, dinar, berenar i sopar amb els científics
 - Aprendre aparells: CTD, Ferrybox, comptador de flocs de neu, etc. (properes diapositives)
@@ -205,17 +213,8 @@ background-size: contain
 
 .footnote[J. Thomas]
 ---
-background-image: url(images/270px-Collision_Calves_Iceberg_from_Mertz_Glacier_Tongue,_Antarctica1.png)
-background-size: contain
-
-.footnote[]
 ---
-background-image: url(images/270px-Collision_Calves_Iceberg_from_Mertz_Glacier_Tongue,_Antarctica2.png)
-background-size: contain
-
-.footnote[]
----
-background-image: url(images/270px-Collision_Calves_Iceberg_from_Mertz_Glacier_Tongue,_Antarctica3.png)
+background-image: url(images/mertz_breakup.jpeg)
 background-size: contain
 
 .footnote[]
