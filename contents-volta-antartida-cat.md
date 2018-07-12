@@ -122,8 +122,12 @@ background-size: contain
 
 .footnote[Jen Thomas]
 ---
-background-image: url(images/microbeads_toothpaste.jpeg)
-background-size: contain
+class: middle, center
+![microplastics_gels](images/microplastics_gels.jpeg)
+![microplastics_makeup](images/microplastics_makeup.jpeg)
+
+![microplastics_toothpast](images/microplastics_toothpaste.jpeg)
+![microplastics_bottles](images/microplastics_bottles.jpeg)
 ---
 background-image: url(images/microplastics_water_collection_with_bucket.jpg)
 background-size: contain
@@ -140,10 +144,13 @@ background-size: contain
 
 .footnote[Peter Ryan]
 ---
-background-image: url(images/microfibres.jpeg)
+background-image: url(images/plastic_litter_diego_ramirez.jpg)
 background-size: contain
 
-.footnote[]
+.footnote[Peter Ryan]
+---
+background-image: url(images/microfibres.jpeg)
+background-size: contain
 ---
 # Dia a dia
 - Esmorzar, dinar, berenar i sopar amb els científics
@@ -278,7 +285,34 @@ background-size: contain
 
 .footnote[J. Thomas]
 ---
-# Dades
+background-image: url(images/penguin_adelie_iceberg_01.jpg)
+background-size: contain
+---
+background-image: url(images/penguin_adelie_iceberg_01.jpg)
+background-size: contain
+---
+background-image: url(images/penguin_adelie_iceberg_02.jpg)
+background-size: contain
+---
+background-image: url(images/penguin_adelie_iceberg_03.jpg)
+background-size: contain
+---
+background-image: url(images/penguin_adelie_iceberg_04.jpg)
+background-size: contain
+---
+background-image: url(images/penguin_adelie_iceberg_05.jpg)
+background-size: contain
+---
+background-image: url(images/penguin_adelie_iceberg_06.jpg)
+background-size: contain
+---
+background-image: url(images/penguin_adelie_iceberg_07.jpg)
+background-size: contain
+---
+background-image: url(images/penguin_adelie_iceberg_08.jpg)
+background-size: contain
+---
+# Dades 
 
 - Distància recorreguda: 33.463 km
 - Temperatura mínima: -12 ℃
