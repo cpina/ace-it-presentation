@@ -182,6 +182,36 @@ background-size: contain
 background-image: url(images/south_georgia_ciencia.jpg)
 background-size: contain
 ---
+background-image: url(images/Selephant_seal_in_tussock.JPG)
+background-size: contain
+
+.footnote[J. Thomas]
+---
+background-image: url(images/Selephant_seal_pair.JPG)
+background-size: contain
+
+.footnote[J. Thomas]
+---
+background-image: url(images/Sfur_seal_in_tussock.JPG)
+background-size: contain
+
+.footnote[J. Thomas]
+---
+background-image: url(images/Sshackletons_grave.JPG)
+background-size: contain
+
+.footnote[J. Thomas]
+---
+background-image: url(images/Swhaling_ships.JPG)
+background-size: contain
+
+.footnote[J. Thomas]
+---
+background-image: url(images/Sgrytviken_whaling_station.JPG)
+background-size: contain
+
+.footnote[J. Thomas]
+---
 # Alguns numeros
 
 - km travelled
