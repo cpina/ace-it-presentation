@@ -68,7 +68,7 @@ background-size: contain
 - ACE ha recullit mostres i estudiat disciplines marines, terrestres i de l'atmosfera a la vegada
 --
 
-- És la primera expedició de l'SPI (Institut Polar Suïss)
+- És la primera expedició de l'SPI (Institut Polar Suís)
 --
 
 - Es va posar apunt amb temps record (van contactar amb nosaltres només 6 setmanes abans de la sortida)
@@ -187,6 +187,19 @@ background-size: contain
 - mostres de coses
 - no gent de no paisos
 - no illes visitades
+---
+# Material
+
+- http://spi-ace-expedition.ch/
+
+- Llibre d'en Rafel Simó (cientfíc oceanògraf) sobre l'expedició: https://www.nuvol.com/ebooks/mar-gel-i-cel-diari-antartic/
+
+- Blog Rafel Simó: http://www.recercaenaccio.cat/basic/els-precedents-de-lexpedicio-una-volta-a-lantartida-no-fumis/
+
+- Vídeos:
+ - Part 1: https://www.youtube.com/watch?v=87TvkL0meGU
+ - Part 2: https://www.youtube.com/watch?v=zUHk-jAe2Gw
+ - Part 3: https://www.youtube.com/watch?v=pt_Euo08O9I
 ---
 template: inverse
 # Preguntes?
