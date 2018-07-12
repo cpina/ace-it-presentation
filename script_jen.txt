@@ -9,7 +9,7 @@ To that end, whenever there was the opportunity to do so, one team took to the a
 [photo of helicopter]
 
 The first place they did this was at Crozet, one of the island groups on leg 1. The island looked very much like you were in the north of Scotland and is placed in the roaring forties, making  the weather a challenge with a constant battering of wind and waves. 
-[aerial photos]
+[aerial photos]*
 
 A student has now begun piecing these images together and is using software and programming techniques to count the individuals in the colonies. This will ultimately feed into world population estimates for these species. 
 
@@ -30,6 +30,8 @@ Whales
 A team from Australia used expired military sonobuoys, or listening devices that can be deployed and sit underwater to listen for whales and other sounds under the ocean. 
 
 Every few hours, they threw a sonobuoy over the side which triggered a float to inflate. They had already chopped off the parachute which was attached (because these things are normally thrown out of aircraft as listening devices) so that didn’t get in the way. Then they ran upstairs (4 floors) to where they had their computer which was hooked up to the radio antenna receiving the signals. Using special software they were able to distinguish between species and also individual whales. By monitoring the direction and distance from which the calls came, they were able to distinguish a rough area of where the whales were. There were a lot more out there than they were able to see though! 
+[sonobuoy]
+[image of whales on map]
 
 Ropos
 

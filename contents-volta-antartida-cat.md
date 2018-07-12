@@ -99,17 +99,17 @@ class: middle, center
 background-image: url(images/S689A0644.JPG)
 background-size: contain
 
-.footnote[**Ile des Cochons, Crozet**; Peter Ryan]
+.footnote[**Ile des Cochons, Crozet** Peter Ryan]
 ---
 background-image: url(images/S689A0696.JPG)
 background-size: contain
 
-.footnote[**Ile des Cochons, Crozet**; Peter Ryan]
+.footnote[**Ile des Cochons, Crozet** Peter Ryan]
 ---
 background-image: url(images/S689A0724.JPG)
 background-size: contain
 
-.footnote[**Ile des Cochons, Crozet**; Peter Ryan]
+.footnote[**Ile des Cochons, Crozet** Peter Ryan]
 ---
 background-image: url(images/Sking_penguin_with_chick.JPG)
 background-size: contain
@@ -150,7 +150,7 @@ background-size: contain
 background-image: url(images/ace_team.jpg)
 background-size: contain
 
-.footnote[22 equips. Swiss Polar Institute]
+.footnote[**22 equips d'ACE** Swiss Polar Institute]
 ???
 22 equips
 ---
