@@ -99,6 +99,9 @@ class: middle, center
 background-image: url(images/albatross.JPG)
 background-size: contain
 ---
+background-image: url(images/aerial_photography.JPG)
+background-size: contain
+---
 background-image: url(images/S689A0644.JPG)
 background-size: contain
 
