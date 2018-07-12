@@ -73,7 +73,7 @@ background-size: contain
 
 - Es va posar apunt amb temps record (van contactar amb nosaltres només 6 setmanes abans de la sortida)
 ---
-**ETAPA 1** Sud-áfrica a Australia
+**ETAPA 1** Sud-áfrica a Austràlia
 <center><img width=600 src="images/ace_final_map_official.png"/></center>
 
 .footnote[Swiss Polar Institute]
@@ -197,7 +197,7 @@ background-size: contain
 ???
 22 equips
 ---
-**ETAPA 2** Australia a Chile
+**ETAPA 2** Austràlia a Xile
 <center><img width=600 src="images/ace_final_map_official.png"/></center>
 
 .footnote[Swiss Polar Institute]
