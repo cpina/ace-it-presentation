@@ -214,10 +214,13 @@ background-size: contain
 ---
 # Alguns numeros
 
-- km travelled
-- mostres de coses
-- no gent de no paisos
-- no illes visitades
+- 33.463 km viatjat
+- temperatura mínima: -12 C
+- latitud mínima: 74 S
+- 27.969 mostres
+- 147 científics, més 15 de suport
+- 12 grups d'illes visitades 
+- 21 TB de dades....4.500 DVDs o música per a escolter durant 40 anys!
 ---
 # Material
 
