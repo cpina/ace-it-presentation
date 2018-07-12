@@ -30,9 +30,9 @@ background-image: url(images/computer_room_big.jpg)
 background-size: contain
 ---
 # Què és SPI?
-- Swiss Polar Institute  (Institut Polar Suís)
+- Swiss Polar Institute (Institut Polar Suís)
 - Fundat el 2016
-- Investigació dels pols i àrees extrems
+- Investigació dels pols i zones semblants
 
 Més informació:
 - https://polar.epfl.ch/page-134197-en.html
@@ -140,8 +140,8 @@ background-size: contains
 # Dia a dia
 - Esmorzar, dinar, berenar i sopar amb els científics
 - Aprendre aparells: CTD, Ferrybox, comptador de flocs de neu, etc. (properes diapositives)
-- Ciencia 24 hores per a aprovechar
-- Treballar de despertar-se fins anar a dormir (amb pauses), sense caps de setmana
+- Ciència 24 hores per aprofitar tot el temps
+- Treballar des de despertar-se fins anar a dormir (amb pauses), sense caps de setmana
 ---
 background-image: url(images/chef.jpg)
 background-size: contain
@@ -166,7 +166,7 @@ background-size: contain
 
 - Qui prioritza durant l'expedició: visitar illes? Fer estacions? Desplegar equips?
 
-- Diferents membres necessiten fer diferentes coses: teniem equips marítims i terrestres
+- Diferents equips necessiten fer diferentes coses: teniem equips marítims i terrestres
 ---
 background-image: url(images/1-scientists-plan-their-upcoming-visit-of-south-georgia-sharif-mirshak.jpg)
 background-size: contain
@@ -293,7 +293,7 @@ background-size: contain
 
 - http://spi-ace-expedition.ch/
 
-- Llibre d'en Rafel Simó (cientfíc oceanògraf) sobre l'expedició: https://www.nuvol.com/ebooks/mar-gel-i-cel-diari-antartic/
+- Llibre electrònic divulgació d'en Rafel Simó (cientfíc oceanògraf) sobre l'expedició: https://www.nuvol.com/ebooks/mar-gel-i-cel-diari-antartic/
 
 - Blog Rafel Simó: http://www.recercaenaccio.cat/basic/els-precedents-de-lexpedicio-una-volta-a-lantartida-no-fumis/
 
