@@ -159,6 +159,21 @@ background-size: contain
 
 .footnote[Swiss Polar Institute]
 ---
+background-image: url(images/antarctic_blue_whale.jpg)
+background-size: contain
+
+.footnote[Brian Miller et al.]
+---
+background-image: url(images/antarctic_blue_whale_call.png)
+background-size: contain
+
+.footnote[Brian Miller et al.]
+---
+background-image: url(images/map_antarctic_blue_whale_calles.png)
+background-size: contain
+
+.footnote[Brian Miller et al.]
+---
 background-image: url(images/Santarctic_coast.JPG)
 background-size: contain
 
@@ -179,13 +194,18 @@ background-size: contain
 
 .footnote[]
 ---
----
 background-image: url(images/ropos-submersible-being-deployed-in-front-of-the-mertz-cian-hogg.jpg)
 background-size: contain
 
 .footnote[**ROPOS**
 
 Ian Hogg]
+---
+background-image: url(images/ropos_control_room.jpg)
+background-size:contain
+---
+background-image: url(images/ropos-submersibles-arm-sampling-under-the-mertz-glacier.jpg)
+background-size: contain
 ---
 background-image: url(images/animaux-benthiques.jpg)
 background-size: contain
