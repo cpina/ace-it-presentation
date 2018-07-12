@@ -159,6 +159,27 @@ background-size: contain
 
 .footnote[Swiss Polar Institute]
 ---
+background-image: url(images/Santarctic_coast.JPG)
+background-size: contain
+
+.footnote[J. Thomas]
+---
+background-image: url(images/270px-Collision_Calves_Iceberg_from_Mertz_Glacier_Tongue,_Antarctica1.png)
+background-size: contain
+
+.footnote[]
+---
+background-image: url(images/270px-Collision_Calves_Iceberg_from_Mertz_Glacier_Tongue,_Antarctica2.png)
+background-size: contain
+
+.footnote[]
+---
+background-image: url(images/270px-Collision_Calves_Iceberg_from_Mertz_Glacier_Tongue,_Antarctica3.png)
+background-size: contain
+
+.footnote[]
+---
+---
 background-image: url(images/ropos-submersible-being-deployed-in-front-of-the-mertz-cian-hogg.jpg)
 background-size: contain
 
