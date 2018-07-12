@@ -91,14 +91,13 @@ background-size: contain
 class: middle, center
 # Cinc dies més tard...
 ---
-background-image: url(images/ace_final_map_official.png)
-background-size: contain
+**ETAPA 1** Sud-áfrica a Australia
+<center><img width=600 src="images/ace_final_map_official.png"/></center>
 
 .footnote[Swiss Polar Institute]
 ---
-TODO: posar mapa de etapa 1 amb les illes
 background-image: url(images/S689A0644.JPG)
-background-sie: contain
+background-size: contain
 
 .footnote[**Ile des Cochons, Crozet**; Peter Ryan]
 ---
@@ -111,7 +110,9 @@ background-image: url(images/S689A0724.JPG)
 background-size: contain
 
 .footnote[**Ile des Cochons, Crozet**; Peter Ryan]
-TODO: Posar foto de Kng Penguins
+---
+background-image: url(images/Sking_penguin_with_chick.JPG)
+background-size: contain
 ---
 # Dia a dia
 - Esmorzar, dinar, berenar i sopar amb els científics
@@ -153,8 +154,8 @@ background-size: contain
 ???
 22 equips
 ---
-background-image: url(images/ace_final_map_official.png)
-background-size: contain
+**ETAPA 2** Australia a Chile
+<center><img width=600 src="images/ace_final_map_official.png"/></center>
 
 .footnote[Swiss Polar Institute]
 ---
@@ -173,8 +174,8 @@ background-size: contain
 
 .footnote[**Illa de Scott**&nbsp;&nbsp;&nbsp;&nbsp;François Bernard]
 ---
-background-image: url(images/ace_final_map_official.png]
-background-size: contain
+**ETAPA 3** Chile a Sud-áfrica
+<center><img width=600 src="images/ace_final_map_official.png"/></center>
 
 .footnote[Swiss Polar Institute]
 ---
