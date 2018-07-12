@@ -8,7 +8,7 @@ class: title-slide
 ### Volta a l'Antàrtida en un vaixell científic: què hem vist, fet i viscut
 ![images](images/title.apng)
 
-.right[ADENC, 2018. Jen Thomas (jenny_t152@yahoo.co.uk) i Carles Pina (carles@pina.cat)]
+.right[ADENC, 2018. Jen Thomas i Carles Pina]
 ---
 layout: false
 # Qui som
