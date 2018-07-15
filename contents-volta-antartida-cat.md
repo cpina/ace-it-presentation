@@ -197,6 +197,8 @@ background-size: contain
 ---
 background-image: url(images/mertz_breakup.jpeg)
 background-size: contain
+
+.footnote[**NASA/Aqua/Earth Observatory**]
 ---
 background-image: url(images/ropos-submersible-being-deployed-in-front-of-the-mertz-cian-hogg.jpg)
 background-size: contain
