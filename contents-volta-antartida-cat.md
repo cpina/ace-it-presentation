@@ -126,13 +126,6 @@ background-size: contain
 background-image: url(images/Sfur_seal_rope_around_neck.JPG)
 background-size: contain
 ---
-class: middle, center
-![microplastics_gels](images/microplastics_gels.jpeg)
-![microplastics_makeup](images/microplastics_makeup.jpeg)
-
-![microplastics_toothpast](images/microplastics_toothpaste.jpeg)
-![microplastics_bottles](images/microplastics_bottles.jpeg)
----
 background-image: url(images/microplastics_water_collection_with_bucket.jpg)
 background-size: contain
 
@@ -150,9 +143,6 @@ background-image: url(images/plastic_litter_diego_ramirez.jpg)
 background-size: contain
 
 .footnote[Peter Ryan]
----
-background-image: url(images/microfibres.jpeg)
-background-size: contain
 ---
 # Dia a dia
 - Esmorzar, dinar, berenar i sopar amb els científics
@@ -202,21 +192,6 @@ background-size: contain
 
 .footnote[Swiss Polar Institute]
 ---
-background-image: url(images/antarctic_blue_whale.jpg)
-background-size: contain
-
-.footnote[Brian Miller et al.]
----
-background-image: url(images/antarctic_blue_whale_call.png)
-background-size: contain
-
-.footnote[Brian Miller et al.]
----
-background-image: url(images/map_antarctic_blue_whale_calles.png)
-background-size: contain
-
-.footnote[Brian Miller et al.]
----
 background-image: url(images/Santarctic_coast.JPG)
 background-size: contain
 ---
@@ -232,12 +207,22 @@ Ian Hogg]
 ---
 background-image: url(images/ropos_control_room.jpg)
 background-size:contain
+
+<font color="white">
+.footnote[**ROPOS control room**]
+</font>
 ---
 background-image: url(images/ropos-submersibles-arm-sampling-under-the-mertz-glacier.jpg)
 background-size: contain
+
+<font color="white">
+.footnote[**ROPOS**]
+</font>
 ---
 background-image: url(images/animaux-benthiques.jpg)
 background-size: contain
+
+.footnote[**Noé Sardet**]
 ---
 **ETAPA 3** Xile a Sud-áfrica
 <center><img width=600 src="images/ace_final_map_official.png"/></center>
@@ -326,4 +311,4 @@ class: inverse
 ## Llicència
 ![CreativeCommons](external/creative-commons.png)
 
-Aquesta obra està subjecta a una llicència de [Reconeixement 4.0 Internacional de Creative Commons](https://creativecommons.org/licenses/by-sa/4.0/deed.ca).
+Aquesta obra **excepte fotos amb autor especificat** està subjecta a una llicència de [Reconeixement 4.0 Internacional de Creative Commons](https://creativecommons.org/licenses/by-sa/4.0/deed.ca). 
