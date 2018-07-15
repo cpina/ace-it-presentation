@@ -16,3 +16,6 @@ How to find the right parameters for bbox? Execute before:
 `pdfcrop --verbose file.pdf`
 
 And copy the BoundingBox of the first slide (or a black background slide, to adjust the new PDF to the size).
+
+PS: if the final PDF is too big in size try:
+`gs -sDEVICE=pdfwrite -dCompatibilityLevel=1.4 -dPDFSETTINGS=/default -dNOPAUSE -dQUIET -dBATCH -r300  -sOutputFile=smaller-presentation.pdf presentation.pdf`
