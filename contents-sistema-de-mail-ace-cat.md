@@ -214,9 +214,7 @@ echo jen.thomas | saslpasswd2 -u ace-expedition.net Bae5hahgho1iephuu5qu
 ```
 ---
 # Enviament d'emails
-- Vaig limitar el màxim a 50 KB (a Roundcube i a Postfix)
---
-(després ho vàrem pujar a 200 KB)
+- Vaig limitar el màxim a 50 KB (a Roundcube i a Postfix) (després ho vàrem pujar a 200 KB)
 --
 
 - Vaig fer que el Postfix del vaixell només fes dues connexions cap al servidor d'internet
