@@ -23,6 +23,7 @@ layout: false
 - El 2009 vaig marxar a Londres treballar per Mendeley
 - C++ i Qt
 - Administrar sistemes no és el meu dia a dia
+- Ho faig una mica per hobby... amb mètodes poc actualitzats?
 - Sempre m'ha agradat el programari lliure
 - El 2016 ens vàrem agafar un any sabàtic
 ---
@@ -376,9 +377,9 @@ background-size: contain
 - Un Iridium com el vell i un "Next" (una mica més ràpid)
 ---
 # Email a la propera expedició
-- Docker al vaixell i al servidor
+- Docker al vaixell i al servidor. Imatges des de Debian i posar Postfix o alguna cosa ja més feta?
 
-Però voldria no accedir a sistema de fitxers per Dovecot (doveadm?)
+Voldria no accedir a sistema de fitxers per utilitzar Dovecot (més doveadm?)
 
 - Com saber quins mails cal baixar? (ara és l'script per mirar /home/$USERNAME/Maildir/new)
 - Com baixar el mail de Dovecot? (ara és rsync mirant /home/$USERNAME/Maildir/dovecot-uidlist per trobar el fitxer)
