@@ -393,6 +393,8 @@ background-size: contain
 
 Voldria no accedir a sistema de fitxers per utilitzar Dovecot (més doveadm?)
 
+Virtual mailboxes?
+
 Baixar el mail...
 - Com saber quins mails cal baixar? (era amb l'script per mirar /home/$USERNAME/Maildir/new)
 - Com baixar el mail de Dovecot? (era amb rsync mirant /home/$USERNAME/Maildir/dovecot-uidlist per trobar el fitxer)
