@@ -19,7 +19,6 @@ layout: false
 ---
 layout: false
 # Qui soc
-- Nascut a Manresa
 - El 2009 vaig marxar a Londres treballar per Mendeley
 - C++ i Qt
 - Administrar sistemes no és el meu dia a dia
@@ -35,16 +34,14 @@ background-size: contain
 .footnote[Copyright: Swiss Polar Institute]
 ---
 # L'expedició
-- Molt especial: dona la volta l'Antàrtida
-- Molta varietat científica: illes, oceanografia, atmosfèric, etc. (22 projectes científics)
+- Molt especial: dóna la volta l'Antàrtida
+- Molta varietat científica: visitar illes, oceanografia, atmòsfera, etc. (22 projectes científics)
 - Primera expedició de l'Institut Polar Suïss (SPI)
 - El vaixell és rús (i la tripulació, ordinadors...)
-- Novembre 2016: el cap científic David Walton va contactar amb la Jen per si podia fer de Data Manager
+- Novembre 2016: el cap científic David Walton va contactar amb la Jen per si podia fer de Data Manager... vàrem sortir 6 setmanes després
 - 3 etapes d'un mes
 
-I vàrem tornar a Europa amb vaixell
-
-I després vàrem tornar amb vaixell cap a Alemania
+I vàrem tornar a Europa amb vaixell des de Sud Àfrica
 ---
 background-image: url(images/akademik_tryoshnikov_grytviken.jpg)
 background-size: contain
@@ -52,10 +49,10 @@ background-size: contain
 # R/V Akademik Tryoshnikov
 
 - Trencagel rús
-- 133 metros d'eslora
-- 23 metros de mànega
-- Tripulació: 60 persones: cuiners, enginyers, tècnics. Sense informàtic
-- Llogat per l'expedició: gairebé tots els projectes científics van portar els seus propi equipament
+- 133 metres d'eslora
+- 23 metres de mànega
+- Tripulació: 60 persones: cuiners, enginyers, tècnics
+- Llogat per l'expedició: gairebé tots els projectes científics van portar el seus propi equipament
 ---
 background-image: url(images/rocking.jpg)
 background-size: contain
@@ -91,11 +88,11 @@ background-size: contain
 background-image: url(images/for_fun/penguins_02.jpg)
 background-size: contain
 ---
-# El començament...
+# Posant-ho apunt...
 va arribar 2 dies abans de sortir...
 ![NAS](images/SNAS.jpg)
 
-I va incloure anar a la cafeteria a baixar 300 MB pels Synology...
+I va incloure anar a l'hotel per baixar 300 MB pels Synology...
 ---
 background-image: url(images/intranet_homepage.png)
 background-size: contain
@@ -154,15 +151,15 @@ background-size: contain
 # Email primera etapa
 - Vàrem recomenar fer servir Thunderbird i utilitzar una de les dues connexions amb cable
 - Va anar força malament:
- - Windows té time-outs curts pel DNS
- - Thunderbird té problemes amb connexions inestables (y mala informació per l'usuari)
+ - Windows té time-outs baixos pel DNS
+ - Thunderbird té problemes amb connexions inestables (i poca informació per l'usuari)
  - Vàrem haver de configurar varis Thunderbirds per diferents proveidors (universitats, empreses, etc.)
  - Mai sabiem si hi havia un error de la configuració (servidores IMAP, SSL, usuari/contrasenya) o error a la connexió
  - Vàrem configurar Thunderbird per baixar només emails nous, només si són més petits de 50 KB, etc.
- - M'exasperava veure gent esperant davant d'una pantalla per enviar un email. No era fiable y era muy estresante (i pobres portàtils...)
+ - M'exasperava veure gent esperant davant d'una pantalla per enviar un email. No era fiable i era molt estressant (i pobres portàtils...)
 ---
 # Baixar dades científiques
-- A la nit baixàvem dades científiques (90 minuts per uns 15 MB, amb desconnexions, molt variable)
+- A la nit baixàvem dades científiques (90 minuts per uns 30 MB, amb desconnexions, molt variable)
 
 --
 
@@ -185,9 +182,9 @@ template: inverse
 ---
 # Sistema d'email
 Quan vàrem arribar a Austràlia...:
-- Vaig comprar un servidor VPS a Gandi
+- Vaig contractar un servidor VPS a Gandi
 - Vaig configurar Postfix (SMTP) i Dovecot (IMAP)
-- Vaig configurar un servidor al vaixell amb Roundcube (Webmail), fetchmail (client IMAP) i Postfix
+- Vaig configurar un servidor al vaixell amb Roundcube (Webmail), fetchmail (client IMAP), Postfix i Dovecot
 - Amb Django vàrem fer un sistema per crear usuaris al servidor del vaixell i al d'internet
 (res amb Docker, no l'havia fet servir abans)
 ---
@@ -218,7 +215,7 @@ echo jen.thomas | saslpasswd2 -u ace-expedition.net Bae5hahgho1iephuu5qu
 - Vaig limitar el màxim a 50 KB (a Roundcube i a Postfix) (després ho vàrem pujar a 200 KB)
 --
 
-- Vaig fer que el Postfix del vaixell només fes dues connexions cap al servidor d'internet
+- Vaig fer que el Postfix del vaixell només fes dues connexions cap al servidor d'internet (penso que era el default_destination_concurrency_limit ?)
 ---
 # Servidor d'internet
 
@@ -235,30 +232,36 @@ class: middle, center
 - Resultat:
  - Si no hi havia emails fetchmail tardava unes 4 hores a comprovar que no hi havia emails (feia una connexió per cada usuari) (IMAP té moltes "anades i tornades")
  - Si la connexió fallava per un usuari: fetchmail "ignorava" aquest fins a la propera passada
- - Els emails podien tardar 8 hores a ser rebuts si fetchmail fallava per un usuari (i només si eren de la mida decididia)
+ - Els emails podien tardar 8 hores a ser rebuts si fetchmail fallava per un usuari (i només si eren de la mida decidida)
 - fetchmail és ideal:
  - time outs alts per defecto
  - bona opció -v (vaig anar aprenent el IMAP)
  - bons exit codes per automació més tard
 ---
 # Recepció d'emails (versió 2)
-- Vaig generar un .fetchmailrc de només els usuaris de la segona part del viatge (llavors tardava unes dues hores enlloc de 4)
+- Vaig generar un .fetchmailrc de només els usuaris de la segona part del viatge (llavors tardava unes 2 hores enlloc de 4)
 ---
-# Recepción de emails (sistema 3, definitivo)
+# Recepció d'emails (sistema 3, definitiu)
 Vaig pensar que només volia fer que fetchmail recullís emails d'usuaris que tenien emails.
 
 Vaig mirar com organitza Dovecot els emails a veure si podia saber quins usuaris tenien emails nous...
 --
 
 
-Dovecot deixa els emails nous a /home/$USERNAME/Maildir/new
+Dovecot deixa els emails nous a:
+```bash
+/home/$USERNAME/Maildir/new
+```
 
-I el nom del fitxer és el timestamp de mail rebut P. ex: 1498094976.24034_1.servidor64
+I el nom del fitxer és el timestamp de mail rebut P. ex:
+```bash
+1498094976.24034_1.servidor64
+```
 ---
 ## Quins usuaris tenen emails a baixar?
 ### Script al servidor d'Internet
 Un script en Python mirava tots els /home/* y imprimia a la sortida estàndard:
-```
+```bash
 /home/carles.pinaestany/Maildir/new/1498094976.24034_1.servidor64
 /home/john.doe/Maildir/new/1375352537.24034_1.servidor64
 ```
@@ -271,7 +274,7 @@ Script: https://github.com/cpina/science-cruise-data-management/blob/master/Scie
 cmd = "ssh -o ConnectTimeout=120 -o ServerAliveInterval=120 root@{} \
 ./messages_to_download.py > '{}'".format(settings.IMAP_SERVER, output_file_path)
 ```
-L'script (al vaixell) té la lògica per saber quins usuaris mirar el mail primer (els usuaris amb els mails més vells)
+L'script (al vaixell) té la lògica per saber quins usuaris recullir el mail primer (els usuaris amb els mails més vells)
 --
 
 
@@ -348,23 +351,32 @@ carles@servidor64:~/Maildir$ cat dovecot-uidlist
 - Mira quin és el nom de fitxer per el $UID notificat
 --
 
-- Baixa (rsync) el fichero que conté el mail: p. ej. $USERNAME/Maildir/new/1499969500.29282_1.servidor64. Amb els reintents...
+- Baixa (rsync) el fitxer que conté el mail: p. ej.
+```bash
+$USERNAME/Maildir/new/1499969500.29282_1.servidor64
+```
+Amb els reintents que calguin...
 --
 
-- Guarda el fichero baixat al servidor del vaixell a $USERNAME/Maildir/.DownloadedEmails
+- Guarda el fitxer baixat al servidor del vaixell a
+```bash
+$USERNAME/Maildir/.DownloadedEmails
+```
 --
 
-- Actualitza (si és necessari) el fichero local $USERNAME/Maildir/subscriptions
+- Actualitza (si és necessari) el fitxer local $USERNAME/Maildir/subscriptions
 ---
 # ¿Com enviar emails (fitxers) grans?
 - Els usuaris venien i ens portaven fitxers grans a una memòria USB, a una carpeta compartida, etc.
 - A vegades ho enviavem amb un script (until rsync - anar provant) al servidor d'Internet a /var/www/uploaded/misc/nombre_fichero.zip
 - Altres vegades ho posàvem a una cua durant la nit
 ---
-# Utilitzar dos Iridiums per dades des del mateix servidor
+# Utilitzar dos antenes Iridium per enviar/recullir dades des del mateix servidor
+(dos gateways bàsicament)
+
 - Al servidor d'internet vaig (via iptables) vaig redirigir el port 2222 al port 22
-- Servidor al vaixell: tenía un default gw (Iridium1). Però els paquets que anàven al port 2222 els marcava (no recordo bé com!) per anar via un altre gateway: Iridium 2
-- Tenía dos rsync_queue.py: uno que usaba el puerto 22 y el otro el puerto 2222
+- Servidor al vaixell: tenia un default gw (Iridium1). Però els paquets que anàven al port 2222 els marcava (crec que via iptables i routing d'alguna manera...) per anar via un altre gateway: Iridium 2
+- Tenia dos rsync_queue.py: un que feia servir el port 22 i l'altre el port 2222
 ---
 background-image: url(images/for_fun/penguins_01.jpg)
 background-size: contain
@@ -381,8 +393,11 @@ background-size: contain
 
 Voldria no accedir a sistema de fitxers per utilitzar Dovecot (més doveadm?)
 
-- Com saber quins mails cal baixar? (ara és l'script per mirar /home/$USERNAME/Maildir/new)
-- Com baixar el mail de Dovecot? (ara és rsync mirant /home/$USERNAME/Maildir/dovecot-uidlist per trobar el fitxer)
+Baixar el mail...
+- Com saber quins mails cal baixar? (era amb l'script per mirar /home/$USERNAME/Maildir/new)
+- Com baixar el mail de Dovecot? (era amb rsync mirant /home/$USERNAME/Maildir/dovecot-uidlist per trobar el fitxer)
+
+Posar el mail...
 - Com injectar el mail en local? LMTP pot fer-ho? val la pena?
 ---
 template: inverse
