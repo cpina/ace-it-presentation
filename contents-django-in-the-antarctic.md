@@ -11,7 +11,7 @@ class: title-slide
 .right[Django London Meetup, Zoom, 2020. Carles Pina i Estany (carles@pina.cat)]
 ---
 layout: false
-# Some admin
+# Some ~~Django~~ admin
 --
 
 - You might hear firecrackers during the presentation
@@ -20,11 +20,11 @@ layout: false
 - I'm now in Catalonia (Spain)
 
 --
-- Today is St. John's evening
+- This evening we have celebrations for St. John's which is tomorrow
 
 --
 
-St John's tradition is...
+St John's evening tradition is...
 ---
 background-image: url(images/st-john/bonfire.jpg)
 background-size: contain
@@ -34,18 +34,18 @@ background-image: url(images/st-john/fireworks.jpg)
 background-size: contain
 .footnote[.white[bayasaa, CC-BY-2.0]]
 ---
-# St John
-- It's the celebration (but 2 nights late!) of Summer solstice
+# St John's evening tradition is...
+- the celebration (but 2 nights late!) of the summer solstice
 --
 
-- It's to scare witches
+- to scare witches away
 --
 
-- It's celebrated in different parts of Spain and different countries
+- celebrated in different parts of Spain and different countries
 
 --
 
-There are other Catalan traditions...
+This is one of many Catalan traditions...
 ---
 background-image: url(images/st-john/castell.jpg)
 background-size: contain
@@ -56,20 +56,12 @@ background-size: contain
 ---
 layout: false
 # What I used (2016) to do for work?
-## Carles
 - C++/Qt software engineer at Mendeley
-- Some Python (scripts at work, evenings and weekends, Python Code Dojos, etc.)
+- Some Python (scripts at work, evenings and weekends, London Python Code Dojos, etc.)
 - Using GNU/Linux for a long time
 - Long time ago: system administrator / network administrator
---
-
-
-## Jen
-- Worked for 3.5 years at the British Antarctic Survey (BAS) as a data manager
-- Now works for the Swiss Polar Institute, following up on the data management of ACE
-- More into wildlife and science (especially birds) than programming
 ---
-# What were our roles on the ship?
+# What were the data management + IT roles on the ship?
 As a team we: 
 - managed the data of all 22 science projects
  - set up the data management recording system (Django);
@@ -91,31 +83,13 @@ background-image: url(images/ace_final_map_official.png)
 background-size: contain
 .footnote[Copyright: Swiss Polar Institute]
 ---
-class: middle, center
-# R/V Akademik Tryoshnikov
----
 background-image: url(images/akademik_tryoshnikov_grytviken.jpg)
 background-size: contain
+
+## R/V Akademik Tryoshnikov
 ---
 background-image: url(images/rocking.jpg)
 background-size: contain
----
-# Why is ACE different?
-- Usually science expeditions focus on a small area of the Antarctic
---
-
-- Only other similar expedition was Discovery II in the 1950's
---
-
-- Sampled and studied marine and terrestrial habitats
---
-
-- First expedition of the Swiss Polar Institute
---
-
-- It was organised very quickly
-???
-Mention that we were called 6 weeks in advance
 ---
 class: middle, center
 # Science 
@@ -126,19 +100,6 @@ background-size: contain
 .footnote[Copyright Swiss Polar Institute]
 ???
 Lots of teams: 22. Many people
----
-background-image: url(images/south_georgia_ciencia.jpg)
-background-size: contain
-???
-Terrestrial science
----
-background-image: url(images/waves.jpg)
-background-size: contain
-???
-Marine science
----
-background-image: url(images/releasing_radiosonde.jpg)
-background-size: contain
 ---
 class: middle, center
 template: inverse
@@ -157,39 +118,13 @@ template: inverse
 - Backup to avoid losing data and to archive it properly for the future
 - The data can be made publicly available after the 2 year embargo
 - Make data easier to discover and usable by others in the future
----
-# We had many IT tasks
-We juggled the data management with many other tasks:
---
-
-- Setup the data storage (2 NAS, 64 TB, 2 UPS, etc.)
---
-
-- Create utilities to backup from USB hard disks and network-attached computers
 
 --
-- Create an intranet webpage for the data entry, utilities and to disseminate information on board
 
---
-- Design and implement an e-mail system that works with an unstable 128 kbit connection for 80 people
-
---
-- Create a way to upload videos for the news (we had journalists on board)
-
---
-- Download data (ice images, weather models) for the scientists
-
---
-- Help scientists to connect different equipment (like snow flake counter)
-
---
-- Fix a winch (software part)
---
-
-- ...
+Bear in mind: we had many other tasks (bigger one the email system)
 ---
 # science-data-management
-Jen said: Can you help me build a database?
+Data manager (Jen) said: Can you help me build a database?
 --
 
 
@@ -205,19 +140,11 @@ background-size: contain
 template: inverse
 # Django
 ---
-I knew:
+I had used (to a certain extend):
 - Python
---
-
 - Flask
---
-
 - MySQL
---
-
 - SQLAlchemy
---
-
 - Mustache
 --
 
@@ -238,34 +165,30 @@ I asked a friend (thanks Fran!)... and he said...
 
 
 Fran created a Django project with a small admin an example... and I loved it!
-???
-Thought "nooooo..." because it's big, we didn't have time
 ---
-# One week of Django
+# My first week of Django
 I went back home and really enjoyed learning Django:
 - Writing Django models is easier than MySQL _create table_ (with foreign keys, etc.)
-- Easier to change the models and migrate
-- We needed authentication of users
-- Permissions for tables were useful
-- Templates are very well integrated with models
-- All the admin part that we used has a good default UI
-- Easy to extend
+- I had done similar things 15 or 20 years ago without any framework: this was more productive!
+- Thinking of writing all the authentication, permissions, admin-alike, migrations, integrate templates with models, etc. would be scary
 
 ---
 # If you are new to Django...
-I feel that for debugging certain issues it's needed:
+I feel that for debugging certain issues it's needed to know:
+- Python
 - HTML
 - CSS
+- git
 - Javascript
+- jQuery
 - HTTP
-- Unit tests
 - Deployments
 - SQL
 - Database administration
 - Server administration
 - ...
 
-Luckily I knew, to a certain extend, many of these things
+Luckily I was familiar (more or less) many of these things
 ---
 class: middle, center
 # science-cruise-data-management
@@ -277,17 +200,33 @@ background-size: contain
 background-image: url(images/intranet_homepage.png)
 background-size: contain
 ---
-# What did we build?
-- Scientists used admin
+# How did we build the interface?
+- Scientists used admin to enter, search, update data (also some visualizations outside admin)
 
 --
 - It did serve us very well! Authentication, permissions, less code to write and fewer things to integrate
 
 --
-- For the past year I've been working on two big Django applications. I would do it differently now but it was very useful!
+- For the past year I've been working on two Django applications. I would do it differently now but it was very useful!
 ---
 background-image: url(images/event_report.png)
 background-size: contain 
+---
+# How the system grew during the expedition
+- All focused on "we need this soon" and "this needs to last until end of April"
+
+--
+- Very rapid development. Initially focused on collecting data
+
+--
+- Make the data useful for the scientists as soon as possible: via maps, reports, validation
+
+--
+- Add small utilities that were useful (e.g. lat long converters, ship time to lat long, etc.)
+
+--
+- 3 years later: the system is still running in the institute internally for the data manager
+
 ---
 background-image: url(images/intranet_location.png)
 background-size: contain 
@@ -295,41 +234,25 @@ background-size: contain
 background-image: url(images/intranet_map.png)
 background-size: contain 
 ---
-# How I worked off-line
+# How it was to work practically off-line
 No easy access to Stackoverflow/Google for 4 months.
 
 - Django documentation is also available off-line: it's fantastic
 - Django source code: a way to complement the documentation
-- It was very handy that I had lot (unrelated) source code in my laptop
-
-I used lots of code that I had in the laptop.
+- It was very handy that I had lot of (unrelated) source code in my laptop
+- ipython + help method, etc.
 
 --
 
 I didn't use PDF books as much as I thought.
 
 ---
-# What helped us?
-- Django documentation
-- Django admin
-- Mails to Fran
-
----
-# How the system grew during the expedition
-- All focused on "this needs to last until end of April".
-
---
-- Very rapid development. Initially focused on collecting data, later on outputing data.
-
---
-- Make the data useful for the scientists as fast as possible: via maps, reports, validation.
----
 # In retrospect
 Django was a very good tool to do what we had to do:
 - Without Django we would have taken much longer to do the same 
 - Django didn't get in the way (I had thought it would)
 - Django _commands_ were very easy to implement and useful for accessing the models from command line parameters, widely used for many of our scripts
-- Thanks Django developers for getting an extra mile with helpful error messages:
+- Thanks Django developers for getting an extra mile with helpful error messages. E.g.:
 ```bash
 main.Project.title: (fields.E120) CharFields must define a 'max_length' attribute.
 ```
@@ -381,4 +304,4 @@ Slides have been written using Markdown and rendered using remarkjs (https://rem
 
 Slides: https://github.com/cpina/ace-it-presentation / https://cpina.github.io/ace-it-presentation/
 
-ACE: http://spi-ace-expedition.ch/ 
+ACE: https://spi-ace-expedition.ch/  Swiss Polar Institute: https://swisspolar.ch
