@@ -55,14 +55,50 @@ background-image: url(images/st-john/calcots.jpg)
 background-size: contain
 ---
 layout: false
-# What I used (2016) to do for work?
-- C++/Qt software engineer at Mendeley
-- Some Python (scripts at work, evenings and weekends, London Python Code Dojos, etc.)
-- Using GNU/Linux for a long time
+# What I'm going to talk about tonight
+<center>
+<table>
+<tr>
+    <td valign="top">
+        <ul>
+	    <li>Using Django for data management</li>
+	    <li>On board a science expedition around Antarctica</li>
+	    <li>Why Django?</li>
+	    <li>How it was used</li>
+	 </ul>
+    </td>
+    <td>
+<img src="images/ace_final_map_official.png" width="450">
+</td>
+</tr>
+</table>
+</center>
+---
+background-image: url(images/akademik_tryoshnikov_grytviken.jpg)
+background-size: contain
+
+## R/V Akademik Tryoshnikov
+---
+background-image: url(images/ace_team.jpg)
+background-size: contain
+
+.footnote[Copyright Swiss Polar Institute]
+???
+Lots of teams: 22. Many people
+---
+# Context 
+- I was a C++/Qt software engineer
+- I took a sabbatical for a year in 2016-2017
+- Casual user of Python: scripts at work, evenings and weekends, London Python Code Dojos, etc.
+- Used GNU/Linux for a long time
 - Long time ago: system administrator / network administrator
 ---
-# What were the data management + IT roles on the ship?
-As a team we: 
+background-image: url(images/for_fun/iceberg-light.jpg)
+background-size: contain
+
+# Data management + IT during the expedition
+---
+# Our tasks: 
 - managed the data of all 22 science projects
  - set up the data management recording system (Django);
  - set up the data storage and back-ups;
@@ -73,44 +109,14 @@ As a team we:
  - e-mail system;
  - file uploader;
 
-- connecting science equipment. 
+- connecting and problem solving with science equipment. 
 ---
-class: middle, center
-# What is ACE?
-## Antarctic Circumnavigation Expedition
----
-background-image: url(images/ace_final_map_official.png)
-background-size: contain
-.footnote[Copyright: Swiss Polar Institute]
----
-background-image: url(images/akademik_tryoshnikov_grytviken.jpg)
-background-size: contain
-
-## R/V Akademik Tryoshnikov
----
-background-image: url(images/rocking.jpg)
-background-size: contain
----
-class: middle, center
-# Science 
----
-background-image: url(images/ace_team.jpg)
-background-size: contain
-
-.footnote[Copyright Swiss Polar Institute]
-???
-Lots of teams: 22. Many people
----
-class: middle, center
-template: inverse
-# Data management
----
-## What is it?
-- Backup all the collected data
-- Keep a log of what's happening: 
+## What is data management onboard?
+- Backup all the data collected onboard
+- Keep a log of what was happening: 
  - ultimate goal - to be able to describe where, when, by whom and for what reason the data were collected
 - Keep a database of all samples collected
-- Create metadata records of all data sets so they can be discovered
+- Create metadata records of all data sets so they are well described
 --
 
 
@@ -119,11 +125,8 @@ template: inverse
 - The data can be made publicly available after the 2 year embargo
 - Make data easier to discover and usable by others in the future
 
---
-
-Bear in mind: we had many other tasks (bigger one the email system)
 ---
-# science-data-management
+# science-cruise-data-management
 Data manager (Jen) said: Can you help me build a database?
 --
 
@@ -134,13 +137,12 @@ I answered: yes! (and thought of MySQL and _create table_...)
 
 Jen also meant a web system to enter data in the database!
 ---
-background-image: url(images/for_fun/iceberg-light.jpg)
+background-image: url(images/for_fun/penguins_01.jpg)
 background-size: contain
+
+#.white[Django]
 ---
-template: inverse
-# Django
----
-I had used (to a certain extend):
+I had used (to a certain extent):
 - Python
 - Flask
 - MySQL
@@ -169,12 +171,12 @@ Fran created a Django project with a small admin an example... and I loved it!
 # My first week of Django
 I went back home and really enjoyed learning Django:
 - Writing Django models is easier than MySQL _create table_ (with foreign keys, etc.)
-- I had done similar things 15 or 20 years ago without any framework: this was more productive!
-- Thinking of writing all the authentication, permissions, admin-alike, migrations, integrate templates with models, etc. would be scary
+- I had done similar things years ago without any framework: using Django was more efficient!
+- The effort involved in writing all the authentication, permissions, admin, migrations, integrating templates with models, etc. using separate tools would have been overwhelming
 
 ---
 # If you are new to Django...
-I feel that for debugging certain issues it's needed to know:
+I feel that for debugging certain issues it helps to have an awareness of:
 - Python
 - HTML
 - CSS
@@ -188,45 +190,42 @@ I feel that for debugging certain issues it's needed to know:
 - Server administration
 - ...
 
-Luckily I was familiar (more or less) many of these things
+Luckily I was familiar (more or less) with many of these things
 ---
-class: middle, center
+background-image: url(images/for_fun/clouds_02.jpg)
+background-size: contain
+
 # science-cruise-data-management
 https://github.com/Swiss-Polar-Institute/science-cruise-data-management
 ---
-background-image: url(images/for_fun/penguins_01.jpg)
-background-size: contain
----
-background-image: url(images/intranet_homepage.png)
-background-size: contain
----
-# How did we build the interface?
-- Scientists used admin to enter, search, update data (also some visualizations outside admin)
-
---
-- It did serve us very well! Authentication, permissions, less code to write and fewer things to integrate
-
---
-- For the past year I've been working on two Django applications. I would do it differently now but it was very useful!
+# The application before leaving port
+- The Django *admin* served as a way for scientists to enter, search for and update data about what happened on board
+- Map of the ship's position and data collection locations
+- Based on similar cruise data management database structure used by BODC (British Oceanographic Data Centre) and BAS (British Antarctic Survey)
 ---
 background-image: url(images/event_report.png)
 background-size: contain 
 ---
 # How the system grew during the expedition
-- All focused on "we need this soon" and "this needs to last until end of April"
+- All focused on "we need this soon" and "I only need to maintain this until April"
 
 --
 - Very rapid development. Initially focused on collecting data
 
 --
-- Make the data useful for the scientists as soon as possible: via maps, reports, validation
+- Aimed to make the data useful for the scientists as soon as possible: visualisations (maps and graphs), reports, validation
 
 --
-- Add small utilities that were useful (e.g. lat long converters, ship time to lat long, etc.)
+- Added small utilities that were asked for (e.g. lat long converters, ship time to position, etc.)
 
 --
 - 3 years later: the system is still running in the institute internally for the data manager
+--
 
+- For the past year I've been working on two Django applications. I would do it differently now but it was very useful!
+---
+background-image: url(images/intranet_homepage.png)
+background-size: contain
 ---
 background-image: url(images/intranet_location.png)
 background-size: contain 
@@ -234,13 +233,13 @@ background-size: contain
 background-image: url(images/intranet_map.png)
 background-size: contain 
 ---
-# How it was to work practically off-line
+# Working (almost) off-line
 No easy access to Stackoverflow/Google for 4 months.
 
 - Django documentation is also available off-line: it's fantastic
 - Django source code: a way to complement the documentation
-- It was very handy that I had lot of (unrelated) source code in my laptop
-- ipython + help method, etc.
+- It was very handy that I had lot of (unrelated) source code on my laptop
+- Python console with the help method
 
 --
 
@@ -248,24 +247,21 @@ I didn't use PDF books as much as I thought.
 
 ---
 # In retrospect
-Django was a very good tool to do what we had to do:
+Django was a very good tool for what we needed:
 - Without Django we would have taken much longer to do the same 
 - Django didn't get in the way (I had thought it would)
+- Admin forms were possible to adapt and change
 - Django _commands_ were very easy to implement and useful for accessing the models from command line parameters, widely used for many of our scripts
-- Thanks Django developers for getting an extra mile with helpful error messages. E.g.:
+- Thanks Django developers for going an extra mile with helpful error messages. E.g.:
 ```bash
 main.Project.title: (fields.E120) CharFields must define a 'max_length' attribute.
 ```
 --
 - Django documentation is very well written!
-- Admin forms were possible to adapt and change
 ???
 If Django didn't exist I would have had to implement it for the expedition, in a hacky way
 ---
-background-image: url(images/for_fun/ice_01.jpg)
-background-size: contain
----
-# What is Django?
+# Final thought
 From the Django website:
 ```bash
 Django makes it easier to build
@@ -281,27 +277,33 @@ We need to build a database
 ```
 --
 
-![images](images/clipart/light-bulb-idea.jpg)
+Django can be used for building database frontends.
 
 ???
 Django for data managers and for other professions: cooks, biologists, etc.
 ---
-template: inverse
+background-image: url(images/for_fun/ice_01.jpg)
+background-size: contain
+
 # Thank you!
 
 # Questions?
 ---
 class: inverse
 ## Contact
-- Carles Pina i Estany ([carles@pina.cat](carles@pina.cat))
+Carles Pina i Estany ([carles@pina.cat](carles@pina.cat), https://carles.pina.cat)
 ## License
 ![CreativeCommons](external/creative-commons.png)
 
 This work is licensed under a [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by-sa/4.0/).
+
+## Links
+ACE: https://spi-ace-expedition.ch
+
+Swiss Polar Institute: https://swisspolar.ch
 
 ## Slides
 Slides have been written using Markdown and rendered using remarkjs (https://remarkjs.com)
 
 Slides: https://github.com/cpina/ace-it-presentation / https://cpina.github.io/ace-it-presentation/
 
-ACE: https://spi-ace-expedition.ch/  Swiss Polar Institute: https://swisspolar.ch
