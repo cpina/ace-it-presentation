@@ -69,6 +69,7 @@ layout: false
     </td>
     <td>
 <img src="images/ace_final_map_official.png" width="450">
+.right[.small[Copyright: Swiss Polar Institute]]
 </td>
 </tr>
 </table>
@@ -78,11 +79,13 @@ background-image: url(images/akademik_tryoshnikov_grytviken.jpg)
 background-size: contain
 
 ## R/V Akademik Tryoshnikov
+
+.footnote[Carles Pina i Estany, CC-BY-4.0]
 ---
 background-image: url(images/ace_team.jpg)
 background-size: contain
 
-.footnote[Copyright Swiss Polar Institute]
+.footnote[Copyright: EPFL/Parafilms]
 ???
 Lots of teams: 22. Many people
 ---
@@ -97,6 +100,9 @@ background-image: url(images/for_fun/iceberg-light.jpg)
 background-size: contain
 
 # Data management + IT during the expedition
+
+
+.footnote[Carles Pina i Estany, CC-BY-4.0]
 ---
 # Our tasks: 
 - managed the data of all 22 science projects
@@ -111,7 +117,7 @@ background-size: contain
 
 - connecting and problem solving with science equipment. 
 ---
-## What is data management onboard?
+# What is data management onboard?
 - Backup all the data collected onboard
 - Keep a log of what was happening: 
  - ultimate goal - to be able to describe where, when, by whom and for what reason the data were collected
@@ -120,7 +126,7 @@ background-size: contain
 --
 
 
-## Why?
+# Why?
 - Backup to avoid losing data and to archive it properly for the future
 - The data can be made publicly available after the 2 year embargo
 - Make data easier to discover and usable by others in the future
@@ -141,6 +147,8 @@ background-image: url(images/for_fun/penguins_01.jpg)
 background-size: contain
 
 #.white[Django]
+
+.footnote[Carles Pina i Estany, CC-BY-4.0]
 ---
 I had used (to a certain extent):
 - Python
@@ -197,17 +205,19 @@ background-size: contain
 
 # science-cruise-data-management
 https://github.com/Swiss-Polar-Institute/science-cruise-data-management
+
+.footnote[.white[Carles Pina i Estany, CC-BY-4.0]]
 ---
 # The application before leaving port
 - The Django *admin* served as a way for scientists to enter, search for and update data about what happened on board
-- Map of the ship's position and data collection locations
 - Based on similar cruise data management database structure used by BODC (British Oceanographic Data Centre) and BAS (British Antarctic Survey)
+- Map of the ship's position and data collection locations
 ---
 background-image: url(images/event_report.png)
 background-size: contain 
 ---
 # How the system grew during the expedition
-- All focused on "we need this soon" and "I only need to maintain this until April"
+- All focussed on "we need this soon" and "I only need to maintain this until April"
 
 --
 - Very rapid development. Initially focused on collecting data
@@ -288,6 +298,8 @@ background-size: contain
 # Thank you!
 
 # Questions?
+
+.footnote[Carles Pina i Estany, CC-BY-4.0]
 ---
 class: inverse
 ## Contact
