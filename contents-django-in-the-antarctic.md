@@ -8,7 +8,7 @@ class: title-slide
 ### Django during the Antarctic Circumnavigation Expedition (ACE)
 ![images](images/title.apng)
 
-.right[Django London Meetup, Zoom, 2020. Carles Pina i Estany (carles@pina.cat)]
+.right[Django London Meetup, Zoom, 2020. Carles Pina i Estany ([carles@pina.cat](carles@pina.cat) https://carles.pina.cat)]
 ---
 layout: false
 # Some ~~Django~~ admin
