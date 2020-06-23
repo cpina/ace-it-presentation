@@ -66,6 +66,9 @@ layout: false
 	    <li>Why Django?</li>
 	    <li>How it was used</li>
 	 </ul>
+	 <center>
+             <img src="images/clipart/Badge ACE.png" width="200">
+	 </center>
     </td>
     <td>
 <img src="images/ace_final_map_official.png" width="450">
