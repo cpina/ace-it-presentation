@@ -219,6 +219,9 @@ https://github.com/Swiss-Polar-Institute/science-cruise-data-management
 background-image: url(images/event_report.png)
 background-size: contain 
 ---
+background-image: url(images/intranet_map.png)
+background-size: contain
+---
 # How the system grew during the expedition
 - All focussed on "we need this soon" and "I only need to maintain this until April"
 
@@ -241,9 +244,6 @@ background-image: url(images/intranet_homepage.png)
 background-size: contain
 ---
 background-image: url(images/intranet_location.png)
-background-size: contain 
----
-background-image: url(images/intranet_map.png)
 background-size: contain 
 ---
 # Working (almost) off-line
