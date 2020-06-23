@@ -246,6 +246,9 @@ background-size: contain
 background-image: url(images/intranet_location.png)
 background-size: contain 
 ---
+background-image: url(images/intranet_ferrybox.png)
+background-size: contain 
+---
 # Working (almost) off-line
 No easy access to Stackoverflow/Google for 4 months.
 
